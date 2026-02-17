@@ -11,44 +11,58 @@
 
 ## 2. Generate Player Character (Kasuari)
 
-- [x] 2.1 Queue Kasuari character creation (128x128, 4-directional)
-- [x] 2.2 Queue idle animation (4 frames per direction)
-- [x] 2.3 Queue walk animation (6 frames per direction)
-- [x] 2.4 Queue shoot animation (4 frames per direction)
-- [x] 2.5 Queue dash animation (3 frames per direction)
-- [x] 2.6 Queue death animation (6 frames, single direction)
+- [x] 2.1 Queue Kasuari character creation (128x128, 4-directional, chibi style)
+- [x] 2.2 Queue idle animation (4 frames per direction) → breathing-idle
+- [x] 2.3 Queue walk animation (4 frames per direction) → walking-4-frames
+- [x] 2.4 Queue shoot animation (4 frames per direction) → lead-jab
+- [x] 2.5 Queue dash animation (6 frames per direction) → running-slide
+- [x] 2.6 Queue death animation (4 frames per direction) → falling-back-death ⏳ processing
 - [x] 2.7 Poll status until complete
 - [x] 2.8 Download and extract to `assets/sprites/characters/player/kasuari/`
 
+**Progress:** Complete ✓ (Base, Idle, Walk, Shoot, Dash, Death)
+**Character ID:** `2b658a0f-3ad4-4b68-96d5-7017a9871166`
+**Downloaded:** 67 PNGs (4 rotations + 5 animations x 4 directions)
+
 ## 3. Generate Shadow Wisp Enemy
 
-- [ ] 3.1 Queue Shadow Wisp character creation (64x64, 4-directional)
-- [ ] 3.2 Queue idle animation (float bob)
+- [x] 3.1 Queue Shadow Wisp character creation (64x64, 4-directional)
+- [x] 3.2 Queue idle animation (float bob) → breathing-idle ⏳ processing (2-4 min)
 - [ ] 3.3 Queue move animation (homing drift)
 - [ ] 3.4 Queue death animation (dissolve)
 - [ ] 3.5 Poll status until complete
 - [ ] 3.6 Download and extract to `assets/sprites/characters/enemies/shadow_wisp/`
 
+**Progress:** Base ✓, Idle ⏳ (queued 2026-02-17)
+**Character ID:** `63605b0a-c5d5-42ff-b38b-3507cacee06c`
+
 ## 4. Generate Shadow Crawler Enemy
 
-- [ ] 4.1 Queue Shadow Crawler character creation (64x64, 4-directional, quadruped)
-- [ ] 4.2 Queue idle animation
+- [x] 4.1 Queue Shadow Crawler character creation (64x64, 4-directional, quadruped)
+- [x] 4.2 Queue idle animation → idle ✓
 - [ ] 4.3 Queue walk animation (fast crawl)
 - [ ] 4.4 Queue attack animation (lunge)
 - [ ] 4.5 Queue death animation
-- [ ] 4.6 Poll status until complete
-- [ ] 4.7 Download and extract to `assets/sprites/characters/enemies/shadow_crawler/`
+- [x] 4.6 Poll status until complete
+- [x] 4.7 Download and extract to `assets/sprites/characters/enemies/shadow_crawler/`
+
+**Progress:** Complete ✓ (minimal - idle only)
+**Character ID:** `2db46d9f-f4c7-4856-997d-de06ad924a05`
+**Downloaded:** 36 PNGs (4 rotations + 32 idle frames)
 
 ## 5. Generate Shadow Stalker Enemy
 
-- [ ] 5.1 Queue Shadow Stalker character creation (96x96, 4-directional)
-- [ ] 5.2 Queue idle animation
-- [ ] 5.3 Queue walk animation
+- [x] 5.1 Queue Shadow Stalker character creation (96x96, 4-directional) ✓
+- [x] 5.2 Queue idle animation ✓ (breathing-idle complete)
+- [x] 5.3 Queue walk animation → walking-4-frames ⏳ processing (2-4 min)
 - [ ] 5.4 Queue teleport animation (fade out/in)
 - [ ] 5.5 Queue attack animation
 - [ ] 5.6 Queue death animation
-- [ ] 5.7 Poll status until complete
-- [ ] 5.8 Download and extract to `assets/sprites/characters/enemies/shadow_stalker/`
+- [x] 5.7 Download base rotations ✓
+- [ ] 5.8 Download animations when complete
+
+**Progress:** Base ✓, Idle ✓, Walk ⏳ (queued 2026-02-17)
+**Character ID:** `2c11e362-c314-4b5f-9460-734af8889641`
 
 ## 6. Generate Shadow Brute Enemy
 

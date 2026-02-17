@@ -11,7 +11,7 @@
 |----------|-------|
 | **Genre** | Top-Down Action Shooter (Stage-based) |
 | **Dimension** | 2D |
-| **Art Style** | Pixel Art |
+| **Art Style** | Pixel Art - Chibi/SD (Super Deformed) |
 | **Tile Size** | 32x32 |
 | **Character Max Size** | 128x128 |
 | **Combat Style** | Methodical (aim carefully, fewer enemies) |
@@ -157,11 +157,27 @@ A massive boar consumed by shadow, representing untamed rage and gluttony.
 
 ### Art Direction
 
-- **Style**: Pixel Art
+- **Style**: Pixel Art - Chibi/SD (Super Deformed)
+- **Character Proportions**: 2-3 heads tall (large head, small body)
+- **Head Size**: Exaggerated (40-50% of character height)
+- **Body**: Compact, stylized, cute yet menacing for enemies
 - **Tile Size**: 32x32
 - **Character Max Size**: 128x128 (Pixellab constraint)
-- **Influences**: Tribal, Papuan indigenous art motifs
+- **Influences**: Tribal, Papuan indigenous art motifs, Japanese SD art style
 - **Environment**: Dense jungle, ancient ruins, spiritual underworld
+
+#### Chibi/SD Style Guidelines
+
+| Element | Specification |
+|---------|--------------|
+| **Head-to-Body Ratio** | 1:1 to 1:2 (large heads) |
+| **Eyes** | Exaggerated, expressive (larger on player) |
+| **Limbs** | Shorter, stubbier proportions |
+| **Silhouettes** | Clear, readable shapes despite small size |
+| **Expressions** | Exaggerated emotions for readability |
+| **Player (Kasuari)** | Cute but fierce warrior aesthetic |
+| **Enemies** | Menacing but stylized shadow creatures |
+| **Boss** | Intimidating oversized chibi form |
 
 ### Color Palette
 
@@ -220,11 +236,14 @@ A massive boar consumed by shadow, representing untamed rage and gluttony.
 
 ### Pixellab Prompts - Characters
 
+**IMPORTANT**: All characters use **Chibi/SD (Super Deformed)** style with large heads and small bodies.
+
 #### Kasuari (Player)
 ```
-Pixel art character, 128x128, top-down view, tribal warrior with cassowary bone armor,
-black feather helmet with casque horn, holding bow, dark blue and black color scheme,
-blood red accents, bone white details, 4-directional, idle pose, pixel art style
+Pixel art character, 128x128, top-down view, chibi SD style, cute but fierce tribal warrior,
+cassowary bone armor, large head with black feather helmet and casque horn, holding bow,
+big expressive eyes, dark blue and black color scheme, blood red accents, bone white details,
+4-directional, idle pose, pixel art style
 ```
 
 **Animation Frames Needed:**
@@ -238,32 +257,36 @@ blood red accents, bone white details, 4-directional, idle pose, pixel art style
 
 #### Shadow Wisp
 ```
-Pixel art enemy, 64x64, top-down view, floating shadow orb with glowing red eyes,
-dark silhouette, wispy trail, simple animated blob shape, black with red glow
+Pixel art enemy, 64x64, top-down view, chibi SD style, cute floating shadow orb,
+large glowing red eyes, round blob shape, wispy trail, dark silhouette,
+black with red glow, simple animated form
 ```
 
 #### Shadow Crawler
 ```
-Pixel art enemy, 64x64, top-down view, quadruped shadow creature, fast crawler,
-dark silhouette with cyan glowing eyes, spindly legs, black purple gradient
+Pixel art enemy, 64x64, top-down view, chibi SD style, cute but creepy quadruped shadow creature,
+big cyan glowing eyes, short stubby legs, dark silhouette, fast crawler, black purple gradient
 ```
 
 #### Shadow Stalker
 ```
-Pixel art enemy, 96x96, top-down view, humanoid shadow figure, hooded silhouette,
-glowing white eyes, ethereal cloak, teleport pose, dark purple black
+Pixel art enemy, 96x96, top-down view, chibi SD style, cute spooky humanoid shadow figure,
+large glowing white eyes, oversized hooded head, ethereal cloak, small body,
+dark purple black, teleport pose
 ```
 
 #### Shadow Brute
 ```
-Pixel art enemy, 128x128, top-down view, large hulking shadow monster,
-glowing red eyes, bulky armored silhouette, slow heavy presence, black with red accents
+Pixel art enemy, 128x128, top-down view, chibi SD style, cute intimidating hulking shadow monster,
+big glowing red eyes, large head with bulky silhouette, small legs, slow heavy presence,
+black with red accents
 ```
 
 #### Shadow Boar (Boss)
 ```
-Pixel art boss, 192x128, top-down view, massive demonic boar with shadow aura,
-glowing red eyes, black mist emanating, tusks, oversized, intimidating, dark with red glow
+Pixel art boss, 192x128, top-down view, chibi SD style, cute but terrifying massive demonic boar,
+huge head with glowing red eyes, shadow aura, tusks, oversized intimidating chibi form,
+black mist emanating, dark with red glow
 ```
 
 ### Pixellab Prompts - Environment

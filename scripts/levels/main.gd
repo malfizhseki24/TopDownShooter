@@ -5,25 +5,27 @@ extends Node2D
 @onready var camera: Camera2D = $Camera2D
 @onready var enemies_container: Node2D = $Enemies
 @onready var health_bar: ProgressBar = $CanvasLayer/HUD/HealthBar
-
-var player: Node2D
+@onready var player_node: Node2D = $Player
+@onready var walls: Node2D = $Walls
 
 
 func _ready() -> void:
-	_setup_player()
+	_setup_walls()
+	_setup_camera()
 	_connect_signals()
 	GameManager.start_game()
 
 
-func _setup_player() -> void:
-	# Load and instantiate player
-	var player_scene := preload("res://scenes/player/player.tscn")
-	player = player_scene.instantiate()
-	player.global_position = player_spawn.global_position
-	add_child(player)
+func _setup_walls() -> void:
+	# Add all walls to "wall" group for collision detection
+	for wall in walls.get_children():
+		wall.add_to_group("wall")
 
-	# Set camera to follow player
-	camera.script.target = player
+
+func _setup_camera() -> void:
+	# Set camera to follow existing player in scene
+	if player_node and camera:
+		camera.target = player_node
 
 
 func _connect_signals() -> void:

@@ -32,6 +32,9 @@ var aim_direction: Vector2 = Vector2.RIGHT
 
 
 func _ready() -> void:
+	# Enable physics interpolation for smooth visual rendering
+	# This allows sub-pixel positions while physics remains discrete
+	physics_interpolation_mode = Node.PHYSICS_INTERPOLATION_MODE_ON
 	add_to_group("player")
 	_connect_signals()
 

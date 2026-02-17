@@ -54,6 +54,15 @@ Generating all character sprites for "Warrior of the Sunrise" using PixelLab MCP
 | Shading | `medium shading` | Balance detail and clarity |
 | Detail | `medium detail` | Readable at game scale |
 | AI Freedom | `700-800` | Balance consistency with creativity |
+| Proportions | `chibi` preset | SD (Super Deformed) style - large head, small body |
+
+### Chibi/SD Proportions
+
+All characters use the **chibi** proportions preset which creates:
+- Head-to-body ratio of approximately 1:1 to 1:2
+- Exaggerated, expressive eyes
+- Shorter, stubbier limbs
+- Cute but readable silhouettes
 
 ### Decision 4: Quadruped Enemies
 
@@ -65,7 +74,7 @@ Shadow Crawler uses `body_type: "quadruped"` with template `"cat"` or `"dog"` as
 
 ```json
 {
-  "description": "tribal warrior with cassowary bone armor, black feather helmet with casque horn, holding bow, dark blue and black color scheme, blood red accents, bone white details",
+  "description": "chibi SD style, cute but fierce tribal warrior with cassowary bone armor, black feather helmet with casque horn, holding bow, big expressive eyes, dark blue and black color scheme, blood red accents, bone white details",
   "name": "Kasuari",
   "n_directions": 4,
   "size": 128,
@@ -73,7 +82,7 @@ Shadow Crawler uses `body_type: "quadruped"` with template `"cat"` or `"dog"` as
   "outline": "single color black outline",
   "shading": "medium shading",
   "detail": "medium detail",
-  "proportions": "{\"type\": \"preset\", \"name\": \"heroic\"}",
+  "proportions": "{\"type\": \"preset\", \"name\": \"chibi\"}",
   "ai_freedom": 750
 }
 ```
@@ -91,7 +100,7 @@ Shadow Crawler uses `body_type: "quadruped"` with template `"cat"` or `"dog"` as
 
 ```json
 {
-  "description": "floating shadow orb with glowing red eyes, wispy dark silhouette, blob shape, black with red glow",
+  "description": "chibi SD style, cute floating shadow orb with large glowing red eyes, wispy dark silhouette, round blob shape, black with red glow",
   "name": "Shadow Wisp",
   "n_directions": 4,
   "size": 64,
@@ -114,7 +123,7 @@ Shadow Crawler uses `body_type: "quadruped"` with template `"cat"` or `"dog"` as
 
 ```json
 {
-  "description": "quadruped shadow creature, spindly legs, dark silhouette with cyan glowing eyes, fast crawler, black purple gradient",
+  "description": "chibi SD style, cute but creepy quadruped shadow creature, short stubby legs, dark silhouette with big cyan glowing eyes, fast crawler, black purple gradient",
   "name": "Shadow Crawler",
   "body_type": "quadruped",
   "template": "cat",
@@ -140,7 +149,7 @@ Shadow Crawler uses `body_type: "quadruped"` with template `"cat"` or `"dog"` as
 
 ```json
 {
-  "description": "humanoid shadow figure, hooded silhouette, glowing white eyes, ethereal cloak, dark purple black",
+  "description": "chibi SD style, cute spooky humanoid shadow figure, large glowing white eyes, oversized hooded head, ethereal cloak, small body, dark purple black",
   "name": "Shadow Stalker",
   "n_directions": 4,
   "size": 96,
@@ -148,7 +157,7 @@ Shadow Crawler uses `body_type: "quadruped"` with template `"cat"` or `"dog"` as
   "outline": "single color black outline",
   "shading": "medium shading",
   "detail": "medium detail",
-  "proportions": "{\"type\": \"preset\", \"name\": \"stylized\"}",
+  "proportions": "{\"type\": \"preset\", \"name\": \"chibi\"}",
   "ai_freedom": 750
 }
 ```
@@ -166,7 +175,7 @@ Shadow Crawler uses `body_type: "quadruped"` with template `"cat"` or `"dog"` as
 
 ```json
 {
-  "description": "large hulking shadow monster, glowing red eyes, bulky armored silhouette, slow heavy presence, black with red accents",
+  "description": "chibi SD style, cute intimidating hulking shadow monster, big glowing red eyes, large head with bulky silhouette, small legs, slow heavy presence, black with red accents",
   "name": "Shadow Brute",
   "n_directions": 4,
   "size": 128,
@@ -174,7 +183,7 @@ Shadow Crawler uses `body_type: "quadruped"` with template `"cat"` or `"dog"` as
   "outline": "single color black outline",
   "shading": "detailed shading",
   "detail": "high detail",
-  "proportions": "{\"type\": \"custom\", \"head_size\": 0.8, \"shoulder_width\": 1.5, \"arms_length\": 0.9}",
+  "proportions": "{\"type\": \"preset\", \"name\": \"chibi\"}",
   "ai_freedom": 700
 }
 ```
@@ -192,7 +201,7 @@ Shadow Crawler uses `body_type: "quadruped"` with template `"cat"` or `"dog"` as
 
 ```json
 {
-  "description": "massive demonic boar with shadow aura, glowing red eyes, black mist emanating, tusks, oversized intimidating, dark with red glow",
+  "description": "chibi SD style, cute but terrifying massive demonic boar with shadow aura, huge head with glowing red eyes, black mist emanating, tusks, oversized intimidating chibi form, dark with red glow",
   "name": "Shadow Boar",
   "n_directions": 4,
   "size": 128,
