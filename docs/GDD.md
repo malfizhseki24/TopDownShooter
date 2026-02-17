@@ -18,6 +18,18 @@
 | **Engine** | Godot 4.6 |
 | **Target Platform** | PC (Windows, macOS, Linux) |
 
+### IMPORTANT: Modern Game with Pixel Art Visuals
+
+> **This is a MODERN top-down shooter (like Enter the Gungeon, Nuclear Throne) that uses pixel art as its VISUAL STYLE.**
+>
+> - **NOT** a retro/pixel-perfect snapping game
+> - **Movement**: Sub-pixel, high-precision, smooth (float coordinates)
+> - **Physics**: Full interpolation for butter-smooth rendering
+> - **Camera**: Physics-synced with built-in smoothing
+> - **Texture Filtering**: Nearest (keeps pixel art sharp at sub-pixel positions)
+>
+> The pixel art is purely aesthetic. All game mechanics must feel modern and responsive.
+
 ---
 
 ## Lore & Story
@@ -165,6 +177,17 @@ A massive boar consumed by shadow, representing untamed rage and gluttony.
 - **Character Max Size**: 128x128 (Pixellab constraint)
 - **Influences**: Tribal, Papuan indigenous art motifs, Japanese SD art style
 - **Environment**: Dense jungle, ancient ruins, spiritual underworld
+
+#### Technical Rendering (Godot 4.6)
+
+| Setting | Value | Purpose |
+|---------|-------|---------|
+| **Pixel Snapping** | DISABLED | Allows smooth sub-pixel movement |
+| **Physics Interpolation** | ENABLED | Smooth rendering between physics ticks |
+| **Texture Filter** | Nearest | Keeps pixel art sharp |
+| **Camera Process** | Physics callback | Syncs with player movement |
+
+> **Note**: Pixel art is the VISUAL style only. The game uses modern smooth movement mechanics similar to Enter the Gungeon or Nuclear Throne.
 
 #### Chibi/SD Style Guidelines
 
