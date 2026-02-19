@@ -1,40 +1,41 @@
-[gd_scene load_steps=4 format=3 uid="uid://player_scene"]
+[gd_scene format=3 uid="uid://dwjjb1dmmg2w4"]
 
-[ext_resource type="Script" path="res://scripts/player/player.gd" id="1_player"]
+[ext_resource type="Script" uid="uid://dwluluoumxvot" path="res://scripts/player/player.gd" id="1_player"]
 [ext_resource type="SpriteFrames" uid="uid://b8md8yilkm16u" path="res://assets/sprites/characters/player/kasuari/kasuari_frames.tres" id="2_frames"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_collision"]
-radius = 16.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_collision"]
+radius = 7.2
+height = 25.5
 
-[node name="Player" type="CharacterBody2D"]
-collision_layer = 1
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dovo2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hitbox"]
+radius = 14.0
+
+[node name="Player" type="CharacterBody2D" unique_id=953070246]
 collision_mask = 8
 script = ExtResource("1_player")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1363607218]
 scale = Vector2(0.5, 0.5)
 sprite_frames = ExtResource("2_frames")
 animation = &"idle_south"
-autoplay = ""
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_collision")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2004293006]
+shape = SubResource("CapsuleShape2D_collision")
 
-[node name="ArrowSpawn" type="Marker2D" parent="."]
-position = Vector2(20, 0)
+[node name="ArrowSpawn" type="Marker2D" parent="." unique_id=515807138]
 
-[node name="Hitbox" type="Area2D" parent="."]
-collision_layer = 1
+[node name="Hitbox" type="Area2D" parent="." unique_id=513631928]
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-shape = SubResource("CircleShape2D_collision")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=161575644]
+shape = SubResource("CapsuleShape2D_dovo2")
 
-[node name="MeleeArea" type="Area2D" parent="."]
-collision_layer = 1
+[node name="MeleeArea" type="Area2D" parent="." unique_id=1064231254]
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MeleeArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MeleeArea" unique_id=182187652]
 position = Vector2(16, 0)
-shape = SubResource("CircleShape2D_collision")
+shape = SubResource("CircleShape2D_hitbox")
 debug_color = Color(1, 0.34902, 0.34902, 0.419608)

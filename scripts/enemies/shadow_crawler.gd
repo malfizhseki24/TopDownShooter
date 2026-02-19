@@ -5,6 +5,9 @@ extends BaseEnemy
 ## Behavior: Chase player → Attack on contact → Bounce back → Chase again
 ## Respawns after 5 seconds at random spawn point.
 
+# Preload scene for respawning
+const SCENE := preload("res://scenes/enemies/shadow_crawler.tscn")
+
 # Bounce settings
 const BOUNCE_DISTANCE: float = 80.0
 const BOUNCE_DURATION: float = 0.25
@@ -57,12 +60,15 @@ func _update_behavior(delta: float) -> void:
 
 ## Override hitbox collision to add attack and bounce effect
 func _on_hitbox_body_entered(body: Node2D) -> void:
+	print("[HITBOX] Body entered: ", body.name, " at enemy pos: ", global_position, " visible: ", visible)
 	if body.is_in_group("player") and body.has_method("take_damage"):
 		# Check cooldown
 		if _attack_on_cooldown:
+			print("[HITBOX] On cooldown, ignoring")
 			return
 
 		# Deal damage to player
+		print("[HITBOX] Dealing damage to player!")
 		body.take_damage(contact_damage)
 
 		# Start cooldown
@@ -146,38 +152,74 @@ func _play_death_animation() -> void:
 			sprite.play(death_anim)
 			await sprite.animation_finished
 
-	# Then dissolve
-	super._play_death_animation()
+	# Then dissolve (with wait before fading)
+	await super._play_death_animation()
 
 
-## Override die() to respawn instead of queue_free
+## Override die() to respawn by spawning NEW instance
 func die() -> void:
+	print("[DIE] START - pos: ", global_position)
 	current_state = State.DYING
 	velocity = Vector2.ZERO
 
-	# Disable collision during death/respawn
+	# Disable collision (deferred to avoid physics flush error)
 	if hitbox:
 		hitbox.set_deferred("monitoring", false)
 	$CollisionShape2D.set_deferred("disabled", true)
-
-	# Play death animation
-	_play_death_animation()
+	print("[DIE] Collisions disabled - pos: ", global_position)
 
 	# Emit signals
 	died.emit()
 	EventBus.enemy_died.emit(self)
 
-	# Hide enemy (keep in scene for respawn)
-	hide()
+	# Play death animation and wait for it to complete
+	await _play_death_animation()
 
-	# Wait for respawn delay
-	await get_tree().create_timer(RESPAWN_DELAY).timeout
+	print("[DIE] Death animation done, scheduling respawn...")
 
-	# Respawn at random spawn point
-	_respawn()
+	# Get spawn position BEFORE queue_free
+	var spawn_pos := _get_respawn_position()
+	print("[DIE] Respawn will be at: ", spawn_pos)
+
+	# Get reference to scene tree (survives after queue_free)
+	var tree := get_tree()
+	var current_scene := tree.current_scene
+
+	# Schedule respawn - lambda is STANDALONE (doesn't reference self)
+	tree.create_timer(RESPAWN_DELAY).timeout.connect(
+		func():
+			print("[RESPAWN] Creating NEW ShadowCrawler at: ", spawn_pos)
+			var new_enemy := SCENE.instantiate()
+			new_enemy.global_position = spawn_pos
+			current_scene.add_child(new_enemy)
+			print("[RESPAWN] NEW enemy spawned successfully")
+	)
+
+	# Remove this instance completely
+	queue_free()
+
+
+func _get_respawn_position() -> Vector2:
+	# Find spawn points
+	var spawn_points := get_tree().get_nodes_in_group("enemy_spawn")
+	if spawn_points.is_empty():
+		var spawns_node := get_tree().current_scene.get_node_or_null("EnemySpawns")
+		if spawns_node:
+			spawn_points = spawns_node.get_children()
+
+	if spawn_points.size() > 0:
+		var spawn: Node2D = spawn_points.pick_random()
+		return spawn.global_position
+
+	return global_position  # fallback
 
 
 func _respawn() -> void:
+	print("[RESPAWN] START - current pos: ", global_position)
+
+	# Keep enemy hidden during respawn setup
+	# (should already be hidden from die())
+
 	# Find spawn points in level
 	var spawn_points := get_tree().get_nodes_in_group("enemy_spawn")
 	if spawn_points.is_empty():
@@ -190,6 +232,7 @@ func _respawn() -> void:
 	if spawn_points.size() > 0:
 		var spawn: Node2D = spawn_points.pick_random()
 		global_position = spawn.global_position
+		print("[RESPAWN] New position set: ", global_position)
 
 	# Reset HP
 	hp = max_hp
@@ -202,16 +245,32 @@ func _respawn() -> void:
 	_is_attacking = false
 	velocity = Vector2.ZERO
 
-	# Re-enable collision
-	if hitbox:
-		hitbox.set_deferred("monitoring", true)
-	$CollisionShape2D.set_deferred("disabled", false)
-
 	# Reset sprite visibility
 	sprite.modulate = Color.WHITE
+	sprite.flip_h = false
 
-	# Show enemy
+	# Reset animation to idle BEFORE showing
+	if sprite is AnimatedSprite2D and sprite.sprite_frames:
+		sprite.animation = &"idle_south"
+		sprite.frame = 0
+		sprite.play("idle_south")
+
+	# Re-enable collision FIRST (while still hidden, so position is correct)
+	if hitbox:
+		hitbox.monitoring = true
+	$CollisionShape2D.disabled = false
+
+	print("[RESPAWN] Collisions enabled - pos: ", global_position, " visible: ", visible)
+
+	# Force physics update to ensure collision shape is at correct position
+	await get_tree().physics_frame
+
+	print("[RESPAWN] After physics frame - pos: ", global_position, " visible: ", visible)
+
+	# NOW show enemy (collision is already at correct position)
 	show()
+
+	print("[RESPAWN] END - pos: ", global_position, " visible: ", visible)
 
 	# Re-find player reference
 	_find_player()

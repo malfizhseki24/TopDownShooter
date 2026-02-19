@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://2x6wivqc1gb5"]
+
+[ext_resource type="Script" path="res://scripts/enemies/shadow_pool.gd" id="1_script"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_detection"]
+radius = 300.0
+
+[sub_resource type="Gradient" id="Gradient_pool"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0.0, 0.5, 1.0)
+colors = PackedColorArray(0.2, 0.0, 0.3, 0.8, 0.4, 0.1, 0.5, 0.4, 0.2, 0.0, 0.3, 0.0)
+
+[node name="ShadowPool" type="Area2D"]
+collision_layer = 0
+collision_mask = 1
+script = ExtResource("1_script")
+detection_radius = 300.0
+spawn_offset_range = 50.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_detection")
+
+[node name="Visual" type="Sprite2D" parent="."]
+modulate = Color(0.4, 0.2, 0.5, 0.6)
+scale = Vector2(2.0, 2.0)
+
+[node name="PulseTween" type="Node" parent="Visual"]

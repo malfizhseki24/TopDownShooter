@@ -1,0 +1,498 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://shadow_stalker_frames"]
+
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/breathing-idle/south/frame_000.png" id="idle_s_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/breathing-idle/south/frame_001.png" id="idle_s_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/breathing-idle/south/frame_002.png" id="idle_s_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/breathing-idle/south/frame_003.png" id="idle_s_3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/breathing-idle/north/frame_000.png" id="idle_n_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/breathing-idle/north/frame_001.png" id="idle_n_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/breathing-idle/north/frame_002.png" id="idle_n_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/breathing-idle/north/frame_003.png" id="idle_n_3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/breathing-idle/east/frame_000.png" id="idle_e_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/breathing-idle/east/frame_001.png" id="idle_e_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/breathing-idle/east/frame_002.png" id="idle_e_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/breathing-idle/east/frame_003.png" id="idle_e_3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/walking-8/south/frame_000.png" id="walk_s_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/walking-8/south/frame_001.png" id="walk_s_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/walking-8/south/frame_002.png" id="walk_s_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/walking-8/south/frame_003.png" id="walk_s_3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/walking-8/south/frame_004.png" id="walk_s_4"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/walking-8/south/frame_005.png" id="walk_s_5"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/walking-8/north/frame_000.png" id="walk_n_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/walking-8/north/frame_001.png" id="walk_n_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/walking-8/north/frame_002.png" id="walk_n_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/walking-8/north/frame_003.png" id="walk_n_3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/walking-8/north/frame_004.png" id="walk_n_4"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/walking-8/north/frame_005.png" id="walk_n_5"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/walking-8/east/frame_000.png" id="walk_e_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/walking-8/east/frame_001.png" id="walk_e_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/walking-8/east/frame_002.png" id="walk_e_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/walking-8/east/frame_003.png" id="walk_e_3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/walking-8/east/frame_004.png" id="walk_e_4"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/walking-8/east/frame_005.png" id="walk_e_5"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/walking-8/west/frame_000.png" id="walk_w_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/walking-8/west/frame_001.png" id="walk_w_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/walking-8/west/frame_002.png" id="walk_w_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/walking-8/west/frame_003.png" id="walk_w_3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/walking-8/west/frame_004.png" id="walk_w_4"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/walking-8/west/frame_005.png" id="walk_w_5"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/surprise-uppercut/south/frame_000.png" id="teleport_s_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/surprise-uppercut/south/frame_001.png" id="teleport_s_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/surprise-uppercut/south/frame_002.png" id="teleport_s_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/surprise-uppercut/south/frame_003.png" id="teleport_s_3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/surprise-uppercut/south/frame_004.png" id="teleport_s_4"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/surprise-uppercut/south/frame_005.png" id="teleport_s_5"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/surprise-uppercut/south/frame_006.png" id="teleport_s_6"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/surprise-uppercut/north/frame_000.png" id="teleport_n_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/surprise-uppercut/north/frame_001.png" id="teleport_n_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/surprise-uppercut/north/frame_002.png" id="teleport_n_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/surprise-uppercut/north/frame_003.png" id="teleport_n_3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/surprise-uppercut/north/frame_004.png" id="teleport_n_4"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/surprise-uppercut/north/frame_005.png" id="teleport_n_5"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/surprise-uppercut/north/frame_006.png" id="teleport_n_6"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/surprise-uppercut/east/frame_000.png" id="teleport_e_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/surprise-uppercut/east/frame_001.png" id="teleport_e_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/surprise-uppercut/east/frame_002.png" id="teleport_e_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/surprise-uppercut/east/frame_003.png" id="teleport_e_3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/surprise-uppercut/east/frame_004.png" id="teleport_e_4"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/surprise-uppercut/east/frame_005.png" id="teleport_e_5"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/surprise-uppercut/east/frame_006.png" id="teleport_e_6"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/cross-punch/south/frame_000.png" id="attack_s_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/cross-punch/south/frame_001.png" id="attack_s_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/cross-punch/south/frame_002.png" id="attack_s_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/cross-punch/south/frame_003.png" id="attack_s_3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/cross-punch/south/frame_004.png" id="attack_s_4"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/cross-punch/south/frame_005.png" id="attack_s_5"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/cross-punch/east/frame_000.png" id="attack_e_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/cross-punch/east/frame_001.png" id="attack_e_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/cross-punch/east/frame_002.png" id="attack_e_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/cross-punch/east/frame_003.png" id="attack_e_3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/cross-punch/east/frame_004.png" id="attack_e_4"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/cross-punch/east/frame_005.png" id="attack_e_5"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/cross-punch/west/frame_000.png" id="attack_w_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/cross-punch/west/frame_001.png" id="attack_w_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/cross-punch/west/frame_002.png" id="attack_w_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/cross-punch/west/frame_003.png" id="attack_w_3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/cross-punch/west/frame_004.png" id="attack_w_4"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/cross-punch/west/frame_005.png" id="attack_w_5"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/cross-punch/north/frame_000.png" id="attack_n_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/cross-punch/north/frame_001.png" id="attack_n_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/cross-punch/north/frame_002.png" id="attack_n_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/cross-punch/north/frame_003.png" id="attack_n_3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/cross-punch/north/frame_004.png" id="attack_n_4"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/cross-punch/north/frame_005.png" id="attack_n_5"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/falling-back-death/south/frame_000.png" id="death_s_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/falling-back-death/south/frame_001.png" id="death_s_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/falling-back-death/south/frame_002.png" id="death_s_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/falling-back-death/south/frame_003.png" id="death_s_3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/falling-back-death/south/frame_004.png" id="death_s_4"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/falling-back-death/south/frame_005.png" id="death_s_5"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/falling-back-death/south/frame_006.png" id="death_s_6"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/falling-back-death/north/frame_000.png" id="death_n_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/falling-back-death/north/frame_001.png" id="death_n_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/falling-back-death/north/frame_002.png" id="death_n_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/falling-back-death/north/frame_003.png" id="death_n_3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/falling-back-death/north/frame_004.png" id="death_n_4"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/falling-back-death/north/frame_005.png" id="death_n_5"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/falling-back-death/north/frame_006.png" id="death_n_6"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/falling-back-death/east/frame_000.png" id="death_e_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/falling-back-death/east/frame_001.png" id="death_e_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/falling-back-death/east/frame_002.png" id="death_e_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/falling-back-death/east/frame_003.png" id="death_e_3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/falling-back-death/east/frame_004.png" id="death_e_4"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/falling-back-death/east/frame_005.png" id="death_e_5"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_stalker/animations/falling-back-death/east/frame_006.png" id="death_e_6"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("idle_s_0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("idle_s_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("idle_s_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("idle_s_3")
+}],
+"loop": true,
+"name": &"idle_south",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("idle_n_0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("idle_n_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("idle_n_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("idle_n_3")
+}],
+"loop": true,
+"name": &"idle_north",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("idle_e_0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("idle_e_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("idle_e_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("idle_e_3")
+}],
+"loop": true,
+"name": &"idle_east",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("walk_s_0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("walk_s_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("walk_s_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("walk_s_3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("walk_s_4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("walk_s_5")
+}],
+"loop": true,
+"name": &"walk_south",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("walk_n_0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("walk_n_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("walk_n_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("walk_n_3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("walk_n_4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("walk_n_5")
+}],
+"loop": true,
+"name": &"walk_north",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("walk_e_0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("walk_e_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("walk_e_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("walk_e_3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("walk_e_4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("walk_e_5")
+}],
+"loop": true,
+"name": &"walk_east",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("walk_w_0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("walk_w_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("walk_w_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("walk_w_3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("walk_w_4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("walk_w_5")
+}],
+"loop": true,
+"name": &"walk_west",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("teleport_s_0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("teleport_s_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("teleport_s_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("teleport_s_3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("teleport_s_4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("teleport_s_5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("teleport_s_6")
+}],
+"loop": false,
+"name": &"teleport_south",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("teleport_n_0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("teleport_n_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("teleport_n_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("teleport_n_3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("teleport_n_4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("teleport_n_5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("teleport_n_6")
+}],
+"loop": false,
+"name": &"teleport_north",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("teleport_e_0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("teleport_e_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("teleport_e_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("teleport_e_3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("teleport_e_4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("teleport_e_5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("teleport_e_6")
+}],
+"loop": false,
+"name": &"teleport_east",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("attack_s_0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("attack_s_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("attack_s_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("attack_s_3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("attack_s_4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("attack_s_5")
+}],
+"loop": false,
+"name": &"attack_south",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("attack_e_0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("attack_e_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("attack_e_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("attack_e_3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("attack_e_4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("attack_e_5")
+}],
+"loop": false,
+"name": &"attack_east",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("attack_w_0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("attack_w_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("attack_w_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("attack_w_3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("attack_w_4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("attack_w_5")
+}],
+"loop": false,
+"name": &"attack_west",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("attack_n_0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("attack_n_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("attack_n_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("attack_n_3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("attack_n_4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("attack_n_5")
+}],
+"loop": false,
+"name": &"attack_north",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("death_s_0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("death_s_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("death_s_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("death_s_3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("death_s_4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("death_s_5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("death_s_6")
+}],
+"loop": false,
+"name": &"death_south",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("death_n_0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("death_n_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("death_n_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("death_n_3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("death_n_4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("death_n_5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("death_n_6")
+}],
+"loop": false,
+"name": &"death_north",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("death_e_0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("death_e_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("death_e_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("death_e_3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("death_e_4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("death_e_5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("death_e_6")
+}],
+"loop": false,
+"name": &"death_east",
+"speed": 12.0
+}]

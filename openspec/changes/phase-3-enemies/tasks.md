@@ -27,18 +27,18 @@
 - [x] 3.2 Create `scenes/enemies/shadow_wisp.tscn`
   - Use Shadow Wisp sprites from add-character-sprites change
   - Configure AnimatedSprite2D with breathing-idle, walking-4-frames, falling-back-death
-- [ ] 3.3 Test Shadow Wisp in isolation
+- [x] 3.3 Test Shadow Wisp in isolation
   - Spawns, moves toward player, deals contact damage, dies when HP=0
 
 ## 4. Shadow Crawler Enemy
 
-- [ ] 4.1 Create `scripts/enemies/shadow_crawler.gd` extending BaseEnemy
-  - Set stats: hp=40, contact_damage=15, move_speed=150
-  - Implement fast movement toward player
-- [ ] 4.2 Create `scenes/enemies/shadow_crawler.tscn`
-  - Generate Shadow Crawler sprites via PixelLab (quadruped, cat template)
-  - Configure AnimatedSprite2D with idle, walk, attack, death animations
-- [ ] 4.3 Test Shadow Crawler movement speed and damage
+- [x] 4.1 Create `scripts/enemies/shadow_crawler.gd` extending BaseEnemy
+  - Set stats: hp=35, contact_damage=15, move_speed=120
+  - Implement fast movement toward player with attack+bounce behavior
+- [x] 4.2 Create `scenes/enemies/shadow_crawler.tscn`
+  - Generated Shadow Crawler sprites via PixelLab (quadruped, cat template)
+  - Configured AnimatedSprite2D with idle, walk, attack, death animations (4 directions)
+- [x] 4.3 Test Shadow Crawler movement speed and damage
 
 ## 5. Shadow Stalker Enemy
 
@@ -66,25 +66,25 @@
 
 ## 7. Enemy Spawn System
 
-- [ ] 7.1 Update GameManager with enemy tracking
+- [x] 7.1 Update GameManager with enemy tracking
   - Add enemy_count property
   - Add MAX_ENEMIES constant (10)
   - Track increment/decrement on spawn/death
-- [ ] 7.2 Create `scripts/enemies/shadow_pool.gd`
+- [x] 7.2 Create `scripts/enemies/shadow_pool.gd`
   - Export: enemy_scenes (Array[PackedScene]), max_spawn, spawn_interval, detection_radius
   - Implement player detection area
   - Implement spawn timer with global limit check
-- [ ] 7.3 Create `scenes/enemies/shadow_pool.tscn`
+- [x] 7.3 Create `scenes/enemies/shadow_pool.tscn`
   - Area2D with collision shape for detection
   - Visual sprite for shadow pool effect
 - [ ] 7.4 Test spawn system with Shadow Wisp only
 
 ## 8. Hit Feedback & Death Effects
 
-- [ ] 8.1 Implement enemy flash on hit (modulate white, 0.1 sec)
-- [ ] 8.2 Implement enemy knockback (50px away from damage source, 0.15 sec)
-- [ ] 8.3 Implement death dissolve (alpha tween 1.0 → 0.0, 0.5 sec)
-- [ ] 8.4 Add death sound effect trigger
+- [x] 8.1 Implement enemy flash on hit (modulate white, 0.1 sec)
+- [x] 8.2 Implement enemy knockback (50px away from damage source, 0.15 sec)
+- [x] 8.3 Implement death dissolve (alpha tween 1.0 → 0.0, 0.5 sec)
+- [x] 8.4 Add death sound effect trigger
 
 ## 9. Integration
 

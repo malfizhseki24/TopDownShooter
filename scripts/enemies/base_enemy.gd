@@ -16,6 +16,9 @@ signal died
 @export var contact_damage: int = 10
 @export var move_speed: float = 80.0
 
+# Audio
+@export var death_sound: AudioStream
+
 var hp: int
 
 # State machine
@@ -35,6 +38,20 @@ func _ready() -> void:
 	add_to_group("enemy")
 	_connect_signals()
 	_find_player()
+	# Initialize sprite animation to ensure correct first frame
+	_init_sprite_animation()
+	# Emit spawn signal for tracking (works for both pre-placed and spawned enemies)
+	EventBus.enemy_spawned.emit(self)
+
+
+func _init_sprite_animation() -> void:
+	# Ensure sprite starts with correct animation (fixes flash of wrong sprite on spawn)
+	if sprite is AnimatedSprite2D and sprite.sprite_frames:
+		# Force animation and frame before first render
+		if sprite.sprite_frames.has_animation("idle_south"):
+			sprite.animation = &"idle_south"
+			sprite.frame = 0
+			sprite.play("idle_south")
 
 
 func _physics_process(delta: float) -> void:
@@ -118,30 +135,41 @@ func die() -> void:
 	current_state = State.DYING
 	velocity = Vector2.ZERO
 
-	# Play death animation
-	_play_death_animation()
-
 	# Emit signals
 	died.emit()
 	EventBus.enemy_died.emit(self)
 
-	# Wait for death animation then remove
-	await get_tree().create_timer(0.5).timeout
+	# Play death animation and wait for it to complete
+	await _play_death_animation()
+
+	# Remove after death animation completes
 	queue_free()
 
 
 ## Play death animation - override for custom death anims
 func _play_death_animation() -> void:
-	# Default: dissolve effect
+	# Play death sound at enemy position
+	if death_sound:
+		AudioManager.play_sfx(death_sound, global_position)
+
+	# Stay visible for 2.5 seconds, then dissolve over 1 second
+	await get_tree().create_timer(2.5).timeout
+
 	var tween := create_tween()
-	tween.tween_property(sprite, "modulate:a", 0.0, 0.5)
+	tween.tween_property(sprite, "modulate:a", 0.0, 1.0)
 
 
 ## Flash white when hit
 func _flash_white() -> void:
-	sprite.modulate = Color.WHITE
+	# Store original modulate
+	var original_modulate: Color = sprite.modulate
+
+	# Flash to red (damage indication)
+	sprite.modulate = Color.RED
 	await get_tree().create_timer(0.1).timeout
-	sprite.modulate = Color(1, 1, 1, sprite.modulate.a)
+
+	# Restore original
+	sprite.modulate = original_modulate
 
 
 ## Knockback away from damage source

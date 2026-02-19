@@ -1,31 +1,30 @@
-[gd_scene load_steps=5 format=3 uid="uid://shadow_wisp_scene"]
+[gd_scene format=3 uid="uid://byrlr2muiwr16"]
 
-[ext_resource type="Script" path="res://scripts/enemies/shadow_wisp.gd" id="1_script"]
+[ext_resource type="Script" uid="uid://bnk7dqrtvq4bk" path="res://scripts/enemies/shadow_wisp.gd" id="1_script"]
 [ext_resource type="SpriteFrames" path="res://assets/sprites/characters/enemies/shadow_wisp/shadow_wisp_frames.tres" id="2_frames"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_collision"]
-radius = 16.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jimwf"]
+radius = 6.65
+height = 23.2
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hitbox"]
-radius = 24.0
+radius = 13.8
 
-[node name="ShadowWisp" type="CharacterBody2D"]
+[node name="ShadowWisp" type="CharacterBody2D" unique_id=762037850]
 collision_layer = 2
 collision_mask = 8
 script = ExtResource("1_script")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=846173652]
 scale = Vector2(0.5, 0.5)
 sprite_frames = ExtResource("2_frames")
 animation = &"idle_south"
-autoplay = ""
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_collision")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1180438637]
+shape = SubResource("CapsuleShape2D_jimwf")
 
-[node name="Hitbox" type="Area2D" parent="."]
+[node name="Hitbox" type="Area2D" parent="." unique_id=842552750]
 collision_layer = 2
-collision_mask = 1
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=307323958]
 shape = SubResource("CircleShape2D_hitbox")

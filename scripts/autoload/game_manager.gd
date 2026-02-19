@@ -9,11 +9,32 @@ var previous_state: GameState = GameState.MENU
 # Player spawn point (set by level)
 var player_spawn_position: Vector2 = Vector2.ZERO
 
+# Enemy tracking
+const MAX_ENEMIES: int = 10
+var enemy_count: int = 0
+
 # Game stats
 var enemies_killed: int = 0
 
+
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
+	EventBus.enemy_spawned.connect(_on_enemy_spawned)
+	EventBus.enemy_died.connect(_on_enemy_died)
+
+
+func _on_enemy_spawned(_enemy: Node) -> void:
+	enemy_count += 1
+
+
+func _on_enemy_died(_enemy: Node) -> void:
+	enemy_count -= 1
+	enemy_count = maxi(enemy_count, 0)
+	enemies_killed += 1
+
+
+func can_spawn_enemy() -> bool:
+	return enemy_count < MAX_ENEMIES
 
 
 func _input(event: InputEvent) -> void:
@@ -23,6 +44,7 @@ func _input(event: InputEvent) -> void:
 
 func start_game() -> void:
 	enemies_killed = 0
+	enemy_count = 0
 	current_state = GameState.PLAYING
 	get_tree().paused = false
 	EventBus.game_started.emit()
