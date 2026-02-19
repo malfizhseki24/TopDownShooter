@@ -99,17 +99,24 @@ All characters use **Octopath Traveler Heroes** art style:
 
 ## 6. Generate Shadow Brute Enemy - 64x64
 
-- [ ] 6.1 Queue Shadow Brute character creation (64x64, 4-directional, Octopath style)
-- [ ] 6.2 Queue idle animation → breathing-idle
-- [ ] 6.3 Queue walk animation → walking-6-frames
-- [ ] 6.4 Queue charge animation → running-4-frames
-- [ ] 6.5 Queue attack animation → two-footed-jump
-- [ ] 6.6 Queue death animation → falling-back-death
-- [ ] 6.7 Poll status until complete
-- [ ] 6.8 Download and extract to `assets/sprites/characters/enemies/shadow_brute/`
+- [x] 6.1 Queue Shadow Brute character creation (64x64, 4-directional, Octopath style)
+- [x] 6.2 Queue idle animation → breathing-idle
+- [x] 6.3 Queue walk animation → walking-6
+- [x] 6.4 Queue charge animation → crouched-walking
+- [x] 6.5 Queue attack animation → two-footed-jump
+- [x] 6.6 Queue death animation → falling-back-death
+- [x] 6.7 Poll status until complete
+- [x] 6.8 Download and extract to `assets/sprites/characters/enemies/shadow_brute/`
 
 **Target Size:** 64x64 pixels
-**Character ID:** _pending_
+**Character ID:** `f5049017-c2f2-4185-9362-fc379ef0062e`
+
+**Animations Generated:**
+- breathing-idle: 4 frames × 4 directions (complete)
+- walking-6: 6 frames × 4 directions (complete)
+- crouched-walking (charge): 6 frames × 4 directions (complete)
+- two-footed-jump (attack): 7 frames × 4 directions (complete)
+- falling-back-death: 7 frames × 4 directions (complete)
 
 ## 7. Generate Shadow Boar Boss - 96x96 (Quadruped)
 
