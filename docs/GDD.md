@@ -257,59 +257,95 @@ A massive boar consumed by shadow, representing untamed rage and gluttony.
 | **SFX** | Internet search | Freesound.org, pixabay.com/music |
 | **Music** | AI generation / Internet search | Traditional + electronic fusion |
 
+### Character Sprite Art Style Reference
+
+**Primary Reference: Octopath Traveler Heroes**
+
+The character sprites should follow the art style of Octopath Traveler's playable characters:
+- **Proportions**: Chibi/SD (2-3 heads tall), similar to Primrose, Therion, Olberic
+- **Outlines**: Clean single-color outlines (not black, use dark variant of character color)
+- **Shading**: Soft dithering, 2-3 shade levels per color, subtle highlights
+- **Colors**: Muted, atmospheric palette - not oversaturated
+- **Detail Level**: Moderate - readable at small sizes but not overly complex
+- **Animation**: Clear key poses, readable silhouettes in motion
+- **Personality**: Each character has distinctive features (hair, clothing, weapons)
+
+**Key Visual Traits from Octopath Traveler:**
+| Trait | Octopath Style | Our Adaptation |
+|-------|---------------|----------------|
+| Head size | Large (40% of height) | Same - chibi proportions |
+| Eyes | Small but expressive, not anime-huge | Exaggerated but grounded |
+| Outlines | Dark color-matched, not pure black | Dark navy/dark purple outlines |
+| Shading | Soft gradients, dithering | Basic-medium shading |
+| Colors | Muted earth tones, jewel accents | Tribal palette - dark blue, red, bone |
+| Animation frames | 4-8 frames, smooth loops | 4-6 frames per animation |
+
 ### Pixellab Prompts - Characters
 
-**IMPORTANT**: All characters use **Chibi/SD (Super Deformed)** style with large heads and small bodies.
+**IMPORTANT**: All characters use **Octopath Traveler Heroes-inspired Chibi/SD style** with clean outlines and muted colors.
 
 #### Kasuari (Player)
 ```
-Pixel art character, 128x128, top-down view, chibi SD style, cute but fierce tribal warrior,
-cassowary bone armor, large head with black feather helmet and casque horn, holding bow,
-big expressive eyes, dark blue and black color scheme, blood red accents, bone white details,
-4-directional, idle pose, pixel art style
+Pixel art character sprite, top-down view, Octopath Traveler style chibi hero,
+tribal warrior with cassowary-inspired armor, dark skin, black feather headdress with bone casque,
+holding wooden bow, flowing grass skirt, tribal bone jewelry,
+muted color palette: dark navy blue, deep black, muted blood red accents, bone white,
+clean dark outline (not pure black), soft shading, 2-3 color shades per element,
+4-directional rotation, idle breathing pose, 48x48 pixels, high top-down view
 ```
 
 **Animation Frames Needed:**
 | Animation | Frames | Size |
 |-----------|--------|------|
-| Idle (per direction) | 4 | 128x128 |
-| Walk (per direction) | 6 | 128x128 |
-| Shoot (per direction) | 4 | 128x128 |
-| Dash (per direction) | 3 | 128x128 |
-| Death | 6 | 128x128 |
+| Idle (per direction) | 4 | 48x48 |
+| Walk (per direction) | 4 | 48x48 |
+| Shoot (per direction) | 3 | 48x48 |
+| Dash (per direction) | 6 | 48x48 |
+| Death (per direction) | 7 | 48x48 |
 
 #### Shadow Wisp
 ```
-Pixel art enemy, 64x64, top-down view, chibi SD style, cute floating shadow orb,
-large glowing red eyes, round blob shape, wispy trail, dark silhouette,
-black with red glow, simple animated form
+Pixel art enemy sprite, top-down view, Octopath Traveler style chibi,
+floating shadow orb spirit, round blob shape with wispy edges,
+small glowing red eyes, ethereal trailing mist,
+muted dark purple and black, subtle red glow accents,
+clean dark outline, soft shading, 4-directional, 64x64 pixels
 ```
 
 #### Shadow Crawler
 ```
-Pixel art enemy, 64x64, top-down view, chibi SD style, cute but creepy quadruped shadow creature,
-big cyan glowing eyes, short stubby legs, dark silhouette, fast crawler, black purple gradient
+Pixel art enemy sprite, top-down view, Octopath Traveler style chibi,
+quadruped shadow creature, short stubby legs, hunched body,
+glowing cyan eyes, feral but cute silhouette,
+muted black and dark purple gradient, clean outline,
+soft shading, 4-directional, 64x64 pixels
 ```
 
 #### Shadow Stalker
 ```
-Pixel art enemy, 96x96, top-down view, chibi SD style, cute spooky humanoid shadow figure,
-large glowing white eyes, oversized hooded head, ethereal cloak, small body,
-dark purple black, teleport pose
+Pixel art enemy sprite, top-down view, Octopath Traveler style chibi,
+humanoid shadow figure with oversized hooded head, ethereal cloak,
+large glowing white eyes, small body, mysterious silhouette,
+muted dark purple and black, clean outline, soft shading,
+4-directional, 64x64 pixels
 ```
 
 #### Shadow Brute
 ```
-Pixel art enemy, 128x128, top-down view, chibi SD style, cute intimidating hulking shadow monster,
-big glowing red eyes, large head with bulky silhouette, small legs, slow heavy presence,
-black with red accents
+Pixel art enemy sprite, top-down view, Octopath Traveler style chibi,
+hulking shadow monster, large head with bulky silhouette,
+small legs, slow heavy presence, glowing red eyes,
+muted black with dark red accents, clean outline, soft shading,
+4-directional, 64x64 pixels
 ```
 
 #### Shadow Boar (Boss)
 ```
-Pixel art boss, 192x128, top-down view, chibi SD style, cute but terrifying massive demonic boar,
-huge head with glowing red eyes, shadow aura, tusks, oversized intimidating chibi form,
-black mist emanating, dark with red glow
+Pixel art boss sprite, top-down view, Octopath Traveler style chibi,
+massive demonic boar, huge head with tusks, shadow aura emanating,
+glowing red eyes, intimidating but stylized silhouette,
+muted black with dark red glow, clean outline, soft shading,
+4-directional, 96x96 pixels
 ```
 
 ### Pixellab Prompts - Environment

@@ -1,5 +1,14 @@
 # Tasks: Character Sprites via PixelLab MCP
 
+## 0. Art Style Reference
+
+All characters use **Octopath Traveler Heroes** art style:
+- Chibi proportions (2-3 heads tall, 40% head)
+- Clean dark outlines (not pure black)
+- Muted color palette
+- Soft shading (2-3 shades per color)
+- Clear readable silhouettes
+
 ## 1. Setup Asset Folders
 
 - [x] 1.1 Create `assets/sprites/characters/player/kasuari/`
@@ -9,82 +18,100 @@
 - [x] 1.5 Create `assets/sprites/characters/enemies/shadow_brute/`
 - [x] 1.6 Create `assets/sprites/characters/boss/shadow_boar/`
 
-## 2. Generate Player Character (Kasuari)
+## 2. Generate Player Character (Kasuari) - 64x64
 
-- [x] 2.1 Queue Kasuari character creation (128x128, 4-directional, chibi style)
-- [x] 2.2 Queue idle animation (4 frames per direction) → breathing-idle
-- [x] 2.3 Queue walk animation (4 frames per direction) → walking-4-frames
-- [x] 2.4 Queue shoot animation (4 frames per direction) → lead-jab
-- [x] 2.5 Queue dash animation (6 frames per direction) → running-slide
-- [x] 2.6 Queue death animation (4 frames per direction) → falling-back-death ⏳ processing
+- [x] 2.1 Queue Kasuari character creation (64x64, 4-directional, Octopath style)
+- [x] 2.2 Queue idle animation → breathing-idle
+- [x] 2.3 Queue walk animation → walking-4-frames
+- [x] 2.4 Queue shoot animation → lead-jab
+- [x] 2.5 Queue dash animation → running-slide
+- [x] 2.6 Queue death animation → falling-back-death
 - [x] 2.7 Poll status until complete
 - [x] 2.8 Download and extract to `assets/sprites/characters/player/kasuari/`
 
-**Progress:** Complete ✓ (Base, Idle, Walk, Shoot, Dash, Death)
-**Character ID:** `2b658a0f-3ad4-4b68-96d5-7017a9871166`
-**Downloaded:** 67 PNGs (4 rotations + 5 animations x 4 directions)
+**Target Size:** 64x64 pixels
+**Character ID:** 2a45b783-281b-4e81-9bc2-af691e12daaa
 
-## 3. Generate Shadow Wisp Enemy
+**Note:** PixelLab did not generate all 4 directions for every animation:
+- breathing-idle: south, east, north (west missing - use flip_h)
+- walking-4-frames: south, east, north (west missing - use flip_h)
+- lead-jab: east, north, west (south missing - use north or east)
+- running-slide: south, east, north, west (complete)
+- falling-back-death: south, east, north (west missing - use flip_h)
 
-- [x] 3.1 Queue Shadow Wisp character creation (64x64, 4-directional)
-- [x] 3.2 Queue idle animation (float bob) → breathing-idle ⏳ processing (2-4 min)
-- [ ] 3.3 Queue move animation (homing drift)
-- [ ] 3.4 Queue death animation (dissolve)
-- [ ] 3.5 Poll status until complete
-- [ ] 3.6 Download and extract to `assets/sprites/characters/enemies/shadow_wisp/`
+## 3. Generate Shadow Wisp Enemy - 64x64
 
-**Progress:** Base ✓, Idle ⏳ (queued 2026-02-17)
-**Character ID:** `63605b0a-c5d5-42ff-b38b-3507cacee06c`
+- [x] 3.1 Queue Shadow Wisp character creation (64x64, 4-directional, Octopath style)
+- [x] 3.2 Queue idle animation → breathing-idle
+- [x] 3.3 Queue move animation → walking-4-frames
+- [x] 3.4 Queue death animation → falling-back-death
+- [x] 3.5 Poll status until complete
+- [x] 3.6 Download and extract to `assets/sprites/characters/enemies/shadow_wisp/`
 
-## 4. Generate Shadow Crawler Enemy
+**Target Size:** 64x64 pixels
+**Character ID:** c07cdaed-8134-476c-9906-ec36c89291ef
 
-- [x] 4.1 Queue Shadow Crawler character creation (64x64, 4-directional, quadruped)
-- [x] 4.2 Queue idle animation → idle ✓
-- [ ] 4.3 Queue walk animation (fast crawl)
-- [ ] 4.4 Queue attack animation (lunge)
-- [ ] 4.5 Queue death animation
-- [x] 4.6 Poll status until complete
-- [x] 4.7 Download and extract to `assets/sprites/characters/enemies/shadow_crawler/`
+**Note:** Shadow Wisp is an orb/ball-shaped creature (not humanoid).
+- breathing-idle: north, south, east (no west - use flip_h)
+- walking-4-frames: north, south, east, west (complete)
+- falling-back-death: north, south, east, west (complete, 7 frames each)
 
-**Progress:** Complete ✓ (minimal - idle only)
-**Character ID:** `2db46d9f-f4c7-4856-997d-de06ad924a05`
-**Downloaded:** 36 PNGs (4 rotations + 32 idle frames)
+## 4. Generate Shadow Crawler Enemy - 64x64 (Quadruped)
 
-## 5. Generate Shadow Stalker Enemy
+- [ ] 4.1 Queue Shadow Crawler character creation (64x64, 4-directional, quadruped, Octopath style)
+- [ ] 4.2 Queue idle animation → idle
+- [ ] 4.3 Queue walk animation → walk
+- [ ] 4.4 Queue attack animation → attack
+- [ ] 4.5 Queue death animation → death
+- [ ] 4.6 Poll status until complete
+- [ ] 4.7 Download and extract to `assets/sprites/characters/enemies/shadow_crawler/`
 
-- [x] 5.1 Queue Shadow Stalker character creation (96x96, 4-directional) ✓
-- [x] 5.2 Queue idle animation ✓ (breathing-idle complete)
-- [x] 5.3 Queue walk animation → walking-4-frames ⏳ processing (2-4 min)
-- [ ] 5.4 Queue teleport animation (fade out/in)
-- [ ] 5.5 Queue attack animation
-- [ ] 5.6 Queue death animation
-- [x] 5.7 Download base rotations ✓
-- [ ] 5.8 Download animations when complete
+**Target Size:** 64x64 pixels
+**Body Type:** Quadruped (cat template)
+**Character ID:** _pending_
 
-**Progress:** Base ✓, Idle ✓, Walk ⏳ (queued 2026-02-17)
-**Character ID:** `2c11e362-c314-4b5f-9460-734af8889641`
+## 5. Generate Shadow Stalker Enemy - 64x64
 
-## 6. Generate Shadow Brute Enemy
+- [ ] 5.1 Queue Shadow Stalker character creation (64x64, 4-directional, Octopath style)
+- [ ] 5.2 Queue idle animation → breathing-idle
+- [ ] 5.3 Queue walk animation → walking-4-frames
+- [ ] 5.4 Queue teleport animation → surprise-uppercut
+- [ ] 5.5 Queue attack animation → cross-punch
+- [ ] 5.6 Queue death animation → falling-back-death
+- [ ] 5.7 Poll status until complete
+- [ ] 5.8 Download and extract to `assets/sprites/characters/enemies/shadow_stalker/`
 
-- [ ] 6.1 Queue Shadow Brute character creation (128x128, 4-directional)
-- [ ] 6.2 Queue idle animation (heavy breathing)
-- [ ] 6.3 Queue walk animation (slow, heavy)
-- [ ] 6.4 Queue charge animation
-- [ ] 6.5 Queue attack animation (slam)
-- [ ] 6.6 Queue death animation
+**Target Size:** 64x64 pixels
+**Character ID:** _pending_
+
+## 6. Generate Shadow Brute Enemy - 64x64
+
+- [ ] 6.1 Queue Shadow Brute character creation (64x64, 4-directional, Octopath style)
+- [ ] 6.2 Queue idle animation → breathing-idle
+- [ ] 6.3 Queue walk animation → walking-6-frames
+- [ ] 6.4 Queue charge animation → running-4-frames
+- [ ] 6.5 Queue attack animation → two-footed-jump
+- [ ] 6.6 Queue death animation → falling-back-death
 - [ ] 6.7 Poll status until complete
 - [ ] 6.8 Download and extract to `assets/sprites/characters/enemies/shadow_brute/`
 
-## 7. Generate Shadow Boar Boss
+**Target Size:** 64x64 pixels
+**Character ID:** _pending_
 
-- [ ] 7.1 Queue Shadow Boar character creation (128x128, 4-directional)
-- [ ] 7.2 Queue idle animation (menacing)
-- [ ] 7.3 Queue walk animation (heavy trot)
-- [ ] 7.4 Queue charge animation (telegraph + rush)
-- [ ] 7.5 Queue slam animation (ground pound)
-- [ ] 7.6 Queue death animation
+## 7. Generate Shadow Boar Boss - 96x96 (Quadruped)
+
+- [ ] 7.1 Queue Shadow Boar character creation (96x96, 4-directional, quadruped, Octopath style)
+- [ ] 7.2 Queue idle animation → idle
+- [ ] 7.3 Queue walk animation → walk
+- [ ] 7.4 Queue charge animation → run
+- [ ] 7.5 Queue slam animation → attack
+- [ ] 7.6 Queue death animation → death
 - [ ] 7.7 Poll status until complete
 - [ ] 7.8 Download and extract to `assets/sprites/characters/boss/shadow_boar/`
+
+**Target Size:** 96x96 pixels
+**Body Type:** Quadruped (bear template)
+**Character ID:** _pending_
 
 ## 8. Import & Configure in Godot
 
@@ -99,4 +126,5 @@
 - [ ] 9.1 All characters display correctly in editor
 - [ ] 9.2 All animations play smoothly
 - [ ] 9.3 Color palette matches GDD specifications
-- [ ] 9.4 Sizes match design (scaled appropriately for boss)
+- [ ] 9.4 Art style consistent (Octopath Traveler reference)
+- [ ] 9.5 Sizes match design (48/64/96 as specified)

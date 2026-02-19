@@ -7,19 +7,33 @@ extends Node2D
 @onready var health_bar: ProgressBar = $CanvasLayer/HUD/HealthBar
 @onready var player_node: Node2D = $Player
 @onready var walls: Node2D = $Walls
+@onready var enemy_spawns: Node2D = $EnemySpawns
 
 
 func _ready() -> void:
 	_setup_walls()
+	_setup_enemy_spawns()
 	_setup_camera()
+	_setup_spawn_position()
 	_connect_signals()
 	GameManager.start_game()
+
+
+func _setup_spawn_position() -> void:
+	# Set the global spawn position for player respawn
+	GameManager.player_spawn_position = player_spawn.global_position
 
 
 func _setup_walls() -> void:
 	# Add all walls to "wall" group for collision detection
 	for wall in walls.get_children():
 		wall.add_to_group("wall")
+
+
+func _setup_enemy_spawns() -> void:
+	# Add all enemy spawn points to "enemy_spawn" group
+	for spawn in enemy_spawns.get_children():
+		spawn.add_to_group("enemy_spawn")
 
 
 func _setup_camera() -> void:
@@ -39,8 +53,9 @@ func _on_health_changed(current: int, maximum: int) -> void:
 
 
 func _on_player_died() -> void:
-	await get_tree().create_timer(1.0).timeout
-	GameManager.trigger_game_over()
+	# Player handles respawn internally - no game over trigger needed
+	# Game over will be triggered by other conditions (boss defeat, no lives, etc.)
+	pass
 
 
 func _on_victory() -> void:

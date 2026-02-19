@@ -5,6 +5,7 @@ extends Node
 signal player_damaged(damage: int)
 signal player_died
 signal player_healed(amount: int)
+signal player_respawned
 
 # Enemy signals
 signal enemy_spawned(enemy: Node)

@@ -1,0 +1,284 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://shadow_wisp_frames"]
+
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_wisp/animations/breathing-idle/south/frame_000.png" id="idle_s_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_wisp/animations/breathing-idle/south/frame_001.png" id="idle_s_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_wisp/animations/breathing-idle/south/frame_002.png" id="idle_s_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_wisp/animations/breathing-idle/south/frame_003.png" id="idle_s_3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_wisp/animations/breathing-idle/north/frame_000.png" id="idle_n_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_wisp/animations/breathing-idle/north/frame_001.png" id="idle_n_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_wisp/animations/breathing-idle/north/frame_002.png" id="idle_n_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_wisp/animations/breathing-idle/north/frame_003.png" id="idle_n_3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_wisp/animations/breathing-idle/east/frame_000.png" id="idle_e_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_wisp/animations/breathing-idle/east/frame_001.png" id="idle_e_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_wisp/animations/breathing-idle/east/frame_002.png" id="idle_e_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_wisp/animations/breathing-idle/east/frame_003.png" id="idle_e_3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_wisp/animations/walking-4-frames/south/frame_000.png" id="walk_s_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_wisp/animations/walking-4-frames/south/frame_001.png" id="walk_s_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_wisp/animations/walking-4-frames/south/frame_002.png" id="walk_s_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_wisp/animations/walking-4-frames/south/frame_003.png" id="walk_s_3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_wisp/animations/walking-4-frames/north/frame_000.png" id="walk_n_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_wisp/animations/walking-4-frames/north/frame_001.png" id="walk_n_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_wisp/animations/walking-4-frames/north/frame_002.png" id="walk_n_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_wisp/animations/walking-4-frames/north/frame_003.png" id="walk_n_3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_wisp/animations/walking-4-frames/east/frame_000.png" id="walk_e_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_wisp/animations/walking-4-frames/east/frame_001.png" id="walk_e_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_wisp/animations/walking-4-frames/east/frame_002.png" id="walk_e_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_wisp/animations/walking-4-frames/east/frame_003.png" id="walk_e_3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_wisp/animations/walking-4-frames/west/frame_000.png" id="walk_w_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_wisp/animations/walking-4-frames/west/frame_001.png" id="walk_w_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_wisp/animations/walking-4-frames/west/frame_002.png" id="walk_w_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_wisp/animations/walking-4-frames/west/frame_003.png" id="walk_w_3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_wisp/animations/falling-back-death/south/frame_000.png" id="death_s_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_wisp/animations/falling-back-death/south/frame_001.png" id="death_s_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_wisp/animations/falling-back-death/south/frame_002.png" id="death_s_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_wisp/animations/falling-back-death/south/frame_003.png" id="death_s_3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_wisp/animations/falling-back-death/south/frame_004.png" id="death_s_4"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_wisp/animations/falling-back-death/south/frame_005.png" id="death_s_5"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_wisp/animations/falling-back-death/south/frame_006.png" id="death_s_6"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_wisp/animations/falling-back-death/north/frame_000.png" id="death_n_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_wisp/animations/falling-back-death/north/frame_001.png" id="death_n_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_wisp/animations/falling-back-death/north/frame_002.png" id="death_n_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_wisp/animations/falling-back-death/north/frame_003.png" id="death_n_3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_wisp/animations/falling-back-death/north/frame_004.png" id="death_n_4"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_wisp/animations/falling-back-death/north/frame_005.png" id="death_n_5"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_wisp/animations/falling-back-death/north/frame_006.png" id="death_n_6"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_wisp/animations/falling-back-death/east/frame_000.png" id="death_e_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_wisp/animations/falling-back-death/east/frame_001.png" id="death_e_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_wisp/animations/falling-back-death/east/frame_002.png" id="death_e_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_wisp/animations/falling-back-death/east/frame_003.png" id="death_e_3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_wisp/animations/falling-back-death/east/frame_004.png" id="death_e_4"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_wisp/animations/falling-back-death/east/frame_005.png" id="death_e_5"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_wisp/animations/falling-back-death/east/frame_006.png" id="death_e_6"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_wisp/animations/falling-back-death/west/frame_000.png" id="death_w_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_wisp/animations/falling-back-death/west/frame_001.png" id="death_w_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_wisp/animations/falling-back-death/west/frame_002.png" id="death_w_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_wisp/animations/falling-back-death/west/frame_003.png" id="death_w_3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_wisp/animations/falling-back-death/west/frame_004.png" id="death_w_4"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_wisp/animations/falling-back-death/west/frame_005.png" id="death_w_5"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_wisp/animations/falling-back-death/west/frame_006.png" id="death_w_6"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("idle_s_0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("idle_s_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("idle_s_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("idle_s_3")
+}],
+"loop": true,
+"name": &"idle_south",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("idle_n_0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("idle_n_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("idle_n_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("idle_n_3")
+}],
+"loop": true,
+"name": &"idle_north",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("idle_e_0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("idle_e_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("idle_e_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("idle_e_3")
+}],
+"loop": true,
+"name": &"idle_east",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("walk_s_0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("walk_s_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("walk_s_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("walk_s_3")
+}],
+"loop": true,
+"name": &"walk_south",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("walk_n_0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("walk_n_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("walk_n_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("walk_n_3")
+}],
+"loop": true,
+"name": &"walk_north",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("walk_e_0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("walk_e_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("walk_e_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("walk_e_3")
+}],
+"loop": true,
+"name": &"walk_east",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("walk_w_0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("walk_w_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("walk_w_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("walk_w_3")
+}],
+"loop": true,
+"name": &"walk_west",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("death_s_0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("death_s_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("death_s_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("death_s_3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("death_s_4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("death_s_5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("death_s_6")
+}],
+"loop": false,
+"name": &"death_south",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("death_n_0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("death_n_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("death_n_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("death_n_3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("death_n_4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("death_n_5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("death_n_6")
+}],
+"loop": false,
+"name": &"death_north",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("death_e_0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("death_e_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("death_e_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("death_e_3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("death_e_4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("death_e_5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("death_e_6")
+}],
+"loop": false,
+"name": &"death_east",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("death_w_0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("death_w_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("death_w_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("death_w_3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("death_w_4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("death_w_5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("death_w_6")
+}],
+"loop": false,
+"name": &"death_west",
+"speed": 12.0
+}]

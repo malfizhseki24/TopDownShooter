@@ -2,7 +2,28 @@
 
 ## Context
 
-Generating all character sprites for "Warrior of the Sunrise" using PixelLab MCP's AI-powered pixel art generation. Characters must match the Papuan folklore theme with dark, tribal aesthetics.
+Generating all character sprites for "Warrior of the Sunrise" using PixelLab MCP's AI-powered pixel art generation. Characters must match the Papuan folklore theme with dark, tribal aesthetics, following the Octopath Traveler Heroes art style.
+
+## Art Style Reference: Octopath Traveler Heroes
+
+The character sprites should follow the art style of Octopath Traveler's playable characters:
+- **Proportions**: Chibi/SD (2-3 heads tall), similar to Primrose, Therion, Olberic
+- **Outlines**: Clean single-color outlines (not pure black, use dark variant of character color)
+- **Shading**: Soft dithering, 2-3 shade levels per color, subtle highlights
+- **Colors**: Muted, atmospheric palette - not oversaturated
+- **Detail Level**: Moderate - readable at small sizes but not overly complex
+- **Animation**: Clear key poses, readable silhouettes in motion
+- **Personality**: Each character has distinctive features (hair, clothing, weapons)
+
+**Key Visual Traits from Octopath Traveler:**
+| Trait | Octopath Style | Our Adaptation |
+|-------|---------------|----------------|
+| Head size | Large (40% of height) | Same - chibi proportions |
+| Eyes | Small but expressive, not anime-huge | Exaggerated but grounded |
+| Outlines | Dark color-matched, not pure black | Dark navy/dark purple outlines |
+| Shading | Soft gradients, dithering | Basic-medium shading |
+| Colors | Muted earth tones, jewel accents | Tribal palette - dark blue, red, bone |
+| Animation frames | 4-8 frames, smooth loops | 4-6 frames per animation |
 
 ## Goals / Non-Goals
 
@@ -11,6 +32,7 @@ Generating all character sprites for "Warrior of the Sunrise" using PixelLab MCP
 - Create 4-directional sprites for top-down gameplay
 - Produce animations for all required actions
 - Match GDD color palette specifications
+- Follow Octopath Traveler-inspired visual style
 
 ### Non-Goals
 - Hand-drawn custom sprites
@@ -33,25 +55,26 @@ Generating all character sprites for "Warrior of the Sunrise" using PixelLab MCP
 
 | Character | Canvas Size | Effective Character Size |
 |-----------|-------------|-------------------------|
+| Kasuari (Player) | 48x48 | ~29px tall |
 | Shadow Wisp | 64x64 | ~38px tall |
 | Shadow Crawler | 64x64 | ~38px tall |
-| Shadow Stalker | 96x96 | ~58px tall |
-| Shadow Brute | 128x128 | ~77px tall |
-| Kasuari (Player) | 128x128 | ~77px tall |
-| Shadow Boar (Boss) | 128x128 | ~77px tall (scaled 1.5x) |
+| Shadow Stalker | 64x64 | ~38px tall |
+| Shadow Brute | 64x64 | ~38px tall |
+| Shadow Boar (Boss) | 96x96 | ~58px tall |
 
 **Rationale**:
-- PixelLab max is 128x128 for characters
-- Boss needs 192x128 visual size → render at 128x128, scale 1.5x in Godot
-- Smaller enemies use 64x64 for faster generation and smaller file sizes
+- Player at 48x48 for compact, readable chibi sprite
+- Most enemies at 64x64 for visual hierarchy
+- Boss at 96x96 to appear larger and more imposing
+- Smaller sizes = faster generation, smaller files, cleaner pixels
 
 ### Decision 3: Style Parameters
 
 | Parameter | Value | Reason |
 |-----------|-------|--------|
-| View | `low top-down` | Matches top-down shooter perspective |
-| Outline | `single color black outline` | Clear silhouettes, retro aesthetic |
-| Shading | `medium shading` | Balance detail and clarity |
+| View | `high top-down` | Better for top-down shooter perspective |
+| Outline | `single color outline` | Color-matched outlines (not pure black) |
+| Shading | `basic shading` | Octopath-style soft shading |
 | Detail | `medium detail` | Readable at game scale |
 | AI Freedom | `700-800` | Balance consistency with creativity |
 | Proportions | `chibi` preset | SD (Super Deformed) style - large head, small body |
@@ -66,7 +89,7 @@ All characters use the **chibi** proportions preset which creates:
 
 ### Decision 4: Quadruped Enemies
 
-Shadow Crawler uses `body_type: "quadruped"` with template `"cat"` or `"dog"` as base for natural 4-legged movement.
+Shadow Crawler and Shadow Boar use `body_type: "quadruped"` with appropriate templates for natural 4-legged movement.
 
 ## PixelLab MCP Parameters
 
@@ -74,13 +97,13 @@ Shadow Crawler uses `body_type: "quadruped"` with template `"cat"` or `"dog"` as
 
 ```json
 {
-  "description": "chibi SD style, cute but fierce tribal warrior with cassowary bone armor, black feather helmet with casque horn, holding bow, big expressive eyes, dark blue and black color scheme, blood red accents, bone white details",
+  "description": "Octopath Traveler style chibi hero, tribal warrior with cassowary-inspired armor, dark skin, black feather headdress with bone casque, holding wooden bow, flowing grass skirt, tribal bone jewelry, muted color palette: dark navy blue, deep black, muted blood red accents, bone white, clean dark outline, soft shading, 2-3 color shades per element",
   "name": "Kasuari",
   "n_directions": 4,
-  "size": 128,
-  "view": "low top-down",
-  "outline": "single color black outline",
-  "shading": "medium shading",
+  "size": 48,
+  "view": "high top-down",
+  "outline": "single color outline",
+  "shading": "basic shading",
   "detail": "medium detail",
   "proportions": "{\"type\": \"preset\", \"name\": \"chibi\"}",
   "ai_freedom": 750
@@ -100,11 +123,11 @@ Shadow Crawler uses `body_type: "quadruped"` with template `"cat"` or `"dog"` as
 
 ```json
 {
-  "description": "chibi SD style, cute floating shadow orb with large glowing red eyes, wispy dark silhouette, round blob shape, black with red glow",
+  "description": "Octopath Traveler style chibi, floating shadow orb spirit, round blob shape with wispy edges, small glowing red eyes, ethereal trailing mist, muted dark purple and black, subtle red glow accents, clean dark outline, soft shading",
   "name": "Shadow Wisp",
   "n_directions": 4,
   "size": 64,
-  "view": "low top-down",
+  "view": "high top-down",
   "outline": "single color outline",
   "shading": "basic shading",
   "detail": "low detail",
@@ -123,16 +146,16 @@ Shadow Crawler uses `body_type: "quadruped"` with template `"cat"` or `"dog"` as
 
 ```json
 {
-  "description": "chibi SD style, cute but creepy quadruped shadow creature, short stubby legs, dark silhouette with big cyan glowing eyes, fast crawler, black purple gradient",
+  "description": "Octopath Traveler style chibi, quadruped shadow creature, short stubby legs, hunched body, glowing cyan eyes, feral but cute silhouette, muted black and dark purple gradient, clean outline, soft shading",
   "name": "Shadow Crawler",
   "body_type": "quadruped",
   "template": "cat",
   "n_directions": 4,
   "size": 64,
-  "view": "low top-down",
-  "outline": "single color black outline",
+  "view": "high top-down",
+  "outline": "single color outline",
   "shading": "basic shading",
-  "detail": "low detail",
+  "detail": "medium detail",
   "ai_freedom": 800
 }
 ```
@@ -149,13 +172,13 @@ Shadow Crawler uses `body_type: "quadruped"` with template `"cat"` or `"dog"` as
 
 ```json
 {
-  "description": "chibi SD style, cute spooky humanoid shadow figure, large glowing white eyes, oversized hooded head, ethereal cloak, small body, dark purple black",
+  "description": "Octopath Traveler style chibi, humanoid shadow figure with oversized hooded head, ethereal cloak, large glowing white eyes, small body, mysterious silhouette, muted dark purple and black, clean outline, soft shading",
   "name": "Shadow Stalker",
   "n_directions": 4,
-  "size": 96,
-  "view": "low top-down",
-  "outline": "single color black outline",
-  "shading": "medium shading",
+  "size": 64,
+  "view": "high top-down",
+  "outline": "single color outline",
+  "shading": "basic shading",
   "detail": "medium detail",
   "proportions": "{\"type\": \"preset\", \"name\": \"chibi\"}",
   "ai_freedom": 750
@@ -175,14 +198,14 @@ Shadow Crawler uses `body_type: "quadruped"` with template `"cat"` or `"dog"` as
 
 ```json
 {
-  "description": "chibi SD style, cute intimidating hulking shadow monster, big glowing red eyes, large head with bulky silhouette, small legs, slow heavy presence, black with red accents",
+  "description": "Octopath Traveler style chibi, hulking shadow monster, large head with bulky silhouette, small legs, slow heavy presence, glowing red eyes, muted black with dark red accents, clean outline, soft shading",
   "name": "Shadow Brute",
   "n_directions": 4,
-  "size": 128,
-  "view": "low top-down",
-  "outline": "single color black outline",
-  "shading": "detailed shading",
-  "detail": "high detail",
+  "size": 64,
+  "view": "high top-down",
+  "outline": "single color outline",
+  "shading": "medium shading",
+  "detail": "medium detail",
   "proportions": "{\"type\": \"preset\", \"name\": \"chibi\"}",
   "ai_freedom": 700
 }
@@ -201,12 +224,12 @@ Shadow Crawler uses `body_type: "quadruped"` with template `"cat"` or `"dog"` as
 
 ```json
 {
-  "description": "chibi SD style, cute but terrifying massive demonic boar with shadow aura, huge head with glowing red eyes, black mist emanating, tusks, oversized intimidating chibi form, dark with red glow",
+  "description": "Octopath Traveler style chibi, massive demonic boar, huge head with tusks, shadow aura emanating, glowing red eyes, intimidating but stylized silhouette, muted black with dark red glow, clean outline, soft shading",
   "name": "Shadow Boar",
   "n_directions": 4,
-  "size": 128,
-  "view": "low top-down",
-  "outline": "single color black outline",
+  "size": 96,
+  "view": "high top-down",
+  "outline": "single color outline",
   "shading": "detailed shading",
   "detail": "high detail",
   "body_type": "quadruped",
@@ -224,8 +247,6 @@ Shadow Crawler uses `body_type: "quadruped"` with template `"cat"` or `"dog"` as
 | Slam | `attack` | ground pound |
 | Death | `death` | dramatic collapse |
 
-**Note**: Rendered at 128x128, scaled to 1.5x (192x128) in Godot.
-
 ## Godot Import Settings
 
 ```
@@ -241,14 +262,15 @@ Repeat: Disabled
 assets/sprites/characters/
 ├── player/
 │   └── kasuari/
-│       ├── kasuari_south.png
-│       ├── kasuari_west.png
-│       ├── kasuari_east.png
-│       ├── kasuari_north.png
 │       └── animations/
-│           ├── idle_south.png (spritesheet)
-│           ├── walk_south.png
-│           └── ...
+│           ├── breathing-idle/
+│           │   ├── south/frame_000.png
+│           │   ├── east/frame_000.png
+│           │   └── north/frame_000.png
+│           ├── walking-4-frames/
+│           ├── lead-jab/
+│           ├── running-slide/
+│           └── falling-back-death/
 ├── enemies/
 │   ├── shadow_wisp/
 │   ├── shadow_crawler/
@@ -260,9 +282,9 @@ assets/sprites/characters/
 
 ## Open Questions
 
-1. **Shadow Wisp directions**: Does a floating orb need 4 directions, or can we use 1 sprite with rotation?
-2. **Death animations**: Single direction or all 4? (currently planned single for efficiency)
-3. **Boss scale**: Test 1.5x scaling to ensure no visual artifacts at 192x128
+1. ~~**Shadow Wisp directions**: Does a floating orb need 4 directions, or can we use 1 sprite with rotation?~~ → Keep 4 directions for consistency
+2. **Death animations**: Single direction or all 4? (currently planned all 4 for consistency)
+3. ~~**Boss scale**: Test 1.5x scaling to ensure no visual artifacts at 192x128~~ → Use 96x96 canvas directly
 
 ## Risk Mitigation
 
@@ -271,4 +293,4 @@ assets/sprites/characters/
 | Generation doesn't match vision | Use lower `ai_freedom` (650-700) for more control |
 | Animations don't fit gameplay | Use custom `action_description` to guide movement style |
 | Colors don't match palette | Specify exact colors in description, may need post-processing |
-| Boss too small at 128px | Accept 1.5x scale or use map_object tool for larger size |
+| Style inconsistent across characters | Reference Octopath Traveler style in all prompts |

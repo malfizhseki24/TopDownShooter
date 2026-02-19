@@ -1,0 +1,414 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://b8md8yilkm16u"]
+
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/player/kasuari/animations/breathing-idle/south/frame_000.png" id="idle_s_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/player/kasuari/animations/breathing-idle/south/frame_001.png" id="idle_s_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/player/kasuari/animations/breathing-idle/south/frame_002.png" id="idle_s_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/player/kasuari/animations/breathing-idle/south/frame_003.png" id="idle_s_3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/player/kasuari/animations/breathing-idle/east/frame_000.png" id="idle_e_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/player/kasuari/animations/breathing-idle/east/frame_001.png" id="idle_e_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/player/kasuari/animations/breathing-idle/east/frame_002.png" id="idle_e_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/player/kasuari/animations/breathing-idle/east/frame_003.png" id="idle_e_3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/player/kasuari/animations/breathing-idle/north/frame_000.png" id="idle_n_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/player/kasuari/animations/breathing-idle/north/frame_001.png" id="idle_n_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/player/kasuari/animations/breathing-idle/north/frame_002.png" id="idle_n_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/player/kasuari/animations/breathing-idle/north/frame_003.png" id="idle_n_3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/player/kasuari/animations/walking-4-frames/south/frame_000.png" id="walk_s_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/player/kasuari/animations/walking-4-frames/south/frame_001.png" id="walk_s_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/player/kasuari/animations/walking-4-frames/south/frame_002.png" id="walk_s_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/player/kasuari/animations/walking-4-frames/south/frame_003.png" id="walk_s_3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/player/kasuari/animations/walking-4-frames/east/frame_000.png" id="walk_e_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/player/kasuari/animations/walking-4-frames/east/frame_001.png" id="walk_e_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/player/kasuari/animations/walking-4-frames/east/frame_002.png" id="walk_e_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/player/kasuari/animations/walking-4-frames/east/frame_003.png" id="walk_e_3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/player/kasuari/animations/walking-4-frames/north/frame_000.png" id="walk_n_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/player/kasuari/animations/walking-4-frames/north/frame_001.png" id="walk_n_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/player/kasuari/animations/walking-4-frames/north/frame_002.png" id="walk_n_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/player/kasuari/animations/walking-4-frames/north/frame_003.png" id="walk_n_3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/player/kasuari/animations/lead-jab/north/frame_000.png" id="shoot_n_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/player/kasuari/animations/lead-jab/north/frame_001.png" id="shoot_n_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/player/kasuari/animations/lead-jab/north/frame_002.png" id="shoot_n_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/player/kasuari/animations/lead-jab/south/frame_000.png" id="shoot_s_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/player/kasuari/animations/lead-jab/south/frame_001.png" id="shoot_s_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/player/kasuari/animations/lead-jab/south/frame_002.png" id="shoot_s_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/player/kasuari/animations/lead-jab/east/frame_000.png" id="shoot_e_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/player/kasuari/animations/lead-jab/east/frame_001.png" id="shoot_e_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/player/kasuari/animations/lead-jab/east/frame_002.png" id="shoot_e_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/player/kasuari/animations/lead-jab/west/frame_000.png" id="shoot_w_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/player/kasuari/animations/lead-jab/west/frame_001.png" id="shoot_w_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/player/kasuari/animations/lead-jab/west/frame_002.png" id="shoot_w_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/player/kasuari/animations/running-slide/south/frame_000.png" id="dash_s_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/player/kasuari/animations/running-slide/south/frame_001.png" id="dash_s_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/player/kasuari/animations/running-slide/south/frame_002.png" id="dash_s_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/player/kasuari/animations/running-slide/south/frame_003.png" id="dash_s_3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/player/kasuari/animations/running-slide/south/frame_004.png" id="dash_s_4"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/player/kasuari/animations/running-slide/south/frame_005.png" id="dash_s_5"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/player/kasuari/animations/running-slide/east/frame_000.png" id="dash_e_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/player/kasuari/animations/running-slide/east/frame_001.png" id="dash_e_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/player/kasuari/animations/running-slide/east/frame_002.png" id="dash_e_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/player/kasuari/animations/running-slide/east/frame_003.png" id="dash_e_3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/player/kasuari/animations/running-slide/east/frame_004.png" id="dash_e_4"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/player/kasuari/animations/running-slide/east/frame_005.png" id="dash_e_5"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/player/kasuari/animations/running-slide/north/frame_000.png" id="dash_n_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/player/kasuari/animations/running-slide/north/frame_001.png" id="dash_n_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/player/kasuari/animations/running-slide/north/frame_002.png" id="dash_n_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/player/kasuari/animations/running-slide/north/frame_003.png" id="dash_n_3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/player/kasuari/animations/running-slide/north/frame_004.png" id="dash_n_4"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/player/kasuari/animations/running-slide/north/frame_005.png" id="dash_n_5"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/player/kasuari/animations/running-slide/west/frame_000.png" id="dash_w_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/player/kasuari/animations/running-slide/west/frame_001.png" id="dash_w_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/player/kasuari/animations/running-slide/west/frame_002.png" id="dash_w_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/player/kasuari/animations/running-slide/west/frame_003.png" id="dash_w_3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/player/kasuari/animations/running-slide/west/frame_004.png" id="dash_w_4"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/player/kasuari/animations/running-slide/west/frame_005.png" id="dash_w_5"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/player/kasuari/animations/falling-back-death/south/frame_000.png" id="death_s_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/player/kasuari/animations/falling-back-death/south/frame_001.png" id="death_s_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/player/kasuari/animations/falling-back-death/south/frame_002.png" id="death_s_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/player/kasuari/animations/falling-back-death/south/frame_003.png" id="death_s_3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/player/kasuari/animations/falling-back-death/south/frame_004.png" id="death_s_4"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/player/kasuari/animations/falling-back-death/south/frame_005.png" id="death_s_5"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/player/kasuari/animations/falling-back-death/south/frame_006.png" id="death_s_6"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/player/kasuari/animations/falling-back-death/east/frame_000.png" id="death_e_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/player/kasuari/animations/falling-back-death/east/frame_001.png" id="death_e_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/player/kasuari/animations/falling-back-death/east/frame_002.png" id="death_e_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/player/kasuari/animations/falling-back-death/east/frame_003.png" id="death_e_3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/player/kasuari/animations/falling-back-death/east/frame_004.png" id="death_e_4"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/player/kasuari/animations/falling-back-death/east/frame_005.png" id="death_e_5"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/player/kasuari/animations/falling-back-death/east/frame_006.png" id="death_e_6"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/player/kasuari/animations/falling-back-death/north/frame_000.png" id="death_n_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/player/kasuari/animations/falling-back-death/north/frame_001.png" id="death_n_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/player/kasuari/animations/falling-back-death/north/frame_002.png" id="death_n_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/player/kasuari/animations/falling-back-death/north/frame_003.png" id="death_n_3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/player/kasuari/animations/falling-back-death/north/frame_004.png" id="death_n_4"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/player/kasuari/animations/falling-back-death/north/frame_005.png" id="death_n_5"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/player/kasuari/animations/falling-back-death/north/frame_006.png" id="death_n_6"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("idle_s_0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("idle_s_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("idle_s_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("idle_s_3")
+}],
+"loop": true,
+"name": &"idle_south",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("idle_e_0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("idle_e_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("idle_e_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("idle_e_3")
+}],
+"loop": true,
+"name": &"idle_east",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("idle_n_0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("idle_n_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("idle_n_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("idle_n_3")
+}],
+"loop": true,
+"name": &"idle_north",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("walk_s_0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("walk_s_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("walk_s_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("walk_s_3")
+}],
+"loop": true,
+"name": &"walk_south",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("walk_e_0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("walk_e_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("walk_e_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("walk_e_3")
+}],
+"loop": true,
+"name": &"walk_east",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("walk_n_0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("walk_n_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("walk_n_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("walk_n_3")
+}],
+"loop": true,
+"name": &"walk_north",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("shoot_n_0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("shoot_n_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("shoot_n_2")
+}],
+"loop": false,
+"name": &"shoot_north",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("shoot_e_0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("shoot_e_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("shoot_e_2")
+}],
+"loop": false,
+"name": &"shoot_east",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("shoot_w_0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("shoot_w_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("shoot_w_2")
+}],
+"loop": false,
+"name": &"shoot_west",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("shoot_s_0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("shoot_s_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("shoot_s_2")
+}],
+"loop": false,
+"name": &"shoot_south",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("dash_s_0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("dash_s_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("dash_s_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("dash_s_3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("dash_s_4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("dash_s_5")
+}],
+"loop": false,
+"name": &"dash_south",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("dash_e_0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("dash_e_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("dash_e_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("dash_e_3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("dash_e_4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("dash_e_5")
+}],
+"loop": false,
+"name": &"dash_east",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("dash_n_0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("dash_n_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("dash_n_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("dash_n_3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("dash_n_4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("dash_n_5")
+}],
+"loop": false,
+"name": &"dash_north",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("dash_w_0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("dash_w_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("dash_w_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("dash_w_3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("dash_w_4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("dash_w_5")
+}],
+"loop": false,
+"name": &"dash_west",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("death_s_0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("death_s_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("death_s_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("death_s_3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("death_s_4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("death_s_5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("death_s_6")
+}],
+"loop": false,
+"name": &"death_south",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("death_e_0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("death_e_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("death_e_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("death_e_3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("death_e_4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("death_e_5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("death_e_6")
+}],
+"loop": false,
+"name": &"death_east",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("death_n_0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("death_n_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("death_n_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("death_n_3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("death_n_4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("death_n_5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("death_n_6")
+}],
+"loop": false,
+"name": &"death_north",
+"speed": 12.0
+}]

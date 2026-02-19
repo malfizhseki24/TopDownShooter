@@ -2,9 +2,32 @@
 
 ## ADDED Requirements
 
+### Requirement: Character Sprite Art Style
+
+All character sprites SHALL follow Octopath Traveler Heroes-inspired art style.
+
+#### Scenario: Visual style consistency
+
+- **WHEN** viewing any character sprite or animation
+- **THEN** sprites SHALL have:
+  - Chibi proportions (2-3 heads tall, large head 40% of height)
+  - Clean dark outlines (not pure black, use dark navy/purple)
+  - Muted color palette (dark navy, black, muted red, bone white)
+  - Soft shading with 2-3 color shades per element
+  - Clear readable silhouettes at small pixel sizes
+
+#### Scenario: Octopath Traveler reference traits
+
+- **WHEN** generating character sprites via PixelLab
+- **THEN** prompt SHALL reference Octopath Traveler style for:
+  - Proportion and head size
+  - Outline style (dark color-matched, not pure black)
+  - Shading approach (soft gradients, basic-medium detail)
+  - Animation clarity (clear key poses, readable in motion)
+
 ### Requirement: Player Character Sprites (Kasuari)
 
-The game SHALL include pixel art sprites for the player character Kasuari rendered at 128x128 canvas with 4-directional views (South, West, East, North) and all required animations.
+The game SHALL include pixel art sprites for the player character Kasuari rendered at 48x48 canvas with 4-directional views (South, West, East, North) and all required animations.
 
 #### Scenario: Player faces movement direction
 
@@ -14,26 +37,26 @@ The game SHALL include pixel art sprites for the player character Kasuari render
 #### Scenario: Player animation plays during movement
 
 - **WHEN** player is walking
-- **THEN** walk animation cycles at appropriate speed
+- **THEN** walk animation cycles at appropriate speed (10 FPS)
 - **AND** sprite direction matches movement vector
 
 #### Scenario: Player attack animation
 
 - **WHEN** player shoots an arrow
-- **THEN** shoot animation plays (4 frames)
+- **THEN** shoot animation plays (3 frames, 12 FPS)
 - **AND** player can still move during animation
 
 #### Scenario: Player dash animation
 
 - **WHEN** player performs dash
-- **THEN** dash animation plays (3 frames)
+- **THEN** dash animation plays (6 frames, 12 FPS)
 - **AND** sprite shows motion blur effect
 
 #### Scenario: Player death animation
 
 - **WHEN** player HP reaches 0
-- **THEN** death animation plays (6 frames)
-- **AND** game transitions to game over screen
+- **THEN** death animation plays (7 frames, 12 FPS)
+- **AND** triggers respawn after animation completes
 
 ### Requirement: Shadow Wisp Enemy Sprites
 
@@ -72,7 +95,7 @@ The game SHALL include pixel art sprites for the Shadow Crawler enemy rendered a
 
 ### Requirement: Shadow Stalker Enemy Sprites
 
-The game SHALL include pixel art sprites for the Shadow Stalker enemy rendered at 96x96 canvas with 4-directional views and walk/teleport/attack/death animations.
+The game SHALL include pixel art sprites for the Shadow Stalker enemy rendered at 64x64 canvas with 4-directional views and walk/teleport/attack/death animations.
 
 #### Scenario: Stalker teleport animation
 
@@ -87,7 +110,7 @@ The game SHALL include pixel art sprites for the Shadow Stalker enemy rendered a
 
 ### Requirement: Shadow Brute Enemy Sprites
 
-The game SHALL include pixel art sprites for the Shadow Brute enemy rendered at 128x128 canvas with 4-directional views and walk/charge/attack/death animations.
+The game SHALL include pixel art sprites for the Shadow Brute enemy rendered at 64x64 canvas with 4-directional views and walk/charge/attack/death animations.
 
 #### Scenario: Brute walk animation
 
@@ -106,7 +129,7 @@ The game SHALL include pixel art sprites for the Shadow Brute enemy rendered at 
 
 ### Requirement: Shadow Boar Boss Sprites
 
-The game SHALL include pixel art sprites for the Shadow Boar boss rendered at 128x128 canvas (scaled 1.5x to 192x128 in-engine) with 4-directional views and walk/charge/slam/death animations.
+The game SHALL include pixel art sprites for the Shadow Boar boss rendered at 96x96 canvas with 4-directional views and walk/charge/slam/death animations.
 
 #### Scenario: Boss idle animation
 
@@ -152,5 +175,7 @@ All character animations SHALL use consistent frame timings as specified in the 
 #### Scenario: Animation playback speed
 
 - **WHEN** any animation plays
-- **THEN** frames advance at consistent rate (8-12 FPS typical)
+- **THEN** frames advance at consistent rate:
+  - Idle/Walk: 10 FPS
+  - Actions (shoot, dash, death): 12 FPS
 - **AND** animation loops seamlessly for cyclic animations

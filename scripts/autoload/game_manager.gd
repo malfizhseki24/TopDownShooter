@@ -6,6 +6,9 @@ enum GameState { MENU, PLAYING, PAUSED, GAME_OVER, VICTORY }
 var current_state: GameState = GameState.MENU
 var previous_state: GameState = GameState.MENU
 
+# Player spawn point (set by level)
+var player_spawn_position: Vector2 = Vector2.ZERO
+
 # Game stats
 var enemies_killed: int = 0
 
