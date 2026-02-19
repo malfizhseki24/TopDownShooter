@@ -78,17 +78,24 @@ All characters use **Octopath Traveler Heroes** art style:
 
 ## 5. Generate Shadow Stalker Enemy - 64x64
 
-- [ ] 5.1 Queue Shadow Stalker character creation (64x64, 4-directional, Octopath style)
-- [ ] 5.2 Queue idle animation → breathing-idle
-- [ ] 5.3 Queue walk animation → walking-4-frames
-- [ ] 5.4 Queue teleport animation → surprise-uppercut
-- [ ] 5.5 Queue attack animation → cross-punch
-- [ ] 5.6 Queue death animation → falling-back-death
-- [ ] 5.7 Poll status until complete
-- [ ] 5.8 Download and extract to `assets/sprites/characters/enemies/shadow_stalker/`
+- [x] 5.1 Queue Shadow Stalker character creation (64x64, 4-directional, Octopath style)
+- [x] 5.2 Queue idle animation → breathing-idle
+- [x] 5.3 Queue walk animation → walking-8
+- [x] 5.4 Queue teleport animation → surprise-uppercut
+- [x] 5.5 Queue attack animation → cross-punch
+- [x] 5.6 Queue death animation → falling-back-death
+- [x] 5.7 Poll status until complete
+- [x] 5.8 Download and extract to `assets/sprites/characters/enemies/shadow_stalker/`
 
 **Target Size:** 64x64 pixels
-**Character ID:** _pending_
+**Character ID:** `eb196173-2ed6-4b53-8265-3910d28d1491`
+
+**Animations Generated:**
+- breathing-idle: 4 frames × 3 directions (south, north, east)
+- walking-8: 6 frames × 4 directions (complete)
+- surprise-uppercut (teleport): 7 frames × 3 directions
+- cross-punch (attack): 6 frames × 4 directions (complete)
+- falling-back-death: 7 frames × 3 directions
 
 ## 6. Generate Shadow Brute Enemy - 64x64
 

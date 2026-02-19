@@ -42,15 +42,15 @@
 
 ## 5. Shadow Stalker Enemy
 
-- [ ] 5.1 Create `scripts/enemies/shadow_stalker.gd` extending BaseEnemy
+- [x] 5.1 Create `scripts/enemies/shadow_stalker.gd` extending BaseEnemy
   - Set stats: hp=60, contact_damage=20, move_speed=100
   - Implement teleport timer (2 sec interval)
   - Implement teleport logic: random position 80-120px from player
   - Add 0.5s visible period after teleport
-- [ ] 5.2 Create `scenes/enemies/shadow_stalker.tscn`
+- [x] 5.2 Create `scenes/enemies/shadow_stalker.tscn`
   - Generate Shadow Stalker sprites via PixelLab
   - Configure AnimatedSprite2D with idle, walk, teleport (surprise-uppercut), attack (cross-punch), death
-- [ ] 5.3 Test teleport behavior and timing
+- [x] 5.3 Test teleport behavior and timing
 
 ## 6. Shadow Brute Enemy
 
