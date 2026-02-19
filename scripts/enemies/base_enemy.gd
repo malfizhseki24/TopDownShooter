@@ -2,6 +2,11 @@ class_name BaseEnemy
 extends CharacterBody2D
 ## Base class for all enemy types in the game.
 ## Provides common functionality: HP, damage, movement, hit feedback, death.
+##
+## Subclasses should override:
+##   - _update_behavior(delta) for movement AI
+##   - _update_animation() for sprite animations
+##   - die() if custom death behavior needed (e.g., respawn)
 
 ## Emitted when enemy dies
 signal died
@@ -72,6 +77,25 @@ func _get_direction_to_player() -> Vector2:
 	if not _player:
 		return Vector2.ZERO
 	return (_player.global_position - global_position).normalized()
+
+
+## Get cardinal direction string from current velocity (north, south, east, west)
+## Use this for animation names like "walk_north", "attack_east", etc.
+func _get_animation_direction() -> String:
+	return _get_animation_direction_from_vector(velocity)
+
+
+## Get cardinal direction string from a given direction vector
+## Useful when you need direction before setting velocity (e.g., during attack)
+func _get_animation_direction_from_vector(dir: Vector2) -> String:
+	if dir.y < -0.5:
+		return "north"
+	elif dir.y > 0.5:
+		return "south"
+	elif dir.x < 0:
+		return "west"
+	else:
+		return "east"
 
 
 ## Take damage from an external source

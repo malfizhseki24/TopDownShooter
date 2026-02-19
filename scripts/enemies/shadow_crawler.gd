@@ -76,10 +76,12 @@ func _on_hitbox_body_entered(body: Node2D) -> void:
 func _attack() -> void:
 	_is_attacking = true
 	current_state = State.ATTACKING
+
+	# Get direction BEFORE zeroing velocity (fixes direction bug)
+	var dir := _get_animation_direction()
 	velocity = Vector2.ZERO
 
 	# Play attack animation
-	var dir := _get_animation_direction()
 	var attack_anim := "attack_" + dir
 	if sprite is AnimatedSprite2D and sprite.sprite_frames:
 		if sprite.sprite_frames.has_animation(attack_anim):
@@ -133,17 +135,6 @@ func _update_animation() -> void:
 			sprite.flip_h = false
 			if sprite.animation != full_anim:
 				sprite.play(full_anim)
-
-
-func _get_animation_direction() -> String:
-	if velocity.y < -0.5:
-		return "north"
-	elif velocity.y > 0.5:
-		return "south"
-	elif velocity.x < 0:
-		return "west"
-	else:
-		return "east"
 
 
 func _play_death_animation() -> void:

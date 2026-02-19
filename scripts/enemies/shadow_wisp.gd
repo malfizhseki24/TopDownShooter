@@ -116,17 +116,6 @@ func _update_animation() -> void:
 				sprite.play(east_anim)
 
 
-func _get_animation_direction() -> String:
-	if velocity.y < -0.5:
-		return "north"
-	elif velocity.y > 0.5:
-		return "south"
-	elif velocity.x < 0:
-		return "west"
-	else:
-		return "east"
-
-
 func _play_death_animation() -> void:
 	# Play death animation if available
 	if sprite is AnimatedSprite2D:
