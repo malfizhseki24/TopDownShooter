@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b64jyiil250mk"]
 
-[ext_resource type="Script" uid="uid://cxx3t2ivas5xj" path="res://scripts/enemies/shadow_crawler.gd" id="1_script"]
+[ext_resource type="Script" path="res://scripts/enemies/shadow_crawler.gd" id="1_script"]
 [ext_resource type="SpriteFrames" path="res://assets/sprites/characters/enemies/shadow_crawler/shadow_crawler_frames.tres" id="2_frames"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_collision"]

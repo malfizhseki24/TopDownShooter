@@ -1,0 +1,95 @@
+[gd_scene load_steps=6 format=3 uid="uid://test_shadow_stalker"]
+
+[ext_resource type="Script" path="res://scripts/levels/test_shadow_stalker.gd" id="1_main"]
+[ext_resource type="Script" path="res://scripts/utils/pixel_camera_2d.gd" id="2_camera"]
+[ext_resource type="PackedScene" uid="uid://player_scene" path="res://scenes/player/player.tscn" id="3_player"]
+[ext_resource type="PackedScene" path="res://scenes/enemies/shadow_stalker.tscn" id="4_stalker"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wall"]
+size = Vector2(800, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wall_vertical"]
+size = Vector2(32, 600)
+
+[node name="TestShadowStalker" type="Node2D"]
+script = ExtResource("1_main")
+
+[node name="Ground" type="ColorRect" parent="."]
+z_index = -10
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 800.0
+offset_bottom = 600.0
+color = Color(0.15, 0.2, 0.15, 1)
+
+[node name="Walls" type="Node2D" parent="."]
+
+[node name="TopWall" type="StaticBody2D" parent="Walls"]
+position = Vector2(400, 16)
+collision_layer = 8
+collision_mask = 0
+
+[node name="WallSprite" type="ColorRect" parent="Walls/TopWall"]
+offset_left = -400.0
+offset_top = -16.0
+offset_right = 400.0
+offset_bottom = 16.0
+color = Color(0.3, 0.25, 0.2, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/TopWall"]
+shape = SubResource("RectangleShape2D_wall")
+
+[node name="BottomWall" type="StaticBody2D" parent="Walls"]
+position = Vector2(400, 584)
+collision_layer = 8
+collision_mask = 0
+
+[node name="WallSprite" type="ColorRect" parent="Walls/BottomWall"]
+offset_left = -400.0
+offset_top = -16.0
+offset_right = 400.0
+offset_bottom = 16.0
+color = Color(0.3, 0.25, 0.2, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/BottomWall"]
+shape = SubResource("RectangleShape2D_wall")
+
+[node name="LeftWall" type="StaticBody2D" parent="Walls"]
+position = Vector2(16, 300)
+collision_layer = 8
+collision_mask = 0
+
+[node name="WallSprite" type="ColorRect" parent="Walls/LeftWall"]
+offset_left = -16.0
+offset_top = -300.0
+offset_right = 16.0
+offset_bottom = 300.0
+color = Color(0.3, 0.25, 0.2, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/LeftWall"]
+shape = SubResource("RectangleShape2D_wall_vertical")
+
+[node name="RightWall" type="StaticBody2D" parent="Walls"]
+position = Vector2(784, 300)
+collision_layer = 8
+collision_mask = 0
+
+[node name="WallSprite" type="ColorRect" parent="Walls/RightWall"]
+offset_left = -16.0
+offset_top = -300.0
+offset_right = 16.0
+offset_bottom = 300.0
+color = Color(0.3, 0.25, 0.2, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/RightWall"]
+shape = SubResource("RectangleShape2D_wall_vertical")
+
+[node name="Player" parent="." instance=ExtResource("3_player")]
+position = Vector2(400, 300)
+
+[node name="ShadowStalker" parent="." instance=ExtResource("4_stalker")]
+position = Vector2(200, 150)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+script = ExtResource("2_camera")
+smoothing_speed = 8.0

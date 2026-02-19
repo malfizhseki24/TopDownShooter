@@ -40,7 +40,6 @@ func _update_behavior(delta: float) -> void:
 		_visible_timer -= delta
 		if _visible_timer <= 0:
 			_post_teleport_visible = false
-			# Start moving toward player
 			current_state = State.MOVING
 		return
 
@@ -71,18 +70,15 @@ func _do_teleport() -> void:
 	current_state = State.ATTACKING
 	velocity = Vector2.ZERO
 
+	# Hide enemy during teleport (for effect)
+	hide()
+
 	# Play teleport animation (disappearing)
-	if sprite is AnimatedSprite2D and sprite.sprite_frames:
-		if sprite.sprite_frames.has_animation("teleport_south"):
-			var dir := _get_animation_direction()
-			var teleport_anim := "teleport_" + dir
-			if sprite.sprite_frames.has_animation(teleport_anim):
-				sprite.play(teleport_anim)
-				await sprite.animation_finished
+	_play_teleport_animation()
 
 	# Calculate teleport position (random distance from player, random angle)
 	var teleport_distance := randf_range(TELEPORT_MIN_DISTANCE, TELEPORT_MAX_DISTANCE)
-	var teleport_angle := randf() * TAU  # Random angle in radians
+	var teleport_angle := randf() * TAU
 	var offset := Vector2(cos(teleport_angle), sin(teleport_angle)) * teleport_distance
 
 	if _player:
@@ -92,14 +88,11 @@ func _do_teleport() -> void:
 		if _player:
 			global_position = _player.global_position + offset
 
+	# Show enemy at new position
+	show()
+
 	# Play teleport animation (appearing)
-	if sprite is AnimatedSprite2D and sprite.sprite_frames:
-		if sprite.sprite_frames.has_animation("teleport_south"):
-			var dir := _get_animation_direction()
-			var teleport_anim := "teleport_" + dir
-			if sprite.sprite_frames.has_animation(teleport_anim):
-				sprite.play(teleport_anim)
-				await sprite.animation_finished
+	_play_teleport_animation()
 
 	# Set visible period after teleport
 	_post_teleport_visible = true
@@ -112,6 +105,30 @@ func _do_teleport() -> void:
 		var idle_anim := "idle_" + dir
 		if sprite.sprite_frames.has_animation(idle_anim):
 			sprite.play(idle_anim)
+		elif dir == "west" and sprite.sprite_frames.has_animation("idle_east"):
+			sprite.flip_h = true
+			sprite.play("idle_east")
+
+
+func _play_teleport_animation() -> void:
+	if sprite is AnimatedSprite2D and sprite.sprite_frames:
+		var dir := _get_animation_direction()
+		var teleport_anim := "teleport_" + dir
+
+		# Check if animation exists, fallback to east with flip for west
+		if sprite.sprite_frames.has_animation(teleport_anim):
+			sprite.flip_h = false
+			sprite.play(teleport_anim)
+			await sprite.animation_finished
+		elif dir == "west" and sprite.sprite_frames.has_animation("teleport_east"):
+			sprite.flip_h = true
+			sprite.play("teleport_east")
+			await sprite.animation_finished
+		elif sprite.sprite_frames.has_animation("teleport_south"):
+			# Fallback to south
+			sprite.flip_h = false
+			sprite.play("teleport_south")
+			await sprite.animation_finished
 
 
 func _update_animation() -> void:

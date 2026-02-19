@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://byrlr2muiwr16"]
 
-[ext_resource type="Script" uid="uid://bnk7dqrtvq4bk" path="res://scripts/enemies/shadow_wisp.gd" id="1_script"]
+[ext_resource type="Script" path="res://scripts/enemies/shadow_wisp.gd" id="1_script"]
 [ext_resource type="SpriteFrames" path="res://assets/sprites/characters/enemies/shadow_wisp/shadow_wisp_frames.tres" id="2_frames"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jimwf"]
