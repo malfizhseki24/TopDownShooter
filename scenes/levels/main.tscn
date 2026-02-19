@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://main_level"]
+[gd_scene load_steps=6 format=3 uid="uid://main_level"]
 
 [ext_resource type="Script" path="res://scripts/utils/pixel_camera_2d.gd" id="1_camera"]
 [ext_resource type="Script" path="res://scripts/levels/main.gd" id="2_main"]
 [ext_resource type="PackedScene" uid="uid://player_scene" path="res://scenes/player/player.tscn" id="3_player"]
 [ext_resource type="PackedScene" path="res://scenes/enemies/shadow_wisp.tscn" id="4_wisp"]
+[ext_resource type="PackedScene" path="res://scenes/enemies/shadow_crawler.tscn" id="5_crawler"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wall"]
 size = Vector2(480, 32)
@@ -141,6 +142,9 @@ value = 100.0
 
 [node name="ShadowWisp" parent="Enemies" instance=ExtResource("4_wisp")]
 position = Vector2(100, 100)
+
+[node name="ShadowCrawler" parent="Enemies" instance=ExtResource("5_crawler")]
+position = Vector2(350, 180)
 
 [node name="EnemySpawns" type="Node2D" parent="."]
 

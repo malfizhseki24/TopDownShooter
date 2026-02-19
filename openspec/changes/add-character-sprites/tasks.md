@@ -58,17 +58,23 @@ All characters use **Octopath Traveler Heroes** art style:
 
 ## 4. Generate Shadow Crawler Enemy - 64x64 (Quadruped)
 
-- [ ] 4.1 Queue Shadow Crawler character creation (64x64, 4-directional, quadruped, Octopath style)
-- [ ] 4.2 Queue idle animation → idle
-- [ ] 4.3 Queue walk animation → walk
-- [ ] 4.4 Queue attack animation → attack
-- [ ] 4.5 Queue death animation → death
-- [ ] 4.6 Poll status until complete
-- [ ] 4.7 Download and extract to `assets/sprites/characters/enemies/shadow_crawler/`
+- [x] 4.1 Queue Shadow Crawler character creation (64x64, 4-directional, quadruped, Octopath style)
+- [x] 4.2 Queue idle animation → idle
+- [x] 4.3 Queue walk animation → running-4-frames
+- [x] 4.4 Queue attack animation → angry
+- [x] 4.5 Queue death animation → seated-on-belly-idle
+- [x] 4.6 Poll status until complete
+- [x] 4.7 Download and extract to `assets/sprites/characters/enemies/shadow_crawler/`
 
 **Target Size:** 64x64 pixels
 **Body Type:** Quadruped (cat template)
-**Character ID:** _pending_
+**Character ID:** 65a13ae1-5f1d-40a6-af5c-0be43449f831
+
+**Animations Generated:**
+- idle: 8 frames × 4 directions (complete)
+- running-4-frames: 4 frames × 4 directions (complete)
+- angry (attack): 7 frames × 4 directions (complete)
+- seated-on-belly-idle (death): 10 frames × 4 directions (complete)
 
 ## 5. Generate Shadow Stalker Enemy - 64x64
 
