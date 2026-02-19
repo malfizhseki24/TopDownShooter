@@ -15,6 +15,7 @@ const CHARGE_DURATION: float = 0.5
 const CHARGE_COOLDOWN: float = 3.0
 const TELEGRAPH_DURATION: float = 0.3
 const RESPAWN_DELAY: float = 5.0
+const ATTACK_COOLDOWN: float = 0.8
 
 # State tracking
 var _charge_cooldown_timer: float = 0.0
@@ -22,6 +23,7 @@ var _is_charging: bool = false
 var _is_telegraphing: bool = false
 var _charge_timer: float = 0.0
 var _charge_direction: Vector2 = Vector2.ZERO
+var _attack_on_cooldown: bool = false
 
 
 func _ready() -> void:
@@ -266,3 +268,7 @@ func _get_respawn_position() -> Vector2:
 		return spawn.global_position
 
 	return global_position  # fallback
+
+
+func _reset_attack_cooldown() -> void:
+	_attack_on_cooldown = false
