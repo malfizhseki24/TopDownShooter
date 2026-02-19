@@ -54,14 +54,14 @@
 
 ## 6. Shadow Brute Enemy
 
-- [ ] 6.1 Create `scripts/enemies/shadow_brute.gd` extending BaseEnemy
+- [x] 6.1 Create `scripts/enemies/shadow_brute.gd` extending BaseEnemy
   - Set stats: hp=150, contact_damage=30, move_speed=60
   - Implement charge attack: telegraph (0.3s flash), charge (300 px/sec, 0.5s)
   - Implement 3 sec charge cooldown
   - Trigger charge when player within 150px
-- [ ] 6.2 Create `scenes/enemies/shadow_brute.tscn`
+- [x] 6.2 Create `scenes/enemies/shadow_brute.tscn`
   - Generate Shadow Brute sprites via PixelLab
-  - Configure AnimatedSprite2D with idle, walk, charge (running-4-frames), attack (two-footed-jump), death
+  - Configure AnimatedSprite2D with idle, walk, charge (crouched-walking), attack (two-footed-jump), death
 - [ ] 6.3 Test charge telegraph and cooldown
 
 ## 7. Enemy Spawn System

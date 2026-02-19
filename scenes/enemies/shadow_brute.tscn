@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://shadow_brute_scene"]
+
+[ext_resource type="Script" path="res://scripts/enemies/shadow_brute.gd" id="1_script"]
+[ext_resource type="SpriteFrames" uid="uid://shadow_brute_frames" path="res://assets/sprites/characters/enemies/shadow_brute/shadow_brute_frames.tres" id="2_frames"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_collision"]
+radius = 16.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hitbox"]
+radius = 20.0
+
+[node name="ShadowBrute" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 8
+script = ExtResource("1_script")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+sprite_frames = ExtResource("2_frames")
+animation = &"breathing-idle_south"
+autoplay = ""
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_collision")
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("CircleShape2D_hitbox")
