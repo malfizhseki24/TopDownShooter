@@ -1,0 +1,124 @@
+[gd_scene load_steps=11 format=3 uid="uid://c8rm_healshrine001"]
+
+[ext_resource type="Script" path="res://scripts/interactables/heal_shrine.gd" id="1_shrine"]
+[ext_resource type="Script" path="res://scripts/ui/interact_prompt.gd" id="2_prompt"]
+[ext_resource type="Texture2D" path="res://assets/vfx/textures/rpicster/offset_glow.png" id="3_glow_tex"]
+[ext_resource type="Texture2D" path="res://assets/vfx/textures/rpicster/floaty_32.png" id="4_floaty_tex"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_shrine"]
+radius = 25.0
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_additive_glow"]
+blend_mode = 1
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_additive_floaty"]
+blend_mode = 1
+particles_animation = true
+particles_anim_h_frames = 7
+particles_anim_v_frames = 7
+particles_anim_loop = false
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_idle_glow"]
+emission_shape = 1
+emission_sphere_radius = 8.0
+direction = Vector3(0, -1, 0)
+spread = 40.0
+initial_velocity_min = 4.0
+initial_velocity_max = 10.0
+gravity = Vector3(0, -12, 0)
+scale_min = 0.03
+scale_max = 0.06
+color = Color(0.3, 1, 0.5, 0.6)
+
+[sub_resource type="Gradient" id="Gradient_idle_floaty"]
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = PackedColorArray(0.2, 0.8, 0.4, 0, 0.3, 1, 0.5, 0.4, 0.2, 0.7, 0.3, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_idle_floaty"]
+gradient = SubResource("Gradient_idle_floaty")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_idle_floaty"]
+emission_shape = 1
+emission_sphere_radius = 12.0
+direction = Vector3(0, -1, 0)
+spread = 180.0
+initial_velocity_min = 2.0
+initial_velocity_max = 6.0
+orbit_velocity_min = 0.15
+orbit_velocity_max = 0.3
+gravity = Vector3(0, -8, 0)
+scale_min = 0.01
+scale_max = 0.02
+color_ramp = SubResource("GradientTexture1D_idle_floaty")
+anim_speed_min = 0.0
+anim_speed_max = 0.0
+anim_offset_min = 0.0
+anim_offset_max = 1.0
+
+[node name="HealShrine" type="Area2D"]
+collision_layer = 0
+collision_mask = 1
+script = ExtResource("1_shrine")
+heal_amount = 50
+
+[node name="ShrineVisual" type="Node2D" parent="."]
+
+[node name="Base" type="Polygon2D" parent="ShrineVisual"]
+color = Color(0.3, 0.3, 0.35, 1)
+polygon = PackedVector2Array(-14, 4, -12, 10, 12, 10, 14, 4, 14, -2, -14, -2)
+
+[node name="Pillar" type="Polygon2D" parent="ShrineVisual"]
+color = Color(0.5, 0.5, 0.55, 1)
+polygon = PackedVector2Array(-6, -2, -6, -18, 6, -18, 6, -2)
+
+[node name="Crystal" type="Polygon2D" parent="ShrineVisual"]
+color = Color(0.2, 0.9, 0.4, 0.9)
+polygon = PackedVector2Array(0, -28, -6, -20, -4, -14, 4, -14, 6, -20)
+
+[node name="GlowInner" type="Polygon2D" parent="ShrineVisual"]
+color = Color(0.4, 1, 0.6, 0.4)
+polygon = PackedVector2Array(0, -26, -4, -20, -2, -16, 2, -16, 4, -20)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_shrine")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+color = Color(0.2, 1, 0.4, 1)
+energy = 1.2
+shadow_enabled = true
+texture_scale = 1.5
+
+[node name="IdleGlow" type="GPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_additive_glow")
+position = Vector2(0, -18)
+emitting = true
+amount = 10
+one_shot = false
+lifetime = 1.8
+explosiveness = 0.1
+randomness = 0.5
+process_material = SubResource("ParticleProcessMaterial_idle_glow")
+texture = ExtResource("3_glow_tex")
+
+[node name="IdleFloaty" type="GPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_additive_floaty")
+position = Vector2(0, -18)
+emitting = true
+amount = 8
+one_shot = false
+lifetime = 2.5
+explosiveness = 0.0
+randomness = 0.7
+process_material = SubResource("ParticleProcessMaterial_idle_floaty")
+texture = ExtResource("4_floaty_tex")
+
+[node name="InteractPrompt" type="Control" parent="."]
+offset_left = -30.0
+offset_top = -44.0
+offset_right = 30.0
+offset_bottom = -30.0
+mouse_filter = 2
+script = ExtResource("2_prompt")
+key_text = "[E]"
+action_text = "Heal"
+action_color = Color(0.439, 0.757, 0.702, 1)

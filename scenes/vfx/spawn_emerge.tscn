@@ -1,0 +1,83 @@
+[gd_scene load_steps=13 format=3 uid="uid://vfx_spawn_emerge_01"]
+
+[ext_resource type="Texture2D" path="res://assets/vfx/textures/kenney_particles/smoke_05.png" id="1_smoke"]
+[ext_resource type="Texture2D" path="res://assets/vfx/textures/rpicster/effect_2.png" id="2_burst_tex"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_additive_burst"]
+blend_mode = 1
+
+[sub_resource type="Gradient" id="Gradient_spawn_smoke"]
+offsets = PackedFloat32Array(0, 0.25, 0.6, 1)
+colors = PackedColorArray(0.15, 0.05, 0.25, 0, 0.25, 0.1, 0.35, 0.85, 0.2, 0.08, 0.3, 0.5, 0.1, 0.05, 0.2, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_spawn_smoke"]
+gradient = SubResource("Gradient_spawn_smoke")
+
+[sub_resource type="Curve" id="Curve_spawn_alpha"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.15, 0.9), 0.0, 0.0, 0, 0, Vector2(0.5, 0.5), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_spawn_alpha"]
+curve = SubResource("Curve_spawn_alpha")
+
+[sub_resource type="Curve" id="Curve_spawn_scale"]
+max_value = 2.0
+_data = [Vector2(0, 0.2), 0.0, 0.0, 0, 0, Vector2(0.4, 1.3), 0.0, 0.0, 0, 0, Vector2(1, 1.8), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_spawn_scale"]
+curve = SubResource("Curve_spawn_scale")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_spawn_smoke"]
+emission_shape = 1
+emission_sphere_radius = 6.0
+direction = Vector3(0, -1, 0)
+spread = 90.0
+initial_velocity_min = 12.0
+initial_velocity_max = 30.0
+gravity = Vector3(0, -10, 0)
+scale_min = 0.02
+scale_max = 0.05
+scale_curve = SubResource("CurveTexture_spawn_scale")
+color_ramp = SubResource("GradientTexture1D_spawn_smoke")
+alpha_curve = SubResource("CurveTexture_spawn_alpha")
+
+[sub_resource type="Gradient" id="Gradient_spawn_burst"]
+offsets = PackedFloat32Array(0, 0.3, 1)
+colors = PackedColorArray(0.4, 0.15, 0.6, 0, 0.5, 0.2, 0.7, 0.9, 0.3, 0.1, 0.5, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_spawn_burst"]
+gradient = SubResource("Gradient_spawn_burst")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_spawn_burst"]
+emission_shape = 1
+emission_sphere_radius = 4.0
+direction = Vector3(0, -1, 0)
+spread = 180.0
+initial_velocity_min = 20.0
+initial_velocity_max = 50.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.03
+scale_max = 0.07
+color_ramp = SubResource("GradientTexture1D_spawn_burst")
+
+[node name="SpawnEmerge" type="Node2D"]
+
+[node name="SmokeParticles" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 16
+one_shot = true
+explosiveness = 0.85
+lifetime = 0.6
+process_material = SubResource("ParticleProcessMaterial_spawn_smoke")
+texture = ExtResource("1_smoke")
+
+[node name="BurstParticles" type="GPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_additive_burst")
+emitting = false
+amount = 12
+one_shot = true
+explosiveness = 0.95
+lifetime = 0.35
+process_material = SubResource("ParticleProcessMaterial_spawn_burst")
+texture = ExtResource("2_burst_tex")

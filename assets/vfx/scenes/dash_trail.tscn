@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://b7m8kp2y1k4dm"]
+
+[ext_resource type="Texture2D" path="res://assets/vfx/textures/kenney_particles/smoke_05.png" id="1_smoke"]
+
+[sub_resource type="Gradient" id="Gradient_dash"]
+offsets = PackedFloat32Array(0, 0.3, 0.7, 1)
+colors = PackedColorArray(0.9, 0.95, 1, 0.9, 0.6, 0.7, 0.9, 0.7, 0.4, 0.5, 0.7, 0.4, 0.2, 0.3, 0.4, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_dash"]
+gradient = SubResource("Gradient_dash")
+
+[sub_resource type="Curve" id="Curve_alpha"]
+_data = [Vector2(0, 0.9), 0.0, 0.0, 0, 0, Vector2(0.4, 0.7), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_alpha"]
+curve = SubResource("Curve_alpha")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_dash"]
+emission_shape = 1
+emission_sphere_radius = 3.0
+direction = Vector3(0, 0, 0)
+spread = 70.0
+initial_velocity_min = 5.0
+initial_velocity_max = 12.0
+gravity = Vector3(0, -8, 0)
+scale_min = 0.04
+scale_max = 0.08
+color_ramp = SubResource("GradientTexture1D_dash")
+alpha_curve = SubResource("CurveTexture_alpha")
+
+[node name="DashTrail" type="GPUParticles2D"]
+emitting = false
+amount = 24
+lifetime = 0.35
+explosiveness = 0.2
+process_material = SubResource("ParticleProcessMaterial_dash")
+texture = ExtResource("1_smoke")

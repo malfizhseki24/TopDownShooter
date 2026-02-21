@@ -1,5 +1,9 @@
-## ADDED Requirements
+# player Specification
 
+## Purpose
+
+Defines the player character (Kasuari) visual style, animation system, rendering approach, respawn behavior, and frame rate conventions. This spec covers the player's presentation layer — combat mechanics are in `player-combat`, movement in `player-movement`, aiming in `player-aiming`.
+## Requirements
 ### Requirement: Character Sprite Art Style
 
 The player character sprites SHALL follow Octopath Traveler Heroes-inspired art style.
@@ -110,8 +114,6 @@ The player animations SHALL use consistent frame rates.
 - **WHEN** shoot, dash, or death animation plays
 - **THEN** frame rate is 12 FPS
 
-## MODIFIED Requirements
-
 ### Requirement: Player Rendering
 
 The player character SHALL use AnimatedSprite2D instead of static Sprite2D.
@@ -121,4 +123,21 @@ The player character SHALL use AnimatedSprite2D instead of static Sprite2D.
 - **WHEN** player is visible in the game world
 - **THEN** AnimatedSprite2D displays the current animation frame
 - **AND** sprite is centered on the player's collision position
-- **AND** scale is 0.5× (matching original Sprite2D scale)
+- **AND** scale is 0.5x (matching original Sprite2D scale)
+
+### Requirement: Player Hitbox Detection
+
+The player Hitbox SHALL detect enemy collisions and trigger damage.
+
+#### Scenario: Enemy contact damage
+
+- **WHEN** enemy body enters player Hitbox area
+- **THEN** player.take_damage(enemy.contact_damage) is called
+- **AND** damage value is retrieved from enemy.get_contact_damage()
+
+#### Scenario: Hitbox collision layers
+
+- **WHEN** player is in game
+- **THEN** player Hitbox is on "player" collision layer
+- **AND** Hitbox detects "enemy" collision layer
+

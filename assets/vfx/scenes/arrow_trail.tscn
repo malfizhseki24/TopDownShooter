@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://c5m8qp2x1k3ql"]
+
+[ext_resource type="Texture2D" path="res://assets/vfx/textures/kenney_particles/trace_01.png" id="1_trace"]
+
+[sub_resource type="Gradient" id="Gradient_trail"]
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = PackedColorArray(1, 0.9, 0.6, 1, 0.9, 0.7, 0.3, 0.6, 0.6, 0.4, 0.2, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_trail"]
+gradient = SubResource("Gradient_trail")
+
+[sub_resource type="Curve" id="Curve_alpha"]
+_data = [Vector2(0, 0.8), 0.0, 0.0, 0, 0, Vector2(0.3, 0.6), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_alpha"]
+curve = SubResource("Curve_alpha")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_trail"]
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector3(0, 0, 0)
+spread = 30.0
+initial_velocity_min = 2.0
+initial_velocity_max = 5.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.02
+scale_max = 0.04
+color_ramp = SubResource("GradientTexture1D_trail")
+alpha_curve = SubResource("CurveTexture_alpha")
+
+[node name="ArrowTrail" type="GPUParticles2D"]
+emitting = true
+amount = 16
+lifetime = 0.15
+process_material = SubResource("ParticleProcessMaterial_trail")
+texture = ExtResource("1_trace")

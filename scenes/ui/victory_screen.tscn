@@ -18,7 +18,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0.1, 0.15, 0.8)
+color = Color(0, 0.15, 0.1, 0.9)
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -27,10 +27,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -100.0
-offset_top = -75.0
-offset_right = 100.0
-offset_bottom = 75.0
+offset_left = -180.0
+offset_top = -180.0
+offset_right = 180.0
+offset_bottom = 180.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -46,10 +46,11 @@ offset_bottom = -20.0
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
+theme_override_constants/separation = 10
 
 [node name="VictoryLabel" type="Label" parent="Panel/VBoxContainer"]
 layout_mode = 2
-text = "VICTORY"
+text = "VICTORY!"
 horizontal_alignment = 1
 
 [node name="ThanksLabel" type="Label" parent="Panel/VBoxContainer"]
@@ -57,6 +58,31 @@ layout_mode = 2
 text = "You have defeated the Shadow Boar!"
 horizontal_alignment = 1
 autowrap_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="SeedLabel" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Seed: -"
+horizontal_alignment = 1
+
+[node name="StatsLabel" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Enemies: 0
+Time: 0:00"
+horizontal_alignment = 1
+
+[node name="CopySeedButton" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "COPY SEED"
+
+[node name="HSeparator2" type="HSeparator" parent="Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="NewRunButton" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "NEW RUN (Harder)"
 
 [node name="MenuButton" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2

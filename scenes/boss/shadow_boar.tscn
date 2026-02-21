@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://cew4ankhel0wa"]
+
+[ext_resource type="Script" uid="uid://cbbl7yjtlf23i" path="res://scripts/boss/shadow_boar.gd" id="1_script"]
+[ext_resource type="SpriteFrames" path="res://assets/sprites/characters/boss/shadow_boar/shadow_boar_frames.tres" id="2_frames"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_collision"]
+radius = 24.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hitbox"]
+radius = 32.0
+
+[node name="ShadowBoar" type="CharacterBody2D" unique_id=1318026104]
+collision_layer = 2
+collision_mask = 8
+script = ExtResource("1_script")
+
+[node name="Shadow" type="Polygon2D" parent="." unique_id=2124123413]
+z_index = -1
+position = Vector2(0, 10.81)
+color = Color(0, 0, 0, 0.3)
+polygon = PackedVector2Array(-24, -6, -20, -12, -10, -14, 0, -14, 10, -14, 20, -12, 24, -6, 24, 0, 20, 6, 10, 8, 0, 8, -10, 8, -20, 6, -24, 0)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2066279815]
+z_index = 1
+scale = Vector2(0.5, 0.5)
+sprite_frames = ExtResource("2_frames")
+animation = &"idle_south"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=751943579]
+shape = SubResource("CircleShape2D_collision")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=466933490]
+collision_layer = 2
+collision_mask = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1553601540]
+shape = SubResource("CircleShape2D_hitbox")

@@ -1,7 +1,8 @@
 # player-aiming Specification
 
 ## Purpose
-TBD - created by archiving change phase-1-foundation. Update Purpose after archive.
+
+Defines the player's mouse-based aiming system: direction calculation from player to cursor using global coordinates, and exposing the aim direction vector for arrow spawning.
 ## Requirements
 ### Requirement: Mouse-Based Aiming
 

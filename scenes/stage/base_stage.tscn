@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cvfgp4bq7d30w"]
+
+[ext_resource type="Script" path="res://scripts/stage/stage_generator.gd" id="1_generator"]
+[ext_resource type="Resource" path="res://resources/stage_configs/default_stage.tres" id="2_config"]
+
+[node name="BaseStage" type="Node2D" unique_id=2053387031]
+
+[node name="StageGenerator" type="Node" parent="." unique_id=1650542712]
+script = ExtResource("1_generator")
+config = ExtResource("2_config")
+
+[node name="TileLayer" type="TileMapLayer" parent="StageGenerator" unique_id=73012859]
+
+[node name="Entities" type="Node2D" parent="." unique_id=2086849773]
+z_index = 1
+y_sort_enabled = true
+
+[node name="Player" type="Node2D" parent="Entities" unique_id=916544218]
+
+[node name="Enemies" type="Node2D" parent="Entities" unique_id=29776177]

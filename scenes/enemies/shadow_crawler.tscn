@@ -14,7 +14,14 @@ collision_layer = 2
 collision_mask = 8
 script = ExtResource("1_script")
 
+[node name="Shadow" type="Polygon2D" parent="."]
+position = Vector2(0, 8)
+z_index = -1
+color = Color(0, 0, 0, 0.3)
+polygon = PackedVector2Array(-10, -3, -8, -5, -4, -6, 0, -6, 4, -6, 8, -5, 10, -3, 10, 0, 8, 2, 4, 3, 0, 3, -4, 3, -8, 2, -10, 0)
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1579993228]
+z_index = 1
 scale = Vector2(0.5, 0.5)
 sprite_frames = ExtResource("2_frames")
 animation = &"idle_south"

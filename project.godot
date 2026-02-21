@@ -20,6 +20,8 @@ config/icon="res://icon.svg"
 GameManager="*res://scripts/autoload/game_manager.gd"
 EventBus="*res://scripts/autoload/event_bus.gd"
 AudioManager="*res://scripts/autoload/audio_manager.gd"
+VFXManager="*res://scripts/vfx/vfx_manager.gd"
+HitstopManager="*res://scripts/autoload/hitstop_manager.gd"
 
 [display]
 
@@ -28,6 +30,10 @@ window/size/viewport_height=270
 window/size/window_width_override=1920
 window/size/window_height_override=1080
 window/stretch/mode="viewport"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/BurstParticles2D/plugin.cfg")
 
 [input]
 
@@ -100,6 +106,7 @@ pause={
 2d_physics/layer_3="arrow"
 2d_physics/layer_4="wall"
 2d_physics/layer_5="boss"
+2d_physics/layer_6="destructible"
 
 [physics]
 

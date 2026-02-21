@@ -1,7 +1,8 @@
 # bow-arrow Specification
 
 ## Purpose
-TBD - created by archiving change phase-1-foundation. Update Purpose after archive.
+
+Defines the bow and arrow projectile system: firing mechanics, fire rate limiting, infinite ammo, arrow lifetime, collision behavior, and physics layer configuration.
 ## Requirements
 ### Requirement: Arrow Firing
 

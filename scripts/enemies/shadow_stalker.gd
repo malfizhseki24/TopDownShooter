@@ -4,17 +4,15 @@ extends BaseEnemy
 ## Stats: 60 HP, 20 contact damage, 100 px/sec movement.
 ## Behavior: Teleport to random position near player every 2 seconds,
 ## visible for 0.5s after teleport, then chase and attack.
-## Respawns after 5 seconds at random spawn point.
 
-# Preload scene for respawning
-const SCENE := preload("res://scenes/enemies/shadow_stalker.tscn")
+# Preload VFX
+const TELEPORT_SMOKE := preload("res://assets/vfx/scenes/teleport_smoke.tscn")
 
 # Teleport settings
 const TELEPORT_INTERVAL: float = 2.0
 const TELEPORT_MIN_DISTANCE: float = 80.0
 const TELEPORT_MAX_DISTANCE: float = 120.0
 const VISIBLE_AFTER_TELEPORT: float = 0.5
-const RESPAWN_DELAY: float = 5.0
 
 # State tracking
 var _teleport_timer: float = 0.0
@@ -27,6 +25,7 @@ func _ready() -> void:
 	max_hp = 60
 	contact_damage = 20
 	move_speed = 100.0
+	glow_color = Color(0.8, 0.3, 0.5, 0.4)  # Dark magenta glow
 	super._ready()
 
 
@@ -70,6 +69,9 @@ func _do_teleport() -> void:
 	current_state = State.ATTACKING
 	velocity = Vector2.ZERO
 
+	# Spawn smoke at old position (disappearing)
+	_spawn_teleport_smoke()
+
 	# Hide enemy during teleport (for effect)
 	hide()
 
@@ -91,6 +93,9 @@ func _do_teleport() -> void:
 	# Show enemy at new position
 	show()
 
+	# Spawn smoke at new position (appearing)
+	_spawn_teleport_smoke()
+
 	# Play teleport animation (appearing)
 	_play_teleport_animation()
 
@@ -108,6 +113,15 @@ func _do_teleport() -> void:
 		elif dir == "west" and sprite.sprite_frames.has_animation("idle_east"):
 			sprite.flip_h = true
 			sprite.play("idle_east")
+
+
+func _spawn_teleport_smoke() -> void:
+	var smoke := TELEPORT_SMOKE.instantiate()
+	smoke.global_position = global_position
+	get_tree().current_scene.add_child(smoke)
+	smoke.emitting = true  # Trigger the particle burst
+	# Auto-cleanup after particles finish
+	smoke.finished.connect(smoke.queue_free)
 
 
 func _play_teleport_animation() -> void:
@@ -165,59 +179,9 @@ func _play_death_animation() -> void:
 	await super._play_death_animation()
 
 
-## Override die() to respawn by spawning NEW instance
 func die() -> void:
-	print("[DIE] START - pos: ", global_position)
-	current_state = State.DYING
-	velocity = Vector2.ZERO
-
-	# Disable collision (deferred to avoid physics flush error)
+	# Disable collision before base die() (deferred to avoid physics flush error)
 	if hitbox:
 		hitbox.set_deferred("monitoring", false)
 	$CollisionShape2D.set_deferred("disabled", true)
-	print("[DIE] Collisions disabled - pos: ", global_position)
-
-	# Emit signals
-	died.emit()
-	EventBus.enemy_died.emit(self)
-
-	# Play death animation and wait for it to complete
-	await _play_death_animation()
-
-	print("[DIE] Death animation done, scheduling respawn...")
-
-	# Get spawn position BEFORE queue_free
-	var spawn_pos := _get_respawn_position()
-	print("[DIE] Respawn will be at: ", spawn_pos)
-
-	# Get reference to scene tree (survives after queue_free)
-	var tree := get_tree()
-	var current_scene := tree.current_scene
-
-	# Schedule respawn - lambda is STANDALONE (doesn't reference self)
-	tree.create_timer(RESPAWN_DELAY).timeout.connect(
-		func():
-			print("[RESPAWN] Creating NEW ShadowStalker at: ", spawn_pos)
-			var new_enemy := SCENE.instantiate()
-			new_enemy.global_position = spawn_pos
-			current_scene.add_child(new_enemy)
-			print("[RESPAWN] NEW enemy spawned successfully")
-	)
-
-	# Remove this instance completely
-	queue_free()
-
-
-func _get_respawn_position() -> Vector2:
-	# Find spawn points
-	var spawn_points := get_tree().get_nodes_in_group("enemy_spawn")
-	if spawn_points.is_empty():
-		var spawns_node := get_tree().current_scene.get_node_or_null("EnemySpawns")
-		if spawns_node:
-			spawn_points = spawns_node.get_children()
-
-	if spawn_points.size() > 0:
-		var spawn: Node2D = spawn_points.pick_random()
-		return spawn.global_position
-
-	return global_position  # fallback
+	super.die()

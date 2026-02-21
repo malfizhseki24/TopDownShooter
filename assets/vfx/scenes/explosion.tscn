@@ -1,0 +1,63 @@
+[gd_scene load_steps=10 format=3 uid="uid://c8m7qp5x2lafn"]
+
+[ext_resource type="Texture2D" path="res://assets/vfx/textures/kenney_particles/fire_01.png" id="1_fire"]
+[ext_resource type="Texture2D" path="res://assets/vfx/textures/kenney_particles/smoke_07.png" id="2_smoke"]
+
+[sub_resource type="Gradient" id="Gradient_fire"]
+offsets = PackedFloat32Array(0, 0.2, 0.5, 0.8, 1)
+colors = PackedColorArray(1, 1, 0.8, 1, 1, 0.8, 0.2, 1, 1, 0.4, 0.1, 0.8, 0.6, 0.2, 0.1, 0.4, 0.2, 0.1, 0.1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_fire"]
+gradient = SubResource("Gradient_fire")
+
+[sub_resource type="Curve" id="Curve_alpha"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.4, 0.8), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_alpha"]
+curve = SubResource("Curve_alpha")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_explosion"]
+emission_shape = 1
+emission_sphere_radius = 2.0
+direction = Vector3(0, -1, 0)
+spread = 60.0
+initial_velocity_min = 30.0
+initial_velocity_max = 60.0
+gravity = Vector3(0, 20, 0)
+scale_min = 0.03
+scale_max = 0.08
+color_ramp = SubResource("GradientTexture1D_fire")
+alpha_curve = SubResource("CurveTexture_alpha")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_smoke"]
+emission_shape = 1
+emission_sphere_radius = 3.0
+direction = Vector3(0, -1, 0)
+spread = 30.0
+initial_velocity_min = 8.0
+initial_velocity_max = 16.0
+gravity = Vector3(0, -10, 0)
+scale_min = 0.04
+scale_max = 0.08
+color = Color(0.3, 0.3, 0.3, 0.6)
+
+[node name="Explosion" type="Node2D"]
+
+[node name="FireBurst" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 16
+one_shot = true
+explosiveness = 1.0
+lifetime = 0.3
+process_material = SubResource("ParticleProcessMaterial_explosion")
+texture = ExtResource("1_fire")
+
+[node name="SmokeRise" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 12
+one_shot = true
+explosiveness = 0.9
+lifetime = 1.0
+process_material = SubResource("ParticleProcessMaterial_smoke")
+texture = ExtResource("2_smoke")

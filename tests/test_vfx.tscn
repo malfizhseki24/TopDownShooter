@@ -1,0 +1,95 @@
+[gd_scene load_steps=9 format=3 uid="uid://dan0qp4x3k1gm"]
+
+[ext_resource type="Script" path="res://tests/test_vfx.gd" id="1_script"]
+[ext_resource type="PackedScene" uid="uid://dh8spq2y5rkhv" path="res://assets/vfx/scenes/hit_spark.tscn" id="2_hit"]
+[ext_resource type="PackedScene" uid="uid://c5m8qp2x1k3ql" path="res://assets/vfx/scenes/arrow_trail.tscn" id="3_arrow"]
+[ext_resource type="PackedScene" uid="uid://b7m8kp2y1k4dm" path="res://assets/vfx/scenes/dash_trail.tscn" id="4_dash"]
+[ext_resource type="PackedScene" uid="uid://d2n9qp3x5k7en" path="res://assets/vfx/scenes/death_smoke.tscn" id="5_death"]
+[ext_resource type="PackedScene" uid="uid://c8m7qp5x2k9fn" path="res://assets/vfx/scenes/explosion.tscn" id="6_explosion"]
+[ext_resource type="PackedScene" uid="uid://d4n0qp8x6k8fo" path="res://assets/vfx/scenes/shadow_spawn.tscn" id="7_spawn"]
+
+[node name="TestVFX" type="Node2D"]
+script = ExtResource("1_script")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(240, 135)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UI" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Title" type="Label" parent="CanvasLayer/UI"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -200.0
+offset_top = 50.0
+offset_right = 200.0
+offset_bottom = 80.0
+grow_horizontal = 2
+text = "VFX Test Scene - Click to Preview"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/UI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -150.0
+offset_right = 100.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="HitSparkBtn" type="Button" parent="CanvasLayer/UI/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+text = "Hit Spark"
+
+[node name="ArrowTrailBtn" type="Button" parent="CanvasLayer/UI/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+text = "Arrow Trail"
+
+[node name="DashTrailBtn" type="Button" parent="CanvasLayer/UI/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+text = "Dash Trail"
+
+[node name="DeathSmokeBtn" type="Button" parent="CanvasLayer/UI/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+text = "Death Smoke"
+
+[node name="ExplosionBtn" type="Button" parent="CanvasLayer/UI/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+text = "Explosion"
+
+[node name="ShadowSpawnBtn" type="Button" parent="CanvasLayer/UI/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+text = "Shadow Spawn"
+
+[node name="SpawnPoint" type="Marker2D" parent="."]
+position = Vector2(240, 200)
+
+[connection signal="pressed" from="CanvasLayer/UI/VBoxContainer/HitSparkBtn" to="." method="_on_hit_spark_btn_pressed"]
+[connection signal="pressed" from="CanvasLayer/UI/VBoxContainer/ArrowTrailBtn" to="." method="_on_arrow_trail_btn_pressed"]
+[connection signal="pressed" from="CanvasLayer/UI/VBoxContainer/DashTrailBtn" to="." method="_on_dash_trail_btn_pressed"]
+[connection signal="pressed" from="CanvasLayer/UI/VBoxContainer/DeathSmokeBtn" to="." method="_on_death_smoke_btn_pressed"]
+[connection signal="pressed" from="CanvasLayer/UI/VBoxContainer/ExplosionBtn" to="." method="_on_explosion_btn_pressed"]
+[connection signal="pressed" from="CanvasLayer/UI/VBoxContainer/ShadowSpawnBtn" to="." method="_on_shadow_spawn_btn_pressed"]

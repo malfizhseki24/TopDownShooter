@@ -1,0 +1,84 @@
+[gd_scene load_steps=12 format=3 uid="uid://vfx_portal_vfx_01"]
+
+[ext_resource type="Script" path="res://scripts/vfx/portal_vfx.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/vfx/textures/rpicster/spotlight_1.png" id="2_glow_tex"]
+[ext_resource type="Texture2D" path="res://assets/vfx/textures/rpicster/floaty_64.png" id="3_floaty_tex"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_additive_glow"]
+blend_mode = 1
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_additive_floaty"]
+blend_mode = 1
+particles_animation = true
+particles_anim_h_frames = 7
+particles_anim_v_frames = 7
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id="Gradient_portal_glow"]
+offsets = PackedFloat32Array(0, 0.3, 0.7, 1)
+colors = PackedColorArray(0.3, 0.6, 1, 0, 0.4, 0.8, 1, 0.8, 0.5, 0.9, 1, 0.6, 0.3, 0.6, 0.8, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_portal_glow"]
+gradient = SubResource("Gradient_portal_glow")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_portal_glow"]
+emission_shape = 1
+emission_sphere_radius = 16.0
+direction = Vector3(0, -1, 0)
+spread = 45.0
+initial_velocity_min = 6.0
+initial_velocity_max = 14.0
+gravity = Vector3(0, -25, 0)
+scale_min = 0.04
+scale_max = 0.08
+color_ramp = SubResource("GradientTexture1D_portal_glow")
+
+[sub_resource type="Gradient" id="Gradient_portal_floaty"]
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = PackedColorArray(0.5, 0.8, 1, 0, 0.6, 0.9, 1, 0.5, 0.4, 0.7, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_portal_floaty"]
+gradient = SubResource("Gradient_portal_floaty")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_portal_floaty"]
+emission_shape = 1
+emission_sphere_radius = 20.0
+direction = Vector3(0, -1, 0)
+spread = 180.0
+initial_velocity_min = 3.0
+initial_velocity_max = 8.0
+gravity = Vector3(0, -5, 0)
+orbit_velocity_min = 0.2
+orbit_velocity_max = 0.4
+scale_min = 0.01
+scale_max = 0.025
+color_ramp = SubResource("GradientTexture1D_portal_floaty")
+anim_speed_min = 0.0
+anim_speed_max = 0.0
+anim_offset_min = 0.0
+anim_offset_max = 1.0
+
+[node name="PortalVFX" type="Node2D"]
+script = ExtResource("1_script")
+
+[node name="IdleParticles" type="GPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_additive_glow")
+emitting = true
+amount = 16
+one_shot = false
+lifetime = 1.4
+explosiveness = 0.1
+randomness = 0.6
+process_material = SubResource("ParticleProcessMaterial_portal_glow")
+texture = ExtResource("2_glow_tex")
+
+[node name="FloatyParticles" type="GPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_additive_floaty")
+emitting = true
+amount = 10
+one_shot = false
+lifetime = 2.0
+explosiveness = 0.0
+randomness = 0.8
+process_material = SubResource("ParticleProcessMaterial_portal_floaty")
+texture = ExtResource("3_floaty_tex")

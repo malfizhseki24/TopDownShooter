@@ -1,20 +1,65 @@
-[gd_scene load_steps=4 format=3 uid="uid://arrow_scene"]
+[gd_scene load_steps=10 format=3 uid="uid://arrow_scene"]
 
 [ext_resource type="Script" path="res://scripts/player/arrow.gd" id="1_arrow"]
-[ext_resource type="Texture2D" path="res://assets/sprites/vfx/arrow.png" id="2_texture"]
+[ext_resource type="Texture2D" path="res://assets/sprites/projectiles/arrow.png" id="2_texture"]
+[ext_resource type="Texture2D" path="res://assets/vfx/textures/rpicster/spotlight_1.png" id="3_trail_tex"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_arrow"]
-size = Vector2(16, 4)
+[sub_resource type="CircleShape2D" id="CircleShape2D_arrow"]
+radius = 7.0
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_additive"]
+blend_mode = 1
+
+[sub_resource type="Gradient" id="Gradient_arrow_trail"]
+offsets = PackedFloat32Array(0, 0.3, 0.7, 1)
+colors = PackedColorArray(1, 0.95, 0.75, 1.0, 0.95, 0.85, 0.6, 0.7, 0.8, 0.7, 0.5, 0.35, 0.6, 0.5, 0.3, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_arrow_trail"]
+gradient = SubResource("Gradient_arrow_trail")
+
+[sub_resource type="Curve" id="Curve_arrow_alpha"]
+_data = [Vector2(0, 1.0), 0.0, 0.0, 0, 0, Vector2(0.4, 0.7), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_arrow_alpha"]
+curve = SubResource("Curve_arrow_alpha")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_arrow_trail"]
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector3(0, 0, 0)
+spread = 12.0
+initial_velocity_min = 0.0
+initial_velocity_max = 3.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.08
+scale_max = 0.15
+color_ramp = SubResource("GradientTexture1D_arrow_trail")
+alpha_curve = SubResource("CurveTexture_arrow_alpha")
 
 [node name="Arrow" type="Area2D"]
 collision_layer = 4
-collision_mask = 10
+collision_mask = 42
 script = ExtResource("1_arrow")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_texture")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_arrow")
+shape = SubResource("CircleShape2D_arrow")
+
+[node name="WallCast" type="RayCast2D" parent="."]
+target_position = Vector2(20, 0)
+collision_mask = 8
+
+[node name="TrailParticles" type="GPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_additive")
+emitting = true
+amount = 14
+lifetime = 0.35
+explosiveness = 0.0
+randomness = 0.2
+process_material = SubResource("ParticleProcessMaterial_arrow_trail")
+texture = ExtResource("3_trail_tex")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

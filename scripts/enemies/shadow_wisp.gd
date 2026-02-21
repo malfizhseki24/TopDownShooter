@@ -3,16 +3,11 @@ extends BaseEnemy
 ## Shadow Wisp: Slow floating orb with aggressive homing behavior.
 ## Stats: 25 HP, 10 contact damage, 80 px/sec movement.
 ## Behavior: Chase player → Bounce back on contact → Chase again
-## Respawns after 5 seconds at random spawn point.
-
-# Preload scene for respawning
-const SCENE := preload("res://scenes/enemies/shadow_wisp.tscn")
 
 # Bounce settings
 const BOUNCE_DISTANCE: float = 100.0
 const BOUNCE_DURATION: float = 0.3
 const ATTACK_COOLDOWN: float = 0.5
-const RESPAWN_DELAY: float = 5.0
 
 # State tracking
 var _is_bouncing: bool = false
@@ -24,6 +19,7 @@ func _ready() -> void:
 	max_hp = 25
 	contact_damage = 10
 	move_speed = 80.0
+	glow_color = Color(0.3, 0.8, 1.0, 0.5)  # Cyan glow
 	super._ready()
 
 
@@ -140,52 +136,9 @@ func _play_death_animation() -> void:
 	await super._play_death_animation()
 
 
-## Override die() to respawn by spawning NEW instance
 func die() -> void:
-	current_state = State.DYING
-	velocity = Vector2.ZERO
-
-	# Disable collision (deferred to avoid physics flush error)
+	# Disable collision before base die() (deferred to avoid physics flush error)
 	if hitbox:
 		hitbox.set_deferred("monitoring", false)
 	$CollisionShape2D.set_deferred("disabled", true)
-
-	# Emit signals
-	died.emit()
-	EventBus.enemy_died.emit(self)
-
-	# Play death animation and wait for it to complete
-	await _play_death_animation()
-
-	# Get spawn position BEFORE queue_free
-	var spawn_pos := _get_respawn_position()
-
-	# Get reference to scene tree (survives after queue_free)
-	var tree := get_tree()
-	var current_scene := tree.current_scene
-
-	# Schedule respawn - lambda is STANDALONE (doesn't reference self)
-	tree.create_timer(RESPAWN_DELAY).timeout.connect(
-		func():
-			var new_enemy := SCENE.instantiate()
-			new_enemy.global_position = spawn_pos
-			current_scene.add_child(new_enemy)
-	)
-
-	# Remove this instance completely
-	queue_free()
-
-
-func _get_respawn_position() -> Vector2:
-	# Find spawn points
-	var spawn_points := get_tree().get_nodes_in_group("enemy_spawn")
-	if spawn_points.is_empty():
-		var spawns_node := get_tree().current_scene.get_node_or_null("EnemySpawns")
-		if spawns_node:
-			spawn_points = spawns_node.get_children()
-
-	if spawn_points.size() > 0:
-		var spawn: Node2D = spawn_points.pick_random()
-		return spawn.global_position
-
-	return global_position  # fallback
+	super.die()
