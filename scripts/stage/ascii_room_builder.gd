@@ -153,17 +153,22 @@ static func _classify_cells(grid: Array, width: int, height: int) -> Dictionary:
 	}
 
 
-## Add a 1-tile border of wall cells around the map for clean Wang terrain edges.
+## Add a 3-tile border of wall cells around the map for clean Wang terrain edges.
+## This creates 2 extra wall layers outward plus the original wall from ASCII.
 static func _add_border_padding(wall_cells: Array[Vector2i], width: int, height: int) -> void:
+	const BORDER_LAYERS := 3  # Number of wall layers to add outside the map
+
 	# Top and bottom borders (including corners)
-	for x in range(-1, width + 1):
-		wall_cells.append(Vector2i(x, -1))
-		wall_cells.append(Vector2i(x, height))
+	for layer in range(BORDER_LAYERS):
+		for x in range(-BORDER_LAYERS, width + BORDER_LAYERS):
+			wall_cells.append(Vector2i(x, -1 - layer))
+			wall_cells.append(Vector2i(x, height + layer))
 
 	# Left and right borders (excluding corners already added)
-	for y in range(0, height):
-		wall_cells.append(Vector2i(-1, y))
-		wall_cells.append(Vector2i(width, y))
+	for layer in range(BORDER_LAYERS):
+		for y in range(0, height):
+			wall_cells.append(Vector2i(-1 - layer, y))
+			wall_cells.append(Vector2i(width + layer, y))
 
 
 ## Paint terrain onto a TileMapLayer using Wang auto-tiling.
