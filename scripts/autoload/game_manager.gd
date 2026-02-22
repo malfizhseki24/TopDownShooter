@@ -1,6 +1,6 @@
 extends Node
 ## Manages global game state and flow.
-## Supports roguelite structure with seed-based runs.
+## Linear stage game structure - no seeds or daily challenges.
 
 enum GameState { MENU, PLAYING, PAUSED, GAME_OVER, VICTORY }
 
@@ -14,9 +14,7 @@ var player_spawn_position: Vector2 = Vector2.ZERO
 const MAX_ENEMIES: int = 10
 var enemy_count: int = 0
 
-# Roguelite state
-var current_seed: int = -1
-var is_daily_run: bool = false
+# Run state
 var run_count: int = 0
 
 # Run statistics
@@ -68,8 +66,8 @@ func _input(event: InputEvent) -> void:
 		toggle_pause()
 
 
-## Start a new roguelite run with optional seed.
-func start_run(seed_value: int = -1, daily: bool = false) -> void:
+## Start a new game run.
+func start_run(_seed_value: int = -1, _daily: bool = false) -> void:
 	# Reset statistics
 	enemies_killed = 0
 	damage_taken = 0
@@ -77,33 +75,22 @@ func start_run(seed_value: int = -1, daily: bool = false) -> void:
 	run_start_time = Time.get_ticks_msec() / 1000.0
 	enemy_count = 0
 	shadow_fragments = 0
-	is_daily_run = daily
 
 	# Reset room tracking
 	current_room = 0
 
-	# Determine seed
-	if daily:
-		# Daily challenge: same seed for everyone on same day
-		var date := Time.get_date_dict_from_system()
-		current_seed = hash(str(date.year) + str(date.month) + str(date.day))
-	else:
-		current_seed = seed_value if seed_value != -1 else randi()
-
 	run_count += 1
 
 	# Emit signal for UI
-	EventBus.run_started.emit(current_seed)
+	EventBus.run_started.emit(0)
 
-	print("Run %d started with seed: %d (daily: %s)" % [run_count, current_seed, daily])
+	print("Run %d started" % run_count)
 
 
 ## Get run statistics as dictionary.
 func get_run_stats() -> Dictionary:
 	return {
-		"seed": current_seed,
 		"run_count": run_count,
-		"is_daily": is_daily_run,
 		"enemies_killed": enemies_killed,
 		"damage_taken": damage_taken,
 		"time_elapsed": time_elapsed,
@@ -117,7 +104,6 @@ func end_run(victory: bool) -> void:
 	EventBus.run_ended.emit(victory, stats)
 
 	print("Run ended: %s" % ("Victory!" if victory else "Defeat"))
-	print("  Seed: %d" % current_seed)
 	print("  Enemies killed: %d" % enemies_killed)
 	print("  Damage taken: %d" % damage_taken)
 	print("  Time: %.1f seconds" % time_elapsed)
@@ -173,28 +159,16 @@ func return_to_menu() -> void:
 	get_tree().change_scene_to_file("res://scenes/ui/main_menu.tscn")
 
 
-## Restart with a NEW seed (roguelite - new run).
+## Restart the game from Room 1.
 func new_run() -> void:
 	get_tree().paused = false
 	start_run(-1, false)
 	get_tree().change_scene_to_file("res://scenes/levels/game.tscn")
 
 
-## Retry with the SAME seed.
+## Retry - same as new_run for linear game (kept for compatibility).
 func retry_run() -> void:
-	get_tree().paused = false
-	var same_seed := current_seed
-	start_run(same_seed, false)
-	get_tree().change_scene_to_file("res://scenes/levels/game.tscn")
-
-
-## Load a specific seed.
-func load_seed(seed_string: String) -> void:
-	var seed_value := seed_string.to_int()
-	if seed_value != 0:
-		get_tree().paused = false
-		start_run(seed_value, false)
-		get_tree().change_scene_to_file("res://scenes/levels/game.tscn")
+	new_run()
 
 
 func is_playing() -> bool:
@@ -215,8 +189,3 @@ func set_total_rooms(count: int) -> void:
 ## Check if final room
 func is_final_room() -> bool:
 	return current_room >= total_rooms - 1
-
-
-## Get seed as display string.
-func get_seed_string() -> String:
-	return str(current_seed)

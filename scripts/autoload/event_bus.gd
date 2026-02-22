@@ -26,7 +26,7 @@ signal game_resumed
 signal game_over
 signal victory
 
-# Roguelite signals
+# Run signals (linear game)
 signal run_started(seed_value: int)
 signal run_ended(victory: bool, stats: Dictionary)
 signal stage_generated
@@ -54,3 +54,12 @@ signal destructible_broken(position: Vector2, type: String)
 # Interactable signals
 signal show_interact_prompt(message: String)
 signal hide_interact_prompt
+
+# Combat Economy signals
+signal shard_dropped(position: Vector2)
+signal shard_collected
+signal energy_meter_changed(current: int, maximum: int)
+signal energy_meter_full
+signal energy_meter_emptied
+signal special_attack_fired(direction: Vector2)
+signal special_attack_hit(target: Node, damage: int)

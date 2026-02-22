@@ -15,6 +15,7 @@ signal died
 @export var max_hp: int = 25
 @export var contact_damage: int = 10
 @export var move_speed: float = 80.0
+@export var shard_drop_chance: float = 0.75  # 75% chance to drop Sun Shard
 
 # Audio
 @export var death_sound: AudioStream
@@ -213,6 +214,9 @@ func die() -> void:
 	died.emit()
 	EventBus.enemy_died.emit(self)
 
+	# Drop Sun Shard (chance-based)
+	_try_drop_shard()
+
 	# Play death animation and wait for it to complete
 	await _play_death_animation()
 
@@ -351,6 +355,15 @@ func _squash_stretch(target_scale: Vector2, duration: float) -> void:
 ## Return contact damage for player collision
 func get_contact_damage() -> int:
 	return contact_damage
+
+
+## Try to drop a Sun Shard on death
+func _try_drop_shard() -> void:
+	if randf() >= shard_drop_chance:
+		return
+
+	# Emit signal for shard spawner to handle
+	EventBus.shard_dropped.emit(global_position)
 
 
 ## Play spawn effect (shadow emergence with squash/stretch scale animation)

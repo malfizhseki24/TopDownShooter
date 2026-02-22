@@ -9,6 +9,7 @@ extends CanvasLayer
 @onready var hp_text: Label = $PlayerHealthBar/HPText
 @onready var dash_cooldown: Control = $DashCooldown
 @onready var dash_bar_fill: ColorRect = $DashCooldown/DashBarFill
+@onready var energy_meter: Control = $EnergyMeter
 @onready var room_progress: HBoxContainer = $RoomProgress
 @onready var fade_rect: ColorRect = $FadeRect
 
@@ -53,6 +54,7 @@ const COLOR_DOT_BOSS := Color("#ee4540")
 # Damage number colors
 const COLOR_DMG_ARROW := Color("#f1f1f1")
 const COLOR_DMG_MELEE := Color("#f0e68c")
+const COLOR_DMG_SPECIAL := Color("#ffdd44")  # Gold for Sun-Piercer
 const COLOR_DMG_PLAYER_HURT := Color("#e94560")
 const COLOR_DMG_BOSS_HURT := Color("#ff2040")
 const COLOR_DMG_HEAL := Color("#70c1b3")
@@ -262,6 +264,8 @@ func _on_damage_dealt(pos: Vector2, amount: int, type: StringName) -> void:
 			_spawn_damage_number(pos, amount, COLOR_DMG_ARROW, 6, false, true)
 		&"melee_hit":
 			_spawn_damage_number(pos, amount, COLOR_DMG_MELEE, 7, false, true)
+		&"special_attack":
+			_spawn_damage_number(pos, amount, COLOR_DMG_SPECIAL, 9, false, true)
 		&"heal":
 			_spawn_damage_number(pos, amount, COLOR_DMG_HEAL, 8, true, true)
 

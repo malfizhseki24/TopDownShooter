@@ -9,7 +9,7 @@
 
 | Property | Value |
 |----------|-------|
-| **Genre** | Top-Down Action Roguelite |
+| **Genre** | Top-Down Action |
 | **Dimension** | 2D |
 | **Art Style** | Pixel Art - Chibi/SD (Super Deformed) |
 | **Tile Size** | 32x32 |
@@ -49,9 +49,9 @@ Kasuari was once a bird with magnificent wide wings capable of soaring through t
 - **Current State**: Condemned to the Underworld / Forbidden Forest
 - **Goal**: Fight through the ever-changing forest to seek redemption and reclaim honor
 
-### Roguelite Story Integration
+### Story Integration
 
-The Forbidden Forest shifts and changes with each attempt - a manifestation of Kasuari's tormented soul. Each run represents another attempt at redemption. Death means starting over, but the forest remembers...
+The Forbidden Forest is a manifestation of Kasuari's tormented soul. Each attempt is a journey toward redemption. Death means starting over from the beginning...
 
 ---
 
@@ -66,7 +66,7 @@ The Forbidden Forest shifts and changes with each attempt - a manifestation of K
 │                                                                 │
 │   ┌─────────────┐                                               │
 │   │ Main Menu   │                                               │
-│   │ - New Run   │                                               │
+│   │ - New Game  │                                               │
 │   └──────┬──────┘                                               │
 │          │                                                       │
 │          ▼                                                       │
@@ -1476,9 +1476,9 @@ signal player_healed(position: Vector2, amount: int)
 - **Destructible environment props** (pots, pillars, roots, totems) <!-- NEW -->
 - **Hitstop / freeze frames** on heavy impacts <!-- NEW -->
 - **Camera trauma system** with noise-based shake <!-- NEW -->
-- Main menu (New Run, Quit)
-- Pause menu (Resume, Quit Run)
-- Game over screen (Try Again, Quit)
+- Main menu (New Game, Options, Quit)
+- Pause menu (Resume, Restart, Quit to Menu)
+- Game over screen (Restart, Quit to Title)
 - Victory screen (Continue, Quit)
 
 **What's OUT (for now):**
@@ -1554,11 +1554,10 @@ signal player_healed(position: Vector2, amount: int)
 - [x] Room transition VFX (black fade overlay, 0.3s tween)
 - [x] Static obstacle props in rooms (pillar StaticBody2D at O markers)
 
-### Phase 6: Roguelite System ✅
-- [x] RunManager implementation (start_run, end_run, seed management)
-- [x] Run statistics tracking (enemies killed, damage taken, time elapsed)
-- [x] Game flow integration (Main Menu → Game → Victory/Game Over → Retry/New Run/Menu)
-- [ ] Progressive difficulty scaling (post-MVP — no scaling between runs yet)
+### Phase 6: Game Flow System ✅
+- [x] RunManager implementation (start_run, end_run)
+- [x] Statistics tracking (enemies killed, damage taken, time elapsed)
+- [x] Game flow integration (Main Menu → Game → Victory/Game Over → Restart/Menu)
 
 ### Phase 7: UI & Menus
 - [x] In-game HUD (basic health, room indicator)
@@ -1569,9 +1568,9 @@ signal player_healed(position: Vector2, amount: int)
 - [x] **HUD: Contextual [E] Prompts** — World-space float above shrines/portals
 - [x] **HUD: Floating Damage Numbers** — Per-hit spawn, color-coded, directional float
 - [x] **HUD: EventBus Integration** — Wire all HUD signals (health, dash, room, boss, damage)
-- [x] Main menu (New Run, Quit)
-- [x] Pause menu
-- [x] Game over screen
+- [x] Main menu (New Game, Options placeholder, Quit)
+- [x] Pause menu (Resume, Restart, Quit to Menu)
+- [x] Game over screen (Restart, Quit to Title)
 - [x] Victory screen
 
 ### Phase 8: Polish & Juice <!-- REVISED: significantly expanded -->

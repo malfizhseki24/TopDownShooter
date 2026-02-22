@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://shard_collect_burst"]
+
+[ext_resource type="Texture2D" path="res://assets/vfx/textures/kenney_particles/star_01.png" id="1_star"]
+
+[sub_resource type="Gradient" id="Gradient_collect"]
+offsets = PackedFloat32Array(0, 0.3, 0.7, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 0.9, 0.4, 1, 1, 0.7, 0.2, 0.8, 0.8, 0.4, 0.1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_collect"]
+gradient = SubResource("Gradient_collect")
+
+[sub_resource type="Curve" id="Curve_alpha"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.5, 0.7), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_alpha"]
+curve = SubResource("Curve_alpha")
+
+[sub_resource type="Curve" id="Curve_scale"]
+_data = [Vector2(0, 0.5), 0.0, 0.0, 0, 0, Vector2(0.3, 1.2), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_scale"]
+curve = SubResource("Curve_scale")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_collect"]
+emission_shape = 1
+emission_sphere_radius = 3.0
+direction = Vector3(0, 0, 0)
+spread = 180.0
+initial_velocity_min = 30.0
+initial_velocity_max = 60.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.03
+scale_max = 0.06
+scale_curve = SubResource("CurveTexture_scale")
+color_ramp = SubResource("GradientTexture1D_collect")
+alpha_curve = SubResource("CurveTexture_alpha")
+
+[node name="ShardCollectBurst" type="GPUParticles2D"]
+emitting = false
+amount = 15
+one_shot = true
+explosiveness = 1.0
+lifetime = 0.3
+process_material = SubResource("ParticleProcessMaterial_collect")
+texture = ExtResource("1_star")

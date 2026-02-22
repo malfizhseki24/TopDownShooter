@@ -18,6 +18,10 @@ const VFX_SCENES := {
 	"heal_burst": preload("res://assets/vfx/scenes/heal_burst.tscn"),
 	"heal_shrine_spiral": preload("res://scenes/vfx/heal_shrine_vfx.tscn"),
 	"spawn_emerge": preload("res://scenes/vfx/spawn_emerge.tscn"),
+	# Combat Economy VFX
+	"shard_spawn_burst": preload("res://assets/vfx/scenes/shard_spawn_burst.tscn"),
+	"shard_collect_burst": preload("res://assets/vfx/scenes/shard_collect_burst.tscn"),
+	"sun_piercer_impact": preload("res://assets/vfx/scenes/sun_piercer_impact.tscn"),
 }
 
 # Container for spawned effects

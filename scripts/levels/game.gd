@@ -5,6 +5,7 @@ extends Node2D
 # Scene references
 @export var player_scene: PackedScene = preload("res://scenes/player/player.tscn")
 var hud_scene: PackedScene = preload("res://scenes/ui/hud.tscn")
+var sun_shard_scene: PackedScene = preload("res://scenes/pickups/sun_shard.tscn")
 
 # Node references
 @onready var room_manager: RoomManager = $RoomManager
@@ -54,6 +55,9 @@ func _connect_signals() -> void:
 	# Player signals
 	EventBus.player_died.connect(_on_player_died)
 
+	# Combat Economy signals
+	EventBus.shard_dropped.connect(_on_shard_dropped)
+
 
 func _spawn_player() -> void:
 	var spawn_pos := room_manager.get_player_spawn_position()
@@ -98,6 +102,35 @@ func _on_room_cleared(room_index: int) -> void:
 
 func _on_all_rooms_cleared() -> void:
 	print("All rooms cleared!")
+
+	# Dramatic victory sequence - wait for boss death animation
+	# Boss death: 2.5s wait + 1.0s dissolve = ~3.5s total
+	# Add extra time for dramatic effect
+
+	# Freeze frame for impact
+	HitstopManager.freeze(0.15)
+
+	# Wait for initial freeze to complete
+	await get_tree().create_timer(0.2).timeout
+
+	# Screen flash white for victory moment
+	EventBus.screen_flash_requested.emit(Color.WHITE, 0.7, 0.3)
+
+	# Add camera trauma for dramatic effect
+	EventBus.camera_trauma.emit(0.4)
+
+	# Slow-mo effect during boss dissolution
+	Engine.time_scale = 0.3
+	await get_tree().create_timer(1.0, true, false, true).timeout  # Process even during slow-mo
+
+	# Gradually return to normal speed
+	var tween := create_tween()
+	tween.tween_method(func(val): Engine.time_scale = val, 0.3, 1.0, 0.5)
+	await tween.finished
+
+	# Final pause before victory screen
+	await get_tree().create_timer(0.5).timeout
+
 	GameManager.trigger_victory()
 
 
@@ -122,3 +155,10 @@ func _on_room_transition_requested(next_room_index: int) -> void:
 func _on_player_died() -> void:
 	await get_tree().create_timer(1.5).timeout
 	GameManager.trigger_game_over()
+
+
+func _on_shard_dropped(pos: Vector2) -> void:
+	# Spawn Sun Shard at the drop position (deferred to avoid physics flush error)
+	var shard := sun_shard_scene.instantiate()
+	shard.global_position = pos
+	entities.call_deferred("add_child", shard)

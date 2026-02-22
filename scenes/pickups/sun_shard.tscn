@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://sun_shard_pickup"]
+
+[ext_resource type="Script" path="res://scripts/pickups/sun_shard.gd" id="1_shard"]
+[ext_resource type="Texture2D" path="res://assets/sprites/pickups/sun_shard.png" id="2_texture"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_shard"]
+radius = 12.0
+
+[node name="SunShard" type="Area2D"]
+script = ExtResource("1_shard")
+
+[node name="Visual" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_texture")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_shard")
+
+[node name="Glow" type="PointLight2D" parent="."]
+color = Color(1, 0.87, 0.27, 1)
+energy = 0.3
+shadow_enabled = false
+texture_scale = 2.0

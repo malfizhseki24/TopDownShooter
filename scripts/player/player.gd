@@ -15,6 +15,10 @@ const ARROW_DAMAGE: int = 25
 const ARROW_SPEED: float = 600.0
 const FIRE_RATE: float = 0.5
 const RESPAWN_INVINCIBILITY: float = 1.0
+const MAX_ENERGY: int = 10
+const SUN_PIERCER_DAMAGE: int = 80
+const SUN_PIERCER_SPEED: float = 400.0
+const SUN_PIERCER_WINDUP: float = 0.25
 
 # Forgiveness constants (tunable)
 const DAMAGE_IFRAME_DURATION: float = 0.8
@@ -42,6 +46,11 @@ var can_dash: bool = true
 var can_shoot: bool = true
 var is_invincible: bool = false
 var is_dead: bool = false
+
+# Combat Economy state
+var current_energy: int = 0
+var is_energy_full: bool = false
+var is_windup: bool = false
 
 var aim_direction: Vector2 = Vector2.RIGHT
 
@@ -71,6 +80,12 @@ var _sfx_bow_shoot: AudioStream = preload("res://assets/audio/sfx/bow_shoot.wav"
 var _sfx_dash_whoosh: AudioStream = preload("res://assets/audio/sfx/dash_whoosh.wav")
 var _sfx_player_hurt: AudioStream = preload("res://assets/audio/sfx/player_hurt.wav")
 var _sfx_player_death: AudioStream = preload("res://assets/audio/sfx/player_death.wav")
+# SFX for Sun-Piercer
+var _sfx_sun_piercer_windup: AudioStream = preload("res://assets/audio/sfx/boss_charge.wav")
+var _sfx_sun_piercer_fire: AudioStream = preload("res://assets/audio/sfx/dash_whoosh.wav")
+
+# Scene references
+var sun_piercer_scene: PackedScene = preload("res://scenes/player/sun_piercer.tscn")
 
 
 func _ready() -> void:
@@ -86,6 +101,12 @@ func _ready() -> void:
 	# Connect i-frame timers
 	iframe_timer.timeout.connect(_on_iframe_timer_timeout)
 	flicker_timer.timeout.connect(_on_flicker_timer_timeout)
+
+	# Connect to shard collection signal
+	EventBus.shard_collected.connect(_on_shard_collected)
+
+	# Initialize energy meter display
+	EventBus.energy_meter_changed.emit(current_energy, MAX_ENERGY)
 
 
 func _physics_process(delta: float) -> void:
@@ -127,6 +148,10 @@ func _handle_aiming() -> void:
 func _handle_actions(_delta: float) -> void:
 	var current_time := Time.get_ticks_msec() / 1000.0
 
+	# Don't allow actions during windup
+	if is_windup:
+		return
+
 	# Try consuming buffered actions first
 	if _consume_buffered_action(&"shoot") and can_shoot:
 		_shoot()
@@ -155,6 +180,10 @@ func _handle_actions(_delta: float) -> void:
 			_dash()
 		else:
 			_buffer_action(&"dash")
+
+	# Special attack (Sun-Piercer)
+	if Input.is_action_just_pressed("special_attack") and is_energy_full and not is_dashing:
+		_fire_sun_piercer()
 
 
 func _shoot() -> void:
@@ -323,10 +352,7 @@ func die() -> void:
 	sprite.play("death_" + direction)
 	EventBus.player_died.emit()
 
-	# Wait for death animation, then respawn
-	await sprite.animation_finished
-	await get_tree().create_timer(1.0).timeout  # Brief pause before respawn
-	respawn()
+	# Stay dead - game.gd will trigger game over screen
 
 
 func respawn() -> void:
@@ -572,3 +598,63 @@ func _connect_signals() -> void:
 func _on_hurtbox_body_entered(body: Node2D) -> void:
 	if body.is_in_group("enemy") and body.has_method("get_contact_damage"):
 		take_damage(body.get_contact_damage())
+
+
+# --- Combat Economy ---
+
+func _on_shard_collected() -> void:
+	if current_energy >= MAX_ENERGY:
+		return  # Already full
+
+	current_energy = mini(current_energy + 1, MAX_ENERGY)
+	EventBus.energy_meter_changed.emit(current_energy, MAX_ENERGY)
+
+	if current_energy >= MAX_ENERGY and not is_energy_full:
+		is_energy_full = true
+		EventBus.energy_meter_full.emit()
+
+
+func _fire_sun_piercer() -> void:
+	is_windup = true
+	is_energy_full = false
+	_is_playing_action = true
+
+	# Consume energy
+	current_energy = 0
+	EventBus.energy_meter_emptied.emit()
+
+	# Windup effects
+	if _sfx_sun_piercer_windup:
+		AudioManager.play_sfx(_sfx_sun_piercer_windup, global_position)
+	EventBus.camera_trauma.emit(0.2)
+
+	# Flash during windup
+	var windup_flash_tween := create_tween()
+	for i in range(5):
+		windup_flash_tween.tween_callback(func(): sprite.modulate = Color(1.5, 1.5, 0.5))
+		windup_flash_tween.tween_interval(SUN_PIERCER_WINDUP / 10.0)
+		windup_flash_tween.tween_callback(func(): sprite.modulate = Color.WHITE)
+		windup_flash_tween.tween_interval(SUN_PIERCER_WINDUP / 10.0)
+
+	# Wait for windup
+	await get_tree().create_timer(SUN_PIERCER_WINDUP).timeout
+
+	# Fire!
+	is_windup = false
+	if _sfx_sun_piercer_fire:
+		AudioManager.play_sfx(_sfx_sun_piercer_fire, global_position)
+	EventBus.camera_trauma.emit(0.15)
+
+	# Spawn Sun-Piercer projectile
+	var sun_piercer := sun_piercer_scene.instantiate()
+	sun_piercer.global_position = arrow_spawn.global_position
+	sun_piercer.direction = aim_direction
+	sun_piercer.damage = SUN_PIERCER_DAMAGE
+	sun_piercer.speed = SUN_PIERCER_SPEED
+	get_tree().current_scene.add_child(sun_piercer)
+
+	# Emit signal
+	EventBus.special_attack_fired.emit(aim_direction)
+
+	# Reset playing action
+	_is_playing_action = false
