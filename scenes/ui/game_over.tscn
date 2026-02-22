@@ -9,66 +9,86 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+process_mode = 3
 script = ExtResource("1_gameover")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Background" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.15, 0, 0, 0.8)
+color = Color(0.1, 0.02, 0.02, 1)
 
-[node name="Panel" type="Panel" parent="."]
+[node name="TitleContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -150.0
-offset_top = -140.0
-offset_right = 150.0
-offset_bottom = 140.0
+offset_left = -160.0
+offset_top = 60.0
+offset_right = 160.0
+offset_bottom = 160.0
 grow_horizontal = 2
-grow_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 20.0
-offset_top = 20.0
-offset_right = -20.0
-offset_bottom = -20.0
-grow_horizontal = 2
-grow_vertical = 2
 alignment = 1
-theme_override_constants/separation = 10
+theme_override_constants/separation = 8
 
-[node name="GameOverLabel" type="Label" parent="Panel/VBoxContainer"]
+[node name="GameOverLabel" type="Label" parent="TitleContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.85, 0.25, 0.25, 1)
+theme_override_font_sizes/font_size = 28
 text = "GAME OVER"
 horizontal_alignment = 1
 
-[node name="HSeparator" type="HSeparator" parent="Panel/VBoxContainer"]
+[node name="StatsContainer" type="VBoxContainer" parent="TitleContainer"]
 layout_mode = 2
+alignment = 1
+theme_override_constants/separation = 4
 
-[node name="StatsLabel" type="Label" parent="Panel/VBoxContainer"]
+[node name="StatsTitle" type="Label" parent="TitleContainer/StatsContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.4, 0.4, 0.45, 1)
+theme_override_font_sizes/font_size = 10
+text = "--- RUN STATISTICS ---"
+horizontal_alignment = 1
+
+[node name="StatsLabel" type="Label" parent="TitleContainer/StatsContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
 text = "Enemies Killed: 0
 Time: 0:00"
 horizontal_alignment = 1
 
-[node name="HSeparator2" type="HSeparator" parent="Panel/VBoxContainer"]
-layout_mode = 2
+[node name="ButtonContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -80.0
+offset_top = -80.0
+offset_right = 80.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+theme_override_constants/separation = 8
 
-[node name="RestartButton" type="Button" parent="Panel/VBoxContainer"]
+[node name="RestartButton" type="Button" parent="ButtonContainer"]
+custom_minimum_size = Vector2(140, 28)
 layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.95, 0.85, 0.6, 1)
+theme_override_colors/font_hover_color = Color(1, 0.95, 0.7, 1)
+theme_override_font_sizes/font_size = 13
 text = "RESTART"
 
-[node name="QuitButton" type="Button" parent="Panel/VBoxContainer"]
+[node name="QuitButton" type="Button" parent="ButtonContainer"]
+custom_minimum_size = Vector2(140, 28)
 layout_mode = 2
-text = "QUIT TO TITLE"
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.6, 0.6, 0.65, 1)
+theme_override_font_sizes/font_size = 12
+text = "Return to Menu"

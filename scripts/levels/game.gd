@@ -153,7 +153,20 @@ func _on_room_transition_requested(next_room_index: int) -> void:
 
 
 func _on_player_died() -> void:
-	await get_tree().create_timer(1.5).timeout
+	print("[Game] _on_player_died called - player died!")
+
+	# Wait a moment for death effect
+	await get_tree().create_timer(1.0).timeout
+
+	# Fade to black first
+	print("[Game] Fading to black...")
+	await hud.fade_to_black()
+
+	# Small pause at black
+	await get_tree().create_timer(0.3).timeout
+
+	# Now trigger game over (GameOver screen appears on top of black)
+	print("[Game] Calling trigger_game_over")
 	GameManager.trigger_game_over()
 
 

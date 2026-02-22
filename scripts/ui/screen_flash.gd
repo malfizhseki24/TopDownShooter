@@ -30,13 +30,6 @@ func _on_flash_requested(flash_color: Color, opacity: float, duration: float) ->
 
 
 func _on_player_died() -> void:
-	if _flash_tween:
-		_flash_tween.kill()
-
-	# Desaturate then fade to black over 1.5s
-	_flash_tween = create_tween()
-	_flash_tween.set_process_mode(Tween.TWEEN_PROCESS_PHYSICS)
-	# Fade to semi-transparent black first
-	_flash_tween.tween_property(self, "color", Color(0, 0, 0, 0.6), 0.5)
-	# Then full black
-	_flash_tween.tween_property(self, "color", Color(0, 0, 0, 1.0), 1.0)
+	# Death fade is handled by HUD's FadeRect instead
+	# This ScreenFlash stays transparent so it doesn't cover the GameOver screen
+	pass

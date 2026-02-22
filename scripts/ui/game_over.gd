@@ -4,24 +4,30 @@ extends Control
 
 var _sfx_confirm: AudioStream = preload("res://assets/audio/sfx/ui_confirm.wav")
 
-@onready var stats_label: Label = $Panel/VBoxContainer/StatsLabel
-@onready var restart_button: Button = $Panel/VBoxContainer/RestartButton
-@onready var quit_button: Button = $Panel/VBoxContainer/QuitButton
+@onready var stats_label: Label = $TitleContainer/StatsContainer/StatsLabel
+@onready var restart_button: Button = $ButtonContainer/RestartButton
+@onready var quit_button: Button = $ButtonContainer/QuitButton
 
 
 func _ready() -> void:
+	print("[GameOver] _ready called")
 	visible = false
 	_connect_signals()
+	print("[GameOver] visible = %s, process_mode = %d" % [str(visible), process_mode])
 
 
 func _connect_signals() -> void:
+	print("[GameOver] Connecting signals...")
 	restart_button.pressed.connect(_on_restart_pressed)
 	quit_button.pressed.connect(_on_quit_pressed)
 	EventBus.game_over.connect(_on_game_over)
+	print("[GameOver] Signals connected")
 
 
 func _on_game_over() -> void:
+	print("[GameOver] _on_game_over called!")
 	visible = true
+	print("[GameOver] visible set to true, now visible = %s" % str(visible))
 	_update_stats()
 	restart_button.grab_focus()
 

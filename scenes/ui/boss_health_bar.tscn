@@ -10,7 +10,7 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -122.0
-offset_top = -24.0
+offset_top = -44.0
 offset_right = 122.0
 offset_bottom = -12.0
 grow_horizontal = 2
@@ -18,36 +18,51 @@ grow_vertical = 0
 script = ExtResource("1_script")
 
 [node name="BossName" type="Label" parent="."]
-layout_mode = 0
-offset_left = 0.0
-offset_top = -12.0
-offset_right = 244.0
-offset_bottom = 0.0
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 0.0
+offset_bottom = 14.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.85, 0.75, 0.6, 1)
+theme_override_font_sizes/font_size = 11
 text = "SHADOW BOAR"
 horizontal_alignment = 1
 vertical_alignment = 1
-modulate = Color(0.945, 0.945, 0.945, 0)
 
 [node name="BarBackground" type="ColorRect" parent="."]
-layout_mode = 0
-offset_left = 2.0
-offset_top = 0.0
-offset_right = 242.0
-offset_bottom = 10.0
+layout_mode = 1
+anchors_preset = 10
+anchor_top = 1.0
+anchor_right = 1.0
+offset_top = -10.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 0
 color = Color(0.102, 0.102, 0.18, 0.8)
 
 [node name="DamageTrail" type="ColorRect" parent="."]
-layout_mode = 0
-offset_left = 4.0
-offset_top = 1.0
-offset_right = 240.0
-offset_bottom = 9.0
+layout_mode = 1
+anchors_preset = 10
+anchor_top = 1.0
+anchor_right = 1.0
+offset_left = 2.0
+offset_top = -9.0
+offset_right = -2.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 0
 color = Color(0.945, 0.945, 0.945, 1)
 
 [node name="BarFill" type="ColorRect" parent="."]
-layout_mode = 0
-offset_left = 4.0
-offset_top = 1.0
-offset_right = 240.0
-offset_bottom = 9.0
+layout_mode = 1
+anchors_preset = 10
+anchor_top = 1.0
+anchor_right = 1.0
+offset_left = 2.0
+offset_top = -9.0
+offset_right = -2.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 0
 color = Color(0.933, 0.271, 0.251, 1)

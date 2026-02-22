@@ -6,7 +6,6 @@ extends Control
 @onready var bar_fill: ColorRect = $BarFill
 @onready var damage_trail: ColorRect = $DamageTrail
 
-const BAR_INNER_WIDTH: float = 236.0  # 240 - 4px padding
 const COLOR_PHASE1 := Color("#ee4540")
 const COLOR_PHASE2 := Color("#2d132c")
 
@@ -29,11 +28,13 @@ func _on_boss_spawned(boss: Node) -> void:
 	_boss_ref = boss
 	_max_hp = boss.max_hp
 
-	# Reset bar
-	bar_fill.size.x = BAR_INNER_WIDTH
+	# Reset bar - using scale for fill
+	bar_fill.scale.x = 1.0
 	bar_fill.color = COLOR_PHASE1
-	damage_trail.size.x = BAR_INNER_WIDTH
-	boss_name_label.modulate.a = 0.0
+	damage_trail.scale.x = 1.0
+	bar_fill.pivot_offset = Vector2(0, 0)  # Pivot at left edge
+	damage_trail.pivot_offset = Vector2(0, 0)
+	boss_name_label.modulate.a = 0.0  # Start invisible for fade-in
 
 	# Slide in from below viewport
 	visible = true
@@ -52,16 +53,15 @@ func _on_enemy_hit(enemy: Node, _damage: int) -> void:
 		return
 	var current_hp: int = _boss_ref.hp
 	var fill_ratio := float(current_hp) / float(_max_hp)
-	var new_width := fill_ratio * BAR_INNER_WIDTH
 
-	# Instant fill update
-	bar_fill.size.x = new_width
+	# Instant fill update using scale
+	bar_fill.scale.x = fill_ratio
 
 	# Damage trail drains over 0.6s
 	if _trail_tween:
 		_trail_tween.kill()
 	_trail_tween = create_tween()
-	_trail_tween.tween_property(damage_trail, "size:x", new_width, 0.6)
+	_trail_tween.tween_property(damage_trail, "scale:x", fill_ratio, 0.6)
 
 
 func _on_boss_phase_changed(phase: int) -> void:

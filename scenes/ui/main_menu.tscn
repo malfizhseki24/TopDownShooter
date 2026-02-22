@@ -11,81 +11,109 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_menu")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Background" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.1, 0.1, 0.18, 1)
+color = Color(0.08, 0.08, 0.12, 1)
 
-[node name="Title" type="Label" parent="."]
+[node name="TitleContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -200.0
-offset_top = 80.0
+offset_top = 60.0
 offset_right = 200.0
-offset_bottom = 130.0
+offset_bottom = 140.0
 grow_horizontal = 2
+alignment = 1
+theme_override_constants/separation = 6
+
+[node name="Title" type="Label" parent="TitleContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
 text = "WARRIOR OF THE SUNRISE"
 horizontal_alignment = 1
 
-[node name="Subtitle" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -150.0
-offset_top = 135.0
-offset_right = 150.0
-offset_bottom = 160.0
-grow_horizontal = 2
-text = "Linear Stage Action"
+[node name="Subtitle" type="Label" parent="TitleContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.55, 0.55, 0.6, 1)
+theme_override_font_sizes/font_size = 12
+text = "A Top-Down Action Game"
 horizontal_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="MenuContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 7
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -100.0
-offset_top = -80.0
-offset_right = 100.0
-offset_bottom = 80.0
+anchor_bottom = 1.0
+offset_left = -80.0
+offset_top = -130.0
+offset_right = 80.0
+offset_bottom = -30.0
 grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 10
+grow_vertical = 0
+alignment = 1
+theme_override_constants/separation = 8
 
-[node name="NewGameButton" type="Button" parent="VBoxContainer"]
+[node name="NewGameButton" type="Button" parent="MenuContainer"]
+custom_minimum_size = Vector2(140, 28)
 layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.95, 0.85, 0.6, 1)
+theme_override_colors/font_hover_color = Color(1, 0.95, 0.7, 1)
+theme_override_font_sizes/font_size = 13
 text = "NEW GAME"
 
-[node name="OptionsButton" type="Button" parent="VBoxContainer"]
+[node name="OptionsButton" type="Button" parent="MenuContainer"]
+custom_minimum_size = Vector2(140, 28)
 layout_mode = 2
+size_flags_horizontal = 4
 disabled = true
+theme_override_colors/font_color = Color(0.4, 0.4, 0.45, 1)
+theme_override_font_sizes/font_size = 13
 text = "OPTIONS"
 
-[node name="QuitButton" type="Button" parent="VBoxContainer"]
+[node name="QuitButton" type="Button" parent="MenuContainer"]
+custom_minimum_size = Vector2(140, 28)
 layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.95, 0.85, 0.6, 1)
+theme_override_colors/font_hover_color = Color(1, 0.95, 0.7, 1)
+theme_override_font_sizes/font_size = 13
 text = "QUIT"
 
-[node name="Version" type="Label" parent="."]
+[node name="Footer" type="HBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -100.0
-offset_top = -30.0
+offset_left = -180.0
+offset_top = -20.0
 offset_right = -10.0
-offset_bottom = -10.0
+offset_bottom = -8.0
 grow_horizontal = 0
 grow_vertical = 0
+alignment = 2
+
+[node name="Version" type="Label" parent="Footer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.35, 0.35, 0.4, 1)
+theme_override_font_sizes/font_size = 10
 text = "v0.1.0 MVP"
+horizontal_alignment = 2
+
+[node name="ControlsHint" type="Label" parent="Footer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.35, 0.35, 0.4, 1)
+theme_override_font_sizes/font_size = 10
+text = "WASD: Move | Click: Shoot | Space: Dash"
 horizontal_alignment = 2

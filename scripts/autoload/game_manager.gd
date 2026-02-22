@@ -140,10 +140,17 @@ func resume_game() -> void:
 
 
 func trigger_game_over() -> void:
+	print("[GameManager] trigger_game_over called!")
 	end_run(false)
 	current_state = GameState.GAME_OVER
-	get_tree().paused = true
+	# Emit signal FIRST so UI can update before pausing
+	print("[GameManager] Emitting game_over signal")
 	EventBus.game_over.emit()
+	print("[GameManager] game_over signal emitted")
+	# Pause AFTER signal is processed
+	await get_tree().process_frame
+	print("[GameManager] Setting paused = true")
+	get_tree().paused = true
 
 
 func trigger_victory() -> void:

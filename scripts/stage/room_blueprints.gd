@@ -191,7 +191,7 @@ const ROOMS: Dictionary = {
 		"waves": [
 			{"enemy_type": &"shadow_crawler", "count": 3, "spawn_delay": 0.5, "wave_delay": 0.0},
 			{"enemy_type": &"shadow_stalker", "count": 2, "spawn_delay": 0.5, "wave_delay": 2.0},
-			{"enemy_type": &"shadow_brute", "count": 1, "spawn_delay": 0.0, "wave_delay": 4.0}
+			{"enemy_type": &"shadow_brute", "count": 2, "spawn_delay": 0.5, "wave_delay": 4.0}
 		]
 	},
 	5: {

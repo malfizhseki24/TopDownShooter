@@ -4,9 +4,9 @@ extends Control
 
 var _sfx_confirm: AudioStream = preload("res://assets/audio/sfx/ui_confirm.wav")
 
-@onready var stats_label: Label = $Panel/VBoxContainer/StatsLabel
-@onready var restart_button: Button = $Panel/VBoxContainer/RestartButton
-@onready var menu_button: Button = $Panel/VBoxContainer/MenuButton
+@onready var stats_label: Label = $TitleContainer/StatsContainer/StatsLabel
+@onready var restart_button: Button = $ButtonContainer/RestartButton
+@onready var menu_button: Button = $ButtonContainer/MenuButton
 
 
 func _ready() -> void:
@@ -31,7 +31,7 @@ func _update_stats() -> void:
 
 	# Show stats (no seed for linear game)
 	var time_str := _format_time(stats.time_elapsed)
-	stats_label.text = "VICTORY!\n\nEnemies Killed: %d\nDamage Taken: %d\nTime: %s" % [
+	stats_label.text = "Enemies Killed: %d\nDamage Taken: %d\nTime: %s" % [
 		stats.enemies_killed,
 		stats.damage_taken,
 		time_str

@@ -4,9 +4,9 @@ extends Control
 
 var _sfx_confirm: AudioStream = preload("res://assets/audio/sfx/ui_confirm.wav")
 
-@onready var resume_button: Button = $Panel/VBoxContainer/ResumeButton
-@onready var restart_button: Button = $Panel/VBoxContainer/RestartButton
-@onready var quit_button: Button = $Panel/VBoxContainer/QuitButton
+@onready var resume_button: Button = $ButtonContainer/ResumeButton
+@onready var restart_button: Button = $ButtonContainer/RestartButton
+@onready var quit_button: Button = $ButtonContainer/QuitButton
 
 
 func _ready() -> void:

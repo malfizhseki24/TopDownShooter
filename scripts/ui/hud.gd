@@ -3,19 +3,17 @@ extends CanvasLayer
 ## Never polls or references game nodes directly.
 
 # Child node references
-@onready var player_health_bar: Control = $PlayerHealthBar
-@onready var bar_fill: ColorRect = $PlayerHealthBar/BarFill
-@onready var damage_trail: ColorRect = $PlayerHealthBar/DamageTrail
-@onready var hp_text: Label = $PlayerHealthBar/HPText
-@onready var dash_cooldown: Control = $DashCooldown
-@onready var dash_bar_fill: ColorRect = $DashCooldown/DashBarFill
-@onready var energy_meter: Control = $EnergyMeter
+@onready var player_health_bar: Control = $LeftPanel/HealthRow/PlayerHealthBar
+@onready var bar_fill: ColorRect = $LeftPanel/HealthRow/PlayerHealthBar/BarFill
+@onready var damage_trail: ColorRect = $LeftPanel/HealthRow/PlayerHealthBar/DamageTrail
+@onready var hp_text: Label = $LeftPanel/HPText
+@onready var dash_cooldown: Control = $LeftPanel/DashCooldown
+@onready var dash_bar_fill: ColorRect = $LeftPanel/DashCooldown/DashBarFill
+@onready var energy_meter: Control = $LeftPanel/HealthRow/EnergyMeter
 @onready var room_progress: HBoxContainer = $RoomProgress
 @onready var fade_rect: ColorRect = $FadeRect
 
 # Health bar state
-const BAR_WIDTH: float = 80.0
-const BAR_INNER_WIDTH: float = 80.0
 const LOW_HP_THRESHOLD: int = 25
 var _current_hp: int = 100
 var _max_hp: int = 100
@@ -25,7 +23,6 @@ var _trail_tween: Tween = null
 var _heal_tween: Tween = null
 
 # Dash bar state
-const DASH_BAR_WIDTH: float = 48.0
 var _dash_tween: Tween = null
 var _dash_fade_tween: Tween = null
 
@@ -71,6 +68,11 @@ func _ready() -> void:
 	# Initialize HP text as invisible
 	hp_text.modulate.a = 0.0
 
+	# Set up pivot for scale-based fill animations
+	bar_fill.pivot_offset = Vector2(0, 0)
+	damage_trail.pivot_offset = Vector2(0, 0)
+	dash_bar_fill.pivot_offset = Vector2(0, 0)
+
 
 func _process(_delta: float) -> void:
 	# Low HP pulse effect
@@ -104,10 +106,9 @@ func _on_health_changed(current: int, maximum: int) -> void:
 	_max_hp = maximum
 
 	var fill_ratio := float(current) / float(maximum)
-	var new_width := fill_ratio * BAR_INNER_WIDTH
 
-	# Instant fill update
-	bar_fill.size.x = new_width
+	# Instant fill update using scale (anchored layout)
+	bar_fill.scale.x = fill_ratio
 
 	# Low HP state
 	_is_low_hp = current <= LOW_HP_THRESHOLD
@@ -119,17 +120,17 @@ func _on_health_changed(current: int, maximum: int) -> void:
 
 	# Damage trail (only on damage, not heal)
 	if current < prev_hp:
-		_show_damage_trail(new_width)
+		_show_damage_trail(fill_ratio)
 
 	# Show HP text briefly
 	_show_hp_text(current, maximum)
 
 
-func _show_damage_trail(target_width: float) -> void:
+func _show_damage_trail(target_ratio: float) -> void:
 	if _trail_tween:
 		_trail_tween.kill()
 	_trail_tween = create_tween()
-	_trail_tween.tween_property(damage_trail, "size:x", target_width, 0.4)
+	_trail_tween.tween_property(damage_trail, "scale:x", target_ratio, 0.4)
 
 
 func _on_player_healed(_amount: int) -> void:
@@ -142,7 +143,7 @@ func _on_player_healed(_amount: int) -> void:
 
 	# Also update the damage trail to match new HP (no trailing on heal)
 	var fill_ratio := float(_current_hp) / float(_max_hp)
-	damage_trail.size.x = fill_ratio * BAR_INNER_WIDTH
+	damage_trail.scale.x = fill_ratio
 
 
 func _show_hp_text(current: int, maximum: int) -> void:
@@ -165,12 +166,12 @@ func _on_dash_started(cooldown_duration: float) -> void:
 		_dash_fade_tween.kill()
 
 	# Fade in the bar
-	dash_cooldown.modulate.a = 0.4
+	dash_cooldown.modulate.a = 0.6
 
-	# Reset fill width to 0 and tween to full
-	dash_bar_fill.size.x = 0.0
+	# Reset fill scale to 0 and tween to full
+	dash_bar_fill.scale.x = 0.0
 	_dash_tween = create_tween()
-	_dash_tween.tween_property(dash_bar_fill, "size:x", DASH_BAR_WIDTH, cooldown_duration)
+	_dash_tween.tween_property(dash_bar_fill, "scale:x", 1.0, cooldown_duration)
 
 
 func _on_dash_ready() -> void:
@@ -179,7 +180,7 @@ func _on_dash_ready() -> void:
 
 	# Flash cyan
 	dash_bar_fill.color = COLOR_DASH_READY
-	dash_bar_fill.size.x = DASH_BAR_WIDTH
+	dash_bar_fill.scale.x = 1.0
 
 	if _dash_fade_tween:
 		_dash_fade_tween.kill()
@@ -189,7 +190,7 @@ func _on_dash_ready() -> void:
 	_dash_fade_tween.tween_property(dash_cooldown, "modulate:a", 0.0, 0.3)
 	_dash_fade_tween.tween_callback(func():
 		dash_bar_fill.color = COLOR_DASH_CHARGE
-		dash_bar_fill.size.x = 0.0
+		dash_bar_fill.scale.x = 0.0
 	)
 
 
