@@ -1,37 +1,108 @@
-# menus Specification
+# Spec: Menus (Linear Stage Game)
 
-## Purpose
-Boss health bar display with damage trail, phase transition effects, and defeat animations.
+## MODIFIED Requirements
 
-## Requirements
-### Requirement: Boss Health Bar Display
+### Requirement: Main Menu Structure
+The main menu SHALL provide a simple interface for starting a new game and quitting.
 
-The boss health bar SHALL be upgraded with a damage trail ghost bar, GDD-spec sizing (240x10 viewport pixels), and enhanced phase transition and defeat animations.
+**Changed from:** Roguelite menu with Daily Challenge, Seed Input, Load Seed
+**Changed to:** Linear game menu with New Game, Options, Quit
 
-#### Scenario: Boss health bar appears on boss spawn
+#### Scenario: Player starts new game
+**Given** the player is on the main menu
+**When** the player clicks "NEW GAME"
+**Then** the game starts from Room 1 with a fresh state
+**And** any previous game progress is discarded
 
-- **WHEN** `EventBus.boss_spawned` is emitted
-- **THEN** the boss health bar slides up from below the viewport over 0.5 seconds (ease-out)
-- **AND** the bar is 240x10 viewport pixels, centered at bottom, 12px from bottom edge
-- **AND** the fill color is `#ee4540` (red)
-- **AND** the background color is `#1a1a2e` at 80% opacity
-- **AND** the border is 2px `#0f0f0f` outline
-- **AND** the boss name label "SHADOW BOAR" fades in 0.3 seconds after the bar arrives
+#### Scenario: Player views main menu options
+**Given** the player launches the game
+**When** the main menu loads
+**Then** exactly three options are visible:
+- "NEW GAME" button
+- "OPTIONS" button (disabled, placeholder)
+- "QUIT" button
+**And** no seed input or daily challenge options are shown
 
-#### Scenario: Boss health bar shows damage trail
+---
 
-- **WHEN** the boss takes damage
-- **THEN** a white ghost bar (`#f1f1f1`) appears at the previous HP width
-- **AND** the ghost bar drains to match new HP over 0.6 seconds
-- **AND** the actual fill updates immediately
+### Requirement: Game Over Screen
+The game over screen SHALL provide simple restart and quit options.
 
-#### Scenario: Boss health bar phase 2 transition
+**Changed from:** Roguelite game over with Seed display, Retry (Same Seed), New Run
+**Changed to:** Linear game over with Restart, Quit to Title
 
-- **WHEN** `EventBus.boss_phase_changed(2)` is emitted
-- **THEN** the bar fill flashes white for 0.15 seconds
-- **AND** the fill color transitions from `#ee4540` (red) to `#2d132c` (dark purple) over 0.3 seconds
+#### Scenario: Player restarts after game over
+**Given** the player has died and the game over screen is shown
+**When** the player clicks "RESTART"
+**Then** the game restarts from Room 1
+**And** all game state is reset (HP=100, room=1, enemies respawn)
 
-#### Scenario: Boss health bar defeat animation
+#### Scenario: Player quits to title after game over
+**Given** the player has died and the game over screen is shown
+**When** the player clicks "QUIT TO TITLE"
+**Then** the game returns to the main menu
+**And** no seed or run statistics are displayed
 
-- **WHEN** `EventBus.boss_died` is emitted
-- **THEN** the boss health bar fades out over 0.5 seconds
+#### Scenario: Game over displays simple statistics
+**Given** the player has died
+**When** the game over screen appears
+**Then** only basic statistics are shown (enemies killed, time)
+**And** no seed value is displayed
+
+---
+
+### Requirement: Pause Menu
+The pause menu SHALL allow resuming, restarting, or quitting the game.
+
+**Changed from:** Simple resume/quit only
+**Changed to:** Resume, Restart, Quit to Menu
+
+#### Scenario: Player restarts from pause menu
+**Given** the game is paused
+**When** the player clicks "RESTART"
+**Then** the game unpauses
+**And** the game restarts from Room 1
+
+#### Scenario: Player quits from pause menu
+**Given** the game is paused
+**When** the player clicks "QUIT TO MENU"
+**Then** the game returns to the main menu
+**And** the current game state is discarded
+
+---
+
+### Requirement: Victory Screen
+The victory screen SHALL provide simple play again and quit options without seed sharing.
+
+**Changed from:** Roguelite victory with Seed display, Copy Seed, New Run (Harder)
+**Changed to:** Linear victory with Play Again, Return to Menu
+
+#### Scenario: Player wins and views victory screen
+**Given** the player has defeated the Shadow Boar
+**When** the victory screen appears
+**Then** "VICTORY!" message is displayed
+**And** basic statistics are shown (enemies killed, damage taken, time)
+**And** no seed value or copy seed button is displayed
+
+#### Scenario: Player plays again after victory
+**Given** the victory screen is shown
+**When** the player clicks "PLAY AGAIN"
+**Then** the game restarts from Room 1
+**And** all game state is reset
+
+#### Scenario: Player returns to menu after victory
+**Given** the victory screen is shown
+**When** the player clicks "RETURN TO MENU"
+**Then** the game returns to the main menu
+
+---
+
+## REMOVED Requirements
+
+- **Daily Challenge**: Player can start a daily challenge with a fixed seed for all players. *Reason: Linear stage game does not need daily challenges.*
+
+- **Seed Input**: Player can enter a specific seed to replay the same level layout. *Reason: Linear stage game has fixed room layouts; no procedural generation.*
+
+- **Retry Same Seed**: Game over screen allows retrying with the same seed. *Reason: Linear game uses fixed rooms; "Restart" achieves the same result.*
+
+- **Copy Seed**: Victory screen allows copying the run seed to clipboard. *Reason: Linear game has no seed system to share.*

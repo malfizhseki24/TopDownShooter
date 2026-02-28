@@ -39,6 +39,7 @@ var _obstacle_positions: Array[Vector2] = []
 ## Node references (set by parent via set_entities_node / set_interactables_node)
 var entities_node: Node2D = null
 var interactables_node: Node2D = null
+var navigation_region: NavigationRegion2D = null
 
 ## Enemy scenes
 var enemy_scenes: Dictionary = {}
@@ -165,6 +166,9 @@ func load_room(room_index: int) -> void:
 	_boss_spawn = result.boss_spawn
 	_enemy_spawns = result.enemy_spawns
 	_obstacle_positions = result.obstacle_positions
+
+	# Setup navigation polygon for pathfinding
+	_setup_navigation(result.navigation_polygon)
 
 	# Spawn obstacles at O marker positions (all room types)
 	_spawn_obstacles()
@@ -463,6 +467,25 @@ func set_entities_node(node: Node2D) -> void:
 
 func set_interactables_node(node: Node2D) -> void:
 	interactables_node = node
+
+
+func set_navigation_region(node: NavigationRegion2D) -> void:
+	navigation_region = node
+
+
+## Setup navigation polygon for the current room
+func _setup_navigation(nav_polygon: NavigationPolygon) -> void:
+	if navigation_region == null:
+		push_warning("RoomManager: NavigationRegion2D not set, pathfinding disabled")
+		return
+
+	if nav_polygon == null:
+		push_warning("RoomManager: No navigation polygon generated")
+		return
+
+	navigation_region.navigation_polygon = nav_polygon
+	navigation_region.bake_navigation_polygon()
+	print("RoomManager: Navigation polygon baked successfully")
 
 
 ## Spawn decorative vegetation in rooms to create jungle atmosphere

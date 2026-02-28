@@ -11,6 +11,9 @@ class_name AsciiRoomBuilder
 const TERRAIN_FLOOR: int = 0
 const TERRAIN_WALL: int = 1
 
+## Number of wall layers added outside the map for clean edges
+const BORDER_LAYERS := 3
+
 ## ASCII legend characters
 const CHAR_WALL := "#"
 const CHAR_FLOOR := "."
@@ -18,11 +21,12 @@ const CHAR_PLAYER := "P"
 const CHAR_ENEMY := "E"
 const CHAR_BOSS := "B"
 const CHAR_SHRINE := "S"
+const CHAR_HEAL := "H"  # Alternative heal shrine character
 const CHAR_PORTAL := "X"
 const CHAR_OBSTACLE := "O"
 
 ## Characters that produce floor terrain underneath
-const FLOOR_CHARS := [CHAR_FLOOR, CHAR_PLAYER, CHAR_ENEMY, CHAR_BOSS, CHAR_SHRINE, CHAR_PORTAL, CHAR_OBSTACLE]
+const FLOOR_CHARS := [CHAR_FLOOR, CHAR_PLAYER, CHAR_ENEMY, CHAR_BOSS, CHAR_SHRINE, CHAR_HEAL, CHAR_PORTAL, CHAR_OBSTACLE]
 
 
 ## Build a room from an ASCII map string and a TileSet resource.
@@ -34,9 +38,12 @@ const FLOOR_CHARS := [CHAR_FLOOR, CHAR_PLAYER, CHAR_ENEMY, CHAR_BOSS, CHAR_SHRIN
 ##   shrine_position: Vector2 — world position of S marker (Vector2.ZERO if none)
 ##   boss_spawn: Vector2 — world position of B marker (Vector2.ZERO if none)
 ##   obstacle_positions: Array[Vector2] — world positions of O markers
+##   navigation_polygon: NavigationPolygon — polygon for pathfinding
 ##   width: int — map width in tiles
 ##   height: int — map height in tiles
 static func build_room(map_string: String, tileset: TileSet) -> Dictionary:
+	var tile_size: int = tileset.tile_size.x  # Assuming square tiles
+
 	# Step 1: Parse ASCII to grid
 	var parsed := _parse_ascii(map_string)
 	var grid: Array = parsed.grid
@@ -55,9 +62,17 @@ static func build_room(map_string: String, tileset: TileSet) -> Dictionary:
 	var tile_layer := TileMapLayer.new()
 	tile_layer.name = "TileLayer"
 	tile_layer.tile_set = tileset
+
+	# Offset the tilemap so that tile (0, 0) appears at world position (0, 0)
+	# Border padding adds tiles at negative coordinates, so we shift the layer
+	tile_layer.position = Vector2(BORDER_LAYERS * tile_size, BORDER_LAYERS * tile_size)
+
 	_paint_terrain(tile_layer, wall_cells, floor_cells)
 
 	# Step 5: Convert entity positions to world coordinates
+	# Step 6: Create navigation polygon from floor cells (excluding obstacles)
+	var nav_polygon := create_navigation_polygon(floor_cells, classified.obstacle_positions, tile_size)
+
 	var result := {
 		"tile_layer": tile_layer,
 		"player_spawn": _tile_to_world(classified.player_spawn, tile_layer),
@@ -66,6 +81,7 @@ static func build_room(map_string: String, tileset: TileSet) -> Dictionary:
 		"shrine_position": _tile_to_world(classified.shrine_position, tile_layer),
 		"boss_spawn": _tile_to_world(classified.boss_spawn, tile_layer),
 		"obstacle_positions": _tiles_to_world(classified.obstacle_positions, tile_layer),
+		"navigation_polygon": nav_polygon,
 		"width": width,
 		"height": height,
 	}
@@ -133,7 +149,7 @@ static func _classify_cells(grid: Array, width: int, height: int) -> Dictionary:
 						enemy_spawns.append(cell)
 					CHAR_BOSS:
 						boss_spawn = cell
-					CHAR_SHRINE:
+					CHAR_SHRINE, CHAR_HEAL:
 						shrine_position = cell
 					CHAR_PORTAL:
 						portal_position = cell
@@ -173,25 +189,67 @@ static func _add_border_padding(wall_cells: Array[Vector2i], width: int, height:
 
 ## Paint terrain onto a TileMapLayer using Wang auto-tiling.
 static func _paint_terrain(layer: TileMapLayer, wall_cells: Array[Vector2i], floor_cells: Array[Vector2i]) -> void:
-	# Paint walls first (all borders + interior walls)
-	if wall_cells.size() > 0:
-		layer.set_cells_terrain_connect(wall_cells, 0, TERRAIN_WALL, false)
-
-	# Paint floors second (overwrites walls where floor exists)
+	# Paint floors first (base layer)
 	if floor_cells.size() > 0:
 		layer.set_cells_terrain_connect(floor_cells, 0, TERRAIN_FLOOR, false)
 
+	# Paint walls second (overwrites floors where walls exist)
+	if wall_cells.size() > 0:
+		layer.set_cells_terrain_connect(wall_cells, 0, TERRAIN_WALL, false)
+
 
 ## Convert a single tile coordinate to world position via the TileMapLayer.
+## Uses to_global to account for the tilemap layer's position offset.
 static func _tile_to_world(tile_pos: Vector2i, layer: TileMapLayer) -> Vector2:
 	if tile_pos.x < 0 or tile_pos.y < 0:
 		return Vector2.ZERO
-	return layer.map_to_local(tile_pos)
+	return layer.to_global(layer.map_to_local(tile_pos))
 
 
 ## Convert an array of tile coordinates to world positions.
 static func _tiles_to_world(tile_positions: Array[Vector2i], layer: TileMapLayer) -> Array[Vector2]:
 	var world_positions: Array[Vector2] = []
 	for tile_pos in tile_positions:
-		world_positions.append(layer.map_to_local(tile_pos))
+		world_positions.append(layer.to_global(layer.map_to_local(tile_pos)))
 	return world_positions
+
+
+## Create a NavigationPolygon from floor cells.
+## The polygon covers the walkable area defined by floor cells.
+## Returns a NavigationPolygon ready to be applied to a NavigationRegion2D.
+## NOTE: Uses simple bounding box - obstacles are handled by their collision
+static func create_navigation_polygon(floor_cells: Array[Vector2i], obstacle_cells: Array[Vector2i], tile_size: int) -> NavigationPolygon:
+	if floor_cells.is_empty():
+		return NavigationPolygon.new()
+
+	# Account for border padding offset
+	var padding := BORDER_LAYERS * tile_size
+
+	# Find bounds of floor area
+	var min_x := INF
+	var max_x := -INF
+	var min_y := INF
+	var max_y := -INF
+
+	for cell in floor_cells:
+		min_x = min(min_x, cell.x)
+		max_x = max(max_x, cell.x)
+		min_y = min(min_y, cell.y)
+		max_y = max(max_y, cell.y)
+
+	var polygon := NavigationPolygon.new()
+
+	# Create the main outline (clockwise) from floor bounds
+	# Add a small inset to keep navigation away from border walls
+	var inset := 8.0
+	var outline: PackedVector2Array = [
+		Vector2(min_x * tile_size + padding + inset, min_y * tile_size + padding + inset),
+		Vector2((max_x + 1) * tile_size + padding - inset, min_y * tile_size + padding + inset),
+		Vector2((max_x + 1) * tile_size + padding - inset, (max_y + 1) * tile_size + padding - inset),
+		Vector2(min_x * tile_size + padding + inset, (max_y + 1) * tile_size + padding - inset),
+	]
+
+	polygon.add_outline(outline)
+	polygon.make_polygons_from_outlines()
+
+	return polygon

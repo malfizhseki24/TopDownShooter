@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/levels/game.gd" id="1_game"]
 [ext_resource type="Script" path="res://scripts/stage/room_manager.gd" id="2_room_manager"]
 [ext_resource type="Script" path="res://scripts/camera/pixel_camera.gd" id="4_camera"]
-[ext_resource type="TileSet" uid="uid://b1fuoucj16pfs" path="res://assets/tilesets/jungle_ruins.tres" id="5_tileset"]
+[ext_resource type="TileSet" uid="uid://b1fuoucj16pfs" path="res://assets/tilesets/jungle_ruins_new.tres" id="5_tileset"]
 [ext_resource type="PackedScene" path="res://scenes/ui/screen_flash.tscn" id="6_screen_flash"]
 
 [node name="Game" type="Node2D"]
@@ -12,6 +12,8 @@ script = ExtResource("1_game")
 [node name="RoomManager" type="Node" parent="."]
 script = ExtResource("2_room_manager")
 tileset = ExtResource("5_tileset")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 
 [node name="Entities" type="Node2D" parent="."]
 z_index = 2

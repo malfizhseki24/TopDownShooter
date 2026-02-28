@@ -53,11 +53,11 @@ func _update_behavior(delta: float) -> void:
 		_do_teleport()
 		return
 
-	# Normal chase behavior
+	# Normal chase behavior (uses pathfinding if available)
 	if current_state != State.MOVING:
 		current_state = State.MOVING
 
-	var direction := _get_direction_to_player()
+	var direction := _get_movement_direction()
 	if direction != Vector2.ZERO:
 		velocity = direction * move_speed
 	else:

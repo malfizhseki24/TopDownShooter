@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://4wcbbxo6nscp"]
 
-[ext_resource type="TileSet" uid="uid://b1fuoucj16pfs" path="res://assets/tilesets/jungle_ruins.tres" id="1_tileset"]
+[ext_resource type="TileSet" uid="uid://b1fuoucj16pfs" path="res://assets/tilesets/jungle_ruins_new.tres" id="1_tileset"]
 
 [node name="Room1" type="Node2D" unique_id=880554092]
 

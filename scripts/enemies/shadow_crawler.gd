@@ -45,8 +45,8 @@ func _update_behavior(delta: float) -> void:
 	if current_state != State.MOVING:
 		current_state = State.MOVING
 
-	# Aggressively home toward player
-	var direction := _get_direction_to_player()
+	# Aggressively home toward player (uses pathfinding if available)
+	var direction := _get_movement_direction()
 	if direction != Vector2.ZERO:
 		velocity = direction * move_speed
 	else:

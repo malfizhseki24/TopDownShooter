@@ -17,6 +17,9 @@ signal died
 @export var move_speed: float = 80.0
 @export var shard_drop_chance: float = 0.75  # 75% chance to drop Sun Shard
 
+# Pathfinding
+@export var use_pathfinding: bool = true  # Use NavigationAgent2D for pathfinding around walls
+
 # Audio
 @export var death_sound: AudioStream
 
@@ -33,9 +36,14 @@ var current_state: State = State.IDLE
 # References
 @onready var sprite: Node = $AnimatedSprite2D if has_node("AnimatedSprite2D") else $Sprite2D
 @onready var hitbox: Area2D = $Hitbox
+@onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D if has_node("NavigationAgent2D") else null
 
 # Player reference (cached)
 var _player: Node2D = null
+
+# Pathfinding state
+var _path_update_timer: float = 0.0
+const PATH_UPDATE_INTERVAL: float = 0.25  # seconds
 
 # Knockback impulse velocity (decays via friction)
 var knockback_velocity: Vector2 = Vector2.ZERO
@@ -65,6 +73,10 @@ func _ready() -> void:
 	add_to_group("enemy")
 	_connect_signals()
 	_find_player()
+
+	# Setup pathfinding
+	_setup_pathfinding()
+
 	# Apply hit flash shader to sprite
 	_setup_hit_flash_shader()
 	# Cache base sprite scale for squash/stretch
@@ -102,6 +114,13 @@ func _physics_process(delta: float) -> void:
 	if knockback_velocity.length() > 1.0:
 		knockback_velocity = knockback_velocity.move_toward(Vector2.ZERO, KNOCKBACK_FRICTION * delta)
 
+	# Update pathfinding periodically
+	if use_pathfinding and navigation_agent:
+		_path_update_timer += delta
+		if _path_update_timer >= PATH_UPDATE_INTERVAL:
+			_path_update_timer = 0.0
+			_update_path_to_player()
+
 	_update_behavior(delta)
 
 	# Apply knockback on top of behavior velocity
@@ -123,6 +142,17 @@ func _find_player() -> void:
 		_player = players[0]
 
 
+## Setup pathfinding navigation agent
+func _setup_pathfinding() -> void:
+	if not navigation_agent:
+		if use_pathfinding:
+			push_warning("BaseEnemy: use_pathfinding is true but NavigationAgent2D not found on %s" % name)
+		return
+
+	# Initial path calculation (deferred to ensure navigation region is ready)
+	call_deferred("_update_path_to_player")
+
+
 ## Override in subclasses for specific movement behavior
 func _update_behavior(_delta: float) -> void:
 	pass
@@ -140,6 +170,44 @@ func _get_direction_to_player() -> Vector2:
 	if not _player:
 		return Vector2.ZERO
 	return (_player.global_position - global_position).normalized()
+
+
+## Request a new path to the player position (for pathfinding)
+func _update_path_to_player() -> void:
+	if not _player:
+		_find_player()
+	if not _player or not navigation_agent:
+		return
+	navigation_agent.target_position = _player.global_position
+
+
+## Get direction toward the next path waypoint (for pathfinding movement)
+## Returns Vector2.ZERO if path is finished or navigation unavailable
+func _get_path_direction() -> Vector2:
+	if not navigation_agent:
+		return Vector2.ZERO
+
+	if navigation_agent.is_navigation_finished():
+		return Vector2.ZERO
+
+	var next_pos := navigation_agent.get_next_path_position()
+	return global_position.direction_to(next_pos)
+
+
+## Get the direction to player, using pathfinding if available, direct otherwise
+## This is the main method subclasses should use for movement
+func _get_movement_direction() -> Vector2:
+	# If pathfinding is disabled or unavailable, fall back to direct movement
+	if not use_pathfinding or not navigation_agent:
+		return _get_direction_to_player()
+
+	# If we have a valid path, use it
+	var path_dir := _get_path_direction()
+	if path_dir != Vector2.ZERO:
+		return path_dir
+
+	# Path is finished or no valid path - fall back to direct movement
+	return _get_direction_to_player()
 
 
 ## Get cardinal direction string from current velocity (north, south, east, west)

@@ -13,6 +13,7 @@ var sun_shard_scene: PackedScene = preload("res://scenes/pickups/sun_shard.tscn"
 @onready var interactables: Node2D = $Interactables
 @onready var damage_number_layer: Node2D = $DamageNumberLayer
 @onready var camera: Camera2D = $Camera2D
+@onready var navigation_region: NavigationRegion2D = $NavigationRegion2D
 
 # HUD (instanced at runtime)
 var hud: CanvasLayer = null
@@ -41,6 +42,7 @@ func _setup_hud() -> void:
 func _setup_room_manager() -> void:
 	room_manager.set_entities_node(entities)
 	room_manager.set_interactables_node(interactables)
+	room_manager.set_navigation_region(navigation_region)
 
 	GameManager.set_total_rooms(RoomBlueprints.get_total_rooms())
 
