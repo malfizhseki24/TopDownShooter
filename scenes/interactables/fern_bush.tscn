@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://fern_bush_001"]
+
+[ext_resource type="Texture2D" path="res://assets/sprites/interactables/vegetation/fern_bush.png" id="1_sprite"]
+
+[node name="FernBush" type="Node2D"]
+
+[node name="Shadow" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(0, 2)
+scale = Vector2(0.2, 0.1)
+modulate = Color(0, 0, 0, 0.2)
+texture = ExtResource("1_sprite")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("1_sprite")

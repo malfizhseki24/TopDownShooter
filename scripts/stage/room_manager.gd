@@ -55,6 +55,9 @@ var obstacle_scene: PackedScene = null
 ## Destructible scenes by type
 var destructible_scenes: Dictionary = {}
 
+## Vegetation scenes (decorative, no collision)
+var vegetation_scenes: Dictionary = {}
+
 
 func _ready() -> void:
 	_load_scenes()
@@ -93,6 +96,18 @@ func _load_scenes() -> void:
 		var path: String = _destructible_paths[key]
 		if ResourceLoader.exists(path):
 			destructible_scenes[key] = load(path)
+
+	# Load vegetation scenes (decorative trees and bushes)
+	var _vegetation_paths := {
+		"sago_palm": "res://scenes/interactables/sago_palm.tscn",
+		"rainforest_tree": "res://scenes/interactables/rainforest_tree.tscn",
+		"mangrove": "res://scenes/interactables/mangrove.tscn",
+		"fern_bush": "res://scenes/interactables/fern_bush.tscn",
+	}
+	for key in _vegetation_paths:
+		var path: String = _vegetation_paths[key]
+		if ResourceLoader.exists(path):
+			vegetation_scenes[key] = load(path)
 
 
 func _connect_signals() -> void:
@@ -153,6 +168,9 @@ func load_room(room_index: int) -> void:
 
 	# Spawn obstacles at O marker positions (all room types)
 	_spawn_obstacles()
+
+	# Spawn decorative vegetation (all room types)
+	_spawn_vegetation()
 
 	# Setup room based on type
 	match current_room_type:
@@ -445,3 +463,53 @@ func set_entities_node(node: Node2D) -> void:
 
 func set_interactables_node(node: Node2D) -> void:
 	interactables_node = node
+
+
+## Spawn decorative vegetation in rooms to create jungle atmosphere
+func _spawn_vegetation() -> void:
+	if vegetation_scenes.is_empty():
+		return
+
+	# Tree types (no mangrove - stage 1 is deep forest, not near water)
+	var tree_types := ["sago_palm", "rainforest_tree"]
+
+	# Spawn 2-3 trees per room
+	var tree_count := 2 + (randi() % 2)
+	for i in range(tree_count):
+		var pick: String = tree_types[randi() % tree_types.size()]
+		var scene: PackedScene = vegetation_scenes.get(pick)
+		if scene == null:
+			continue
+
+		var pos := _get_random_vegetation_position()
+		var obj := scene.instantiate() as Node2D
+		obj.global_position = pos
+		obj.scale = Vector2(0.2, 0.2) * randf_range(0.8, 1.2)
+
+		if interactables_node:
+			interactables_node.add_child(obj)
+
+	# Spawn 4-6 fern bushes (smaller but more numerous)
+	var fern_scene: PackedScene = vegetation_scenes.get("fern_bush")
+	if fern_scene:
+		var fern_count := 4 + (randi() % 3)
+		for i in range(fern_count):
+			var pos := _get_random_vegetation_position()
+			var obj := fern_scene.instantiate() as Node2D
+			obj.global_position = pos
+			# Fern bushes are 80% smaller than trees
+			obj.scale = Vector2(0.04, 0.04) * randf_range(0.8, 1.2)
+
+			if interactables_node:
+				interactables_node.add_child(obj)
+
+		print("RoomManager: Spawned %d trees and %d fern bushes" % [tree_count, 4 + (randi() % 3)])
+
+
+## Get random position for vegetation (avoid center combat area)
+func _get_random_vegetation_position() -> Vector2:
+	var angle := randf() * TAU
+	var dist := 80.0 + randf() * 60.0  # 80-140 pixels from center
+	var pos := Vector2(240, 200) + Vector2(cos(angle), sin(angle)) * dist
+	pos += Vector2(randf_range(-20, 20), randf_range(-20, 20))
+	return pos

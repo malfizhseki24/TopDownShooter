@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://mangrove_001"]
+
+[ext_resource type="Texture2D" path="res://assets/sprites/interactables/vegetation/mangrove.png" id="1_sprite"]
+
+[node name="Mangrove" type="Node2D"]
+z_index = 1
+
+[node name="Shadow" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(0, 4)
+scale = Vector2(0.2, 0.1)
+modulate = Color(0, 0, 0, 0.25)
+texture = ExtResource("1_sprite")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_sprite")

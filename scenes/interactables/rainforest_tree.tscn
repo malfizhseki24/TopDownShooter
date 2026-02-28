@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://rainforest_tree_001"]
+
+[ext_resource type="Texture2D" path="res://assets/sprites/interactables/vegetation/rainforest_tree.png" id="1_sprite"]
+
+[node name="RainforestTree" type="Node2D"]
+z_index = 1
+
+[node name="Shadow" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(0, 5)
+scale = Vector2(0.25, 0.12)
+modulate = Color(0, 0, 0, 0.25)
+texture = ExtResource("1_sprite")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("1_sprite")

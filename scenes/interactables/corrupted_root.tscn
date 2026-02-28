@@ -1,44 +1,30 @@
-[gd_scene load_steps=3 format=3 uid="uid://corrupted_root_001"]
+[gd_scene load_steps=4 format=3 uid="uid://corrupted_root_001"]
 
 [ext_resource type="Script" path="res://scripts/interactables/base_destructible.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/sprites/interactables/destructibles/corrupted_root.png" id="2_sprite"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_col"]
-size = Vector2(12, 8)
+size = Vector2(8, 6)
 
 [node name="CorruptedRoot" type="StaticBody2D"]
 collision_layer = 32
 collision_mask = 0
 script = ExtResource("1_script")
 max_hp = 1
-destructible_type = "corrupted_root"
+destructible_type = "wood"
 break_vfx = "hit_spark"
 
-[node name="Shadow" type="Polygon2D" parent="."]
+[node name="Shadow" type="Sprite2D" parent="."]
 z_index = -1
 position = Vector2(0, 2)
-color = Color(0, 0, 0, 0.15)
-polygon = PackedVector2Array(-7, -2, -4, -4, 4, -4, 7, -2, 7, 1, 4, 3, -4, 3, -7, 1)
+scale = Vector2(0.15, 0.08)
+modulate = Color(0, 0, 0, 0.3)
+texture = ExtResource("2_sprite")
 
-[node name="RootLeft" type="ColorRect" parent="."]
-offset_left = -7.0
-offset_top = -3.0
-offset_right = -2.0
-offset_bottom = 2.0
-color = Color(0.25, 0.15, 0.1, 1)
-
-[node name="RootRight" type="ColorRect" parent="."]
-offset_left = 1.0
-offset_top = -4.0
-offset_right = 6.0
-offset_bottom = 1.0
-color = Color(0.3, 0.18, 0.12, 1)
-
-[node name="Leaves" type="ColorRect" parent="."]
-offset_left = -3.0
-offset_top = -6.0
-offset_right = 2.0
-offset_bottom = -3.0
-color = Color(0.2, 0.5, 0.15, 0.8)
+[node name="Sprite" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_sprite")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_col")
