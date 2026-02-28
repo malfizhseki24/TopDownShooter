@@ -1,0 +1,30 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://sun_piercer_frames"]
+
+[ext_resource type="Texture2D" uid="uid://bvnb2lmjx24u8" path="res://assets/sprites/projectiles/sun_piercer/FB001.png" id="frame1"]
+[ext_resource type="Texture2D" uid="uid://dna3aad5x4am2" path="res://assets/sprites/projectiles/sun_piercer/FB002.png" id="frame2"]
+[ext_resource type="Texture2D" uid="uid://cbj15nsr8n8hn" path="res://assets/sprites/projectiles/sun_piercer/FB003.png" id="frame3"]
+[ext_resource type="Texture2D" uid="uid://dc3kbr5sorsg8" path="res://assets/sprites/projectiles/sun_piercer/FB004.png" id="frame4"]
+[ext_resource type="Texture2D" uid="uid://cwn08j6p1gcd1" path="res://assets/sprites/projectiles/sun_piercer/FB005.png" id="frame5"]
+
+[resource]
+animations = [{
+"frames": [{
+	"duration": 1.0,
+	"texture": ExtResource("frame1")
+}, {
+	"duration": 1.0,
+	"texture": ExtResource("frame2")
+}, {
+	"duration": 1.0,
+	"texture": ExtResource("frame3")
+}, {
+	"duration": 1.0,
+	"texture": ExtResource("frame4")
+}, {
+	"duration": 1.0,
+	"texture": ExtResource("frame5")
+}],
+"loop": true,
+"name": &"fly",
+"speed": 10.0
+}]

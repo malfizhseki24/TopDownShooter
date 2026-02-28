@@ -41,7 +41,7 @@ var _velocity: Vector2 = Vector2.ZERO
 @onready var glow: PointLight2D = $Glow
 
 # Base scale (set in scene)
-const BASE_SCALE: float = 0.25
+const BASE_SCALE: float = 0.02
 
 # Player reference for magnetic pull
 var _player: Node2D = null

@@ -19,7 +19,7 @@ var _obstacles_pierced: int = 0
 var _hit_enemies: Dictionary = {}  # enemy -> time of hit
 
 # References
-@onready var sprite: Sprite2D = $Sprite2D
+@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var glow: PointLight2D = $Glow
 @onready var trail: GPUParticles2D = $TrailParticles
 @onready var hit_cooldown_timer: Timer = $HitCooldownTimer
