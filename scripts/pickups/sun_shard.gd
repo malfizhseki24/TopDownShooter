@@ -7,21 +7,21 @@ extends Area2D
 signal collected
 
 # Physics constants
-const SPAWN_UPWARD_VELOCITY_MIN: float = 80.0
-const SPAWN_UPWARD_VELOCITY_MAX: float = 120.0
-const SPAWN_HORIZONTAL_RANGE: float = 30.0
+const SPAWN_UPWARD_VELOCITY_MIN: float = 107.0
+const SPAWN_UPWARD_VELOCITY_MAX: float = 160.0
+const SPAWN_HORIZONTAL_RANGE: float = 40.0
 const BOUNCE_DAMPENING: float = 0.5
 const FRICTION: float = 0.8
-const GRAVITY: float = 400.0
-const SETTLE_THRESHOLD: float = 10.0
+const GRAVITY: float = 533.0
+const SETTLE_THRESHOLD: float = 13.3
 
 # Magnetic pull constants
-const MAGNETIC_RANGE: float = 80.0
-const MAGNETIC_ACCELERATION: float = 400.0
-const MAX_MAGNETIC_SPEED: float = 500.0
+const MAGNETIC_RANGE: float = 107.0
+const MAGNETIC_ACCELERATION: float = 533.0
+const MAX_MAGNETIC_SPEED: float = 667.0
 
 # Animation constants
-const BOB_AMPLITUDE: float = 2.0
+const BOB_AMPLITUDE: float = 2.7
 const BOB_PERIOD: float = 1.5
 const COLLECT_TWEEN_DURATION: float = 0.2
 
@@ -156,7 +156,7 @@ func _update_magnetic(delta: float) -> void:
 	var to_player := (_player.global_position - global_position)
 	var dist := to_player.length()
 
-	if dist < 5.0:
+	if dist < 6.7:
 		# Close enough to collect
 		return
 

@@ -1,0 +1,234 @@
+[gd_scene load_steps=6 format=3 uid="uid://skill_bar_ui"]
+
+[ext_resource type="Script" path="res://scripts/ui/skill_bar.gd" id="1_skillbar"]
+[ext_resource type="Texture2D" path="res://assets/sprites/ui/skill_talon_kick.png" id="2_icon1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/ui/skill_feather_volley.png" id="3_icon2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/ui/skill_ancestor_ward.png" id="4_icon3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/ui/white_square.png" id="5_white"]
+
+[node name="SkillBar" type="HBoxContainer"]
+custom_minimum_size = Vector2(96, 28)
+theme_override_constants/separation = 4
+script = ExtResource("1_skillbar")
+
+[node name="Slot1" type="Control" parent="."]
+layout_mode = 2
+custom_minimum_size = Vector2(28, 28)
+size_flags_horizontal = 0
+
+[node name="SlotBG" type="ColorRect" parent="Slot1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.06, 0.06, 0.14, 0.85)
+
+[node name="Icon" type="TextureRect" parent="Slot1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = -2.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_icon1")
+stretch_mode = 5
+
+[node name="CooldownSweep" type="TextureProgressBar" parent="Slot1"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture_under = ExtResource("5_white")
+texture_progress = ExtResource("5_white")
+fill_mode = 7
+radial_initial_angle = -90.0
+radial_fill_degrees = 360.0
+max_value = 100.0
+value = 100.0
+tint_under = Color(0, 0, 0, 0)
+tint_progress = Color(0.0, 0.0, 0.0, 0.88)
+
+[node name="ReadyGlow" type="ColorRect" parent="Slot1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1.0, 0.87, 0.3, 0.0)
+
+[node name="KeyLabel" type="Label" parent="Slot1"]
+layout_mode = 1
+anchors_preset = 4
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_top = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.9, 0.9, 0.9, 0.7)
+theme_override_font_sizes/font_size = 6
+text = "1"
+
+[node name="Slot2" type="Control" parent="."]
+layout_mode = 2
+custom_minimum_size = Vector2(28, 28)
+size_flags_horizontal = 0
+
+[node name="SlotBG" type="ColorRect" parent="Slot2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.06, 0.06, 0.14, 0.85)
+
+[node name="Icon" type="TextureRect" parent="Slot2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = -2.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("3_icon2")
+stretch_mode = 5
+
+[node name="CooldownSweep" type="TextureProgressBar" parent="Slot2"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture_under = ExtResource("5_white")
+texture_progress = ExtResource("5_white")
+fill_mode = 7
+radial_initial_angle = -90.0
+radial_fill_degrees = 360.0
+max_value = 100.0
+value = 100.0
+tint_under = Color(0, 0, 0, 0)
+tint_progress = Color(0.0, 0.0, 0.0, 0.88)
+
+[node name="ReadyGlow" type="ColorRect" parent="Slot2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1.0, 0.87, 0.3, 0.0)
+
+[node name="KeyLabel" type="Label" parent="Slot2"]
+layout_mode = 1
+anchors_preset = 4
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_top = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.9, 0.9, 0.9, 0.7)
+theme_override_font_sizes/font_size = 6
+text = "2"
+
+[node name="Slot3" type="Control" parent="."]
+layout_mode = 2
+custom_minimum_size = Vector2(28, 28)
+size_flags_horizontal = 0
+
+[node name="SlotBG" type="ColorRect" parent="Slot3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.06, 0.06, 0.14, 0.85)
+
+[node name="Icon" type="TextureRect" parent="Slot3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = -2.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("4_icon3")
+stretch_mode = 5
+
+[node name="CooldownSweep" type="TextureProgressBar" parent="Slot3"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture_under = ExtResource("5_white")
+texture_progress = ExtResource("5_white")
+fill_mode = 7
+radial_initial_angle = -90.0
+radial_fill_degrees = 360.0
+max_value = 100.0
+value = 100.0
+tint_under = Color(0, 0, 0, 0)
+tint_progress = Color(0.0, 0.0, 0.0, 0.88)
+
+[node name="ReadyGlow" type="ColorRect" parent="Slot3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1.0, 0.87, 0.3, 0.0)
+
+[node name="KeyLabel" type="Label" parent="Slot3"]
+layout_mode = 1
+anchors_preset = 4
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_top = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.9, 0.9, 0.9, 0.7)
+theme_override_font_sizes/font_size = 6
+text = "3"

@@ -1,121 +1,77 @@
 [gd_resource type="SpriteFrames" format=3 uid="uid://shadow_crawler_frames"]
 
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/idle/south/frame_000.png" id="idle_s_0"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/idle/south/frame_001.png" id="idle_s_1"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/idle/south/frame_002.png" id="idle_s_2"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/idle/south/frame_003.png" id="idle_s_3"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/idle/south/frame_004.png" id="idle_s_4"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/idle/south/frame_005.png" id="idle_s_5"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/idle/south/frame_006.png" id="idle_s_6"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/idle/south/frame_007.png" id="idle_s_7"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/idle/north/frame_000.png" id="idle_n_0"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/idle/north/frame_001.png" id="idle_n_1"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/idle/north/frame_002.png" id="idle_n_2"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/idle/north/frame_003.png" id="idle_n_3"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/idle/north/frame_004.png" id="idle_n_4"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/idle/north/frame_005.png" id="idle_n_5"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/idle/north/frame_006.png" id="idle_n_6"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/idle/north/frame_007.png" id="idle_n_7"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/idle/east/frame_000.png" id="idle_e_0"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/idle/east/frame_001.png" id="idle_e_1"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/idle/east/frame_002.png" id="idle_e_2"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/idle/east/frame_003.png" id="idle_e_3"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/idle/east/frame_004.png" id="idle_e_4"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/idle/east/frame_005.png" id="idle_e_5"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/idle/east/frame_006.png" id="idle_e_6"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/idle/east/frame_007.png" id="idle_e_7"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/idle/west/frame_000.png" id="idle_w_0"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/idle/west/frame_001.png" id="idle_w_1"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/idle/west/frame_002.png" id="idle_w_2"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/idle/west/frame_003.png" id="idle_w_3"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/idle/west/frame_004.png" id="idle_w_4"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/idle/west/frame_005.png" id="idle_w_5"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/idle/west/frame_006.png" id="idle_w_6"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/idle/west/frame_007.png" id="idle_w_7"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/running-4-frames/south/frame_000.png" id="walk_s_0"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/running-4-frames/south/frame_001.png" id="walk_s_1"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/running-4-frames/south/frame_002.png" id="walk_s_2"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/running-4-frames/south/frame_003.png" id="walk_s_3"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/running-4-frames/north/frame_000.png" id="walk_n_0"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/running-4-frames/north/frame_001.png" id="walk_n_1"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/running-4-frames/north/frame_002.png" id="walk_n_2"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/running-4-frames/north/frame_003.png" id="walk_n_3"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/running-4-frames/east/frame_000.png" id="walk_e_0"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/running-4-frames/east/frame_001.png" id="walk_e_1"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/running-4-frames/east/frame_002.png" id="walk_e_2"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/running-4-frames/east/frame_003.png" id="walk_e_3"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/running-4-frames/west/frame_000.png" id="walk_w_0"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/running-4-frames/west/frame_001.png" id="walk_w_1"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/running-4-frames/west/frame_002.png" id="walk_w_2"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/running-4-frames/west/frame_003.png" id="walk_w_3"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/angry/south/frame_000.png" id="attack_s_0"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/angry/south/frame_001.png" id="attack_s_1"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/angry/south/frame_002.png" id="attack_s_2"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/angry/south/frame_003.png" id="attack_s_3"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/angry/south/frame_004.png" id="attack_s_4"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/angry/south/frame_005.png" id="attack_s_5"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/angry/south/frame_006.png" id="attack_s_6"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/angry/north/frame_000.png" id="attack_n_0"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/angry/north/frame_001.png" id="attack_n_1"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/angry/north/frame_002.png" id="attack_n_2"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/angry/north/frame_003.png" id="attack_n_3"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/angry/north/frame_004.png" id="attack_n_4"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/angry/north/frame_005.png" id="attack_n_5"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/angry/north/frame_006.png" id="attack_n_6"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/angry/east/frame_000.png" id="attack_e_0"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/angry/east/frame_001.png" id="attack_e_1"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/angry/east/frame_002.png" id="attack_e_2"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/angry/east/frame_003.png" id="attack_e_3"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/angry/east/frame_004.png" id="attack_e_4"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/angry/east/frame_005.png" id="attack_e_5"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/angry/east/frame_006.png" id="attack_e_6"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/angry/west/frame_000.png" id="attack_w_0"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/angry/west/frame_001.png" id="attack_w_1"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/angry/west/frame_002.png" id="attack_w_2"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/angry/west/frame_003.png" id="attack_w_3"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/angry/west/frame_004.png" id="attack_w_4"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/angry/west/frame_005.png" id="attack_w_5"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/angry/west/frame_006.png" id="attack_w_6"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/seated-on-belly-idle/south/frame_000.png" id="death_s_0"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/seated-on-belly-idle/south/frame_001.png" id="death_s_1"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/seated-on-belly-idle/south/frame_002.png" id="death_s_2"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/seated-on-belly-idle/south/frame_003.png" id="death_s_3"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/seated-on-belly-idle/south/frame_004.png" id="death_s_4"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/seated-on-belly-idle/south/frame_005.png" id="death_s_5"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/seated-on-belly-idle/south/frame_006.png" id="death_s_6"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/seated-on-belly-idle/south/frame_007.png" id="death_s_7"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/seated-on-belly-idle/south/frame_008.png" id="death_s_8"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/seated-on-belly-idle/south/frame_009.png" id="death_s_9"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/seated-on-belly-idle/north/frame_000.png" id="death_n_0"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/seated-on-belly-idle/north/frame_001.png" id="death_n_1"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/seated-on-belly-idle/north/frame_002.png" id="death_n_2"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/seated-on-belly-idle/north/frame_003.png" id="death_n_3"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/seated-on-belly-idle/north/frame_004.png" id="death_n_4"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/seated-on-belly-idle/north/frame_005.png" id="death_n_5"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/seated-on-belly-idle/north/frame_006.png" id="death_n_6"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/seated-on-belly-idle/north/frame_007.png" id="death_n_7"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/seated-on-belly-idle/north/frame_008.png" id="death_n_8"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/seated-on-belly-idle/north/frame_009.png" id="death_n_9"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/seated-on-belly-idle/east/frame_000.png" id="death_e_0"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/seated-on-belly-idle/east/frame_001.png" id="death_e_1"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/seated-on-belly-idle/east/frame_002.png" id="death_e_2"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/seated-on-belly-idle/east/frame_003.png" id="death_e_3"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/seated-on-belly-idle/east/frame_004.png" id="death_e_4"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/seated-on-belly-idle/east/frame_005.png" id="death_e_5"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/seated-on-belly-idle/east/frame_006.png" id="death_e_6"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/seated-on-belly-idle/east/frame_007.png" id="death_e_7"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/seated-on-belly-idle/east/frame_008.png" id="death_e_8"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/seated-on-belly-idle/east/frame_009.png" id="death_e_9"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/seated-on-belly-idle/west/frame_000.png" id="death_w_0"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/seated-on-belly-idle/west/frame_001.png" id="death_w_1"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/seated-on-belly-idle/west/frame_002.png" id="death_w_2"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/seated-on-belly-idle/west/frame_003.png" id="death_w_3"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/seated-on-belly-idle/west/frame_004.png" id="death_w_4"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/seated-on-belly-idle/west/frame_005.png" id="death_w_5"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/seated-on-belly-idle/west/frame_006.png" id="death_w_6"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/seated-on-belly-idle/west/frame_007.png" id="death_w_7"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/seated-on-belly-idle/west/frame_008.png" id="death_w_8"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/seated-on-belly-idle/west/frame_009.png" id="death_w_9"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/breathing-idle/south/frame_000.png" id="idle_s_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/breathing-idle/south/frame_001.png" id="idle_s_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/breathing-idle/south/frame_002.png" id="idle_s_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/breathing-idle/south/frame_003.png" id="idle_s_3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/breathing-idle/north/frame_000.png" id="idle_n_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/breathing-idle/north/frame_001.png" id="idle_n_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/breathing-idle/north/frame_002.png" id="idle_n_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/breathing-idle/north/frame_003.png" id="idle_n_3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/breathing-idle/east/frame_000.png" id="idle_e_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/breathing-idle/east/frame_001.png" id="idle_e_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/breathing-idle/east/frame_002.png" id="idle_e_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/breathing-idle/east/frame_003.png" id="idle_e_3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/breathing-idle/west/frame_000.png" id="idle_w_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/breathing-idle/west/frame_001.png" id="idle_w_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/breathing-idle/west/frame_002.png" id="idle_w_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/breathing-idle/west/frame_003.png" id="idle_w_3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/walking-4-frames/south/frame_000.png" id="walk_s_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/walking-4-frames/south/frame_001.png" id="walk_s_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/walking-4-frames/south/frame_002.png" id="walk_s_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/walking-4-frames/south/frame_003.png" id="walk_s_3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/walking-4-frames/north/frame_000.png" id="walk_n_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/walking-4-frames/north/frame_001.png" id="walk_n_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/walking-4-frames/north/frame_002.png" id="walk_n_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/walking-4-frames/north/frame_003.png" id="walk_n_3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/walking-4-frames/east/frame_000.png" id="walk_e_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/walking-4-frames/east/frame_001.png" id="walk_e_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/walking-4-frames/east/frame_002.png" id="walk_e_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/walking-4-frames/east/frame_003.png" id="walk_e_3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/walking-4-frames/west/frame_000.png" id="walk_w_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/walking-4-frames/west/frame_001.png" id="walk_w_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/walking-4-frames/west/frame_002.png" id="walk_w_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/walking-4-frames/west/frame_003.png" id="walk_w_3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/falling-back-death/south/frame_000.png" id="death_s_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/falling-back-death/south/frame_001.png" id="death_s_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/falling-back-death/south/frame_002.png" id="death_s_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/falling-back-death/south/frame_003.png" id="death_s_3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/falling-back-death/south/frame_004.png" id="death_s_4"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/falling-back-death/south/frame_005.png" id="death_s_5"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/falling-back-death/south/frame_006.png" id="death_s_6"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/falling-back-death/north/frame_000.png" id="death_n_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/falling-back-death/north/frame_001.png" id="death_n_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/falling-back-death/north/frame_002.png" id="death_n_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/falling-back-death/north/frame_003.png" id="death_n_3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/falling-back-death/north/frame_004.png" id="death_n_4"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/falling-back-death/north/frame_005.png" id="death_n_5"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/falling-back-death/north/frame_006.png" id="death_n_6"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/falling-back-death/east/frame_000.png" id="death_e_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/falling-back-death/east/frame_001.png" id="death_e_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/falling-back-death/east/frame_002.png" id="death_e_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/falling-back-death/east/frame_003.png" id="death_e_3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/falling-back-death/east/frame_004.png" id="death_e_4"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/falling-back-death/east/frame_005.png" id="death_e_5"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/falling-back-death/east/frame_006.png" id="death_e_6"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/falling-back-death/west/frame_000.png" id="death_w_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/falling-back-death/west/frame_001.png" id="death_w_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/falling-back-death/west/frame_002.png" id="death_w_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/falling-back-death/west/frame_003.png" id="death_w_3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/falling-back-death/west/frame_004.png" id="death_w_4"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/falling-back-death/west/frame_005.png" id="death_w_5"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/falling-back-death/west/frame_006.png" id="death_w_6"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/lead-jab/south/frame_000.png" id="attack_s_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/lead-jab/south/frame_001.png" id="attack_s_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/lead-jab/south/frame_002.png" id="attack_s_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/lead-jab/north/frame_000.png" id="attack_n_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/lead-jab/north/frame_001.png" id="attack_n_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/lead-jab/north/frame_002.png" id="attack_n_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/lead-jab/east/frame_000.png" id="attack_e_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/lead-jab/east/frame_001.png" id="attack_e_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/lead-jab/east/frame_002.png" id="attack_e_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/lead-jab/west/frame_000.png" id="attack_w_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/lead-jab/west/frame_001.png" id="attack_w_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_crawler/animations/lead-jab/west/frame_002.png" id="attack_w_2"]
 
 [resource]
 animations = [{
@@ -131,18 +87,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("idle_s_3")
-}, {
-"duration": 1.0,
-"texture": ExtResource("idle_s_4")
-}, {
-"duration": 1.0,
-"texture": ExtResource("idle_s_5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("idle_s_6")
-}, {
-"duration": 1.0,
-"texture": ExtResource("idle_s_7")
 }],
 "loop": true,
 "name": &"idle_south",
@@ -160,18 +104,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("idle_n_3")
-}, {
-"duration": 1.0,
-"texture": ExtResource("idle_n_4")
-}, {
-"duration": 1.0,
-"texture": ExtResource("idle_n_5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("idle_n_6")
-}, {
-"duration": 1.0,
-"texture": ExtResource("idle_n_7")
 }],
 "loop": true,
 "name": &"idle_north",
@@ -189,18 +121,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("idle_e_3")
-}, {
-"duration": 1.0,
-"texture": ExtResource("idle_e_4")
-}, {
-"duration": 1.0,
-"texture": ExtResource("idle_e_5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("idle_e_6")
-}, {
-"duration": 1.0,
-"texture": ExtResource("idle_e_7")
 }],
 "loop": true,
 "name": &"idle_east",
@@ -218,18 +138,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("idle_w_3")
-}, {
-"duration": 1.0,
-"texture": ExtResource("idle_w_4")
-}, {
-"duration": 1.0,
-"texture": ExtResource("idle_w_5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("idle_w_6")
-}, {
-"duration": 1.0,
-"texture": ExtResource("idle_w_7")
 }],
 "loop": true,
 "name": &"idle_west",
@@ -305,110 +213,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("attack_s_0")
-}, {
-"duration": 1.0,
-"texture": ExtResource("attack_s_1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("attack_s_2")
-}, {
-"duration": 1.0,
-"texture": ExtResource("attack_s_3")
-}, {
-"duration": 1.0,
-"texture": ExtResource("attack_s_4")
-}, {
-"duration": 1.0,
-"texture": ExtResource("attack_s_5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("attack_s_6")
-}],
-"loop": false,
-"name": &"attack_south",
-"speed": 14.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("attack_n_0")
-}, {
-"duration": 1.0,
-"texture": ExtResource("attack_n_1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("attack_n_2")
-}, {
-"duration": 1.0,
-"texture": ExtResource("attack_n_3")
-}, {
-"duration": 1.0,
-"texture": ExtResource("attack_n_4")
-}, {
-"duration": 1.0,
-"texture": ExtResource("attack_n_5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("attack_n_6")
-}],
-"loop": false,
-"name": &"attack_north",
-"speed": 14.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("attack_e_0")
-}, {
-"duration": 1.0,
-"texture": ExtResource("attack_e_1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("attack_e_2")
-}, {
-"duration": 1.0,
-"texture": ExtResource("attack_e_3")
-}, {
-"duration": 1.0,
-"texture": ExtResource("attack_e_4")
-}, {
-"duration": 1.0,
-"texture": ExtResource("attack_e_5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("attack_e_6")
-}],
-"loop": false,
-"name": &"attack_east",
-"speed": 14.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("attack_w_0")
-}, {
-"duration": 1.0,
-"texture": ExtResource("attack_w_1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("attack_w_2")
-}, {
-"duration": 1.0,
-"texture": ExtResource("attack_w_3")
-}, {
-"duration": 1.0,
-"texture": ExtResource("attack_w_4")
-}, {
-"duration": 1.0,
-"texture": ExtResource("attack_w_5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("attack_w_6")
-}],
-"loop": false,
-"name": &"attack_west",
-"speed": 14.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": ExtResource("death_s_0")
 }, {
 "duration": 1.0,
@@ -428,15 +232,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("death_s_6")
-}, {
-"duration": 1.0,
-"texture": ExtResource("death_s_7")
-}, {
-"duration": 1.0,
-"texture": ExtResource("death_s_8")
-}, {
-"duration": 1.0,
-"texture": ExtResource("death_s_9")
 }],
 "loop": false,
 "name": &"death_south",
@@ -463,15 +258,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("death_n_6")
-}, {
-"duration": 1.0,
-"texture": ExtResource("death_n_7")
-}, {
-"duration": 1.0,
-"texture": ExtResource("death_n_8")
-}, {
-"duration": 1.0,
-"texture": ExtResource("death_n_9")
 }],
 "loop": false,
 "name": &"death_north",
@@ -498,15 +284,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("death_e_6")
-}, {
-"duration": 1.0,
-"texture": ExtResource("death_e_7")
-}, {
-"duration": 1.0,
-"texture": ExtResource("death_e_8")
-}, {
-"duration": 1.0,
-"texture": ExtResource("death_e_9")
 }],
 "loop": false,
 "name": &"death_east",
@@ -533,17 +310,64 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("death_w_6")
-}, {
-"duration": 1.0,
-"texture": ExtResource("death_w_7")
-}, {
-"duration": 1.0,
-"texture": ExtResource("death_w_8")
-}, {
-"duration": 1.0,
-"texture": ExtResource("death_w_9")
 }],
 "loop": false,
 "name": &"death_west",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("attack_s_0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("attack_s_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("attack_s_2")
+}],
+"loop": false,
+"name": &"attack_south",
+"speed": 14.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("attack_n_0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("attack_n_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("attack_n_2")
+}],
+"loop": false,
+"name": &"attack_north",
+"speed": 14.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("attack_e_0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("attack_e_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("attack_e_2")
+}],
+"loop": false,
+"name": &"attack_east",
+"speed": 14.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("attack_w_0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("attack_w_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("attack_w_2")
+}],
+"loop": false,
+"name": &"attack_west",
+"speed": 14.0
 }]

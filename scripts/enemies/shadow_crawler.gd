@@ -5,7 +5,7 @@ extends BaseEnemy
 ## Behavior: Chase player → Attack on contact → Bounce back → Chase again
 
 # Bounce settings
-const BOUNCE_DISTANCE: float = 80.0
+const BOUNCE_DISTANCE: float = 107.0
 const BOUNCE_DURATION: float = 0.25
 const ATTACK_COOLDOWN: float = 0.6
 
@@ -19,7 +19,7 @@ var _is_attacking: bool = false
 func _ready() -> void:
 	max_hp = 35
 	contact_damage = 15
-	move_speed = 120.0
+	move_speed = 160.0
 	super._ready()
 
 

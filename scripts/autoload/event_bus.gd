@@ -63,3 +63,8 @@ signal energy_meter_full
 signal energy_meter_emptied
 signal special_attack_fired(direction: Vector2)
 signal special_attack_hit(target: Node, damage: int)
+
+# Skill signals
+signal skill_activated(skill_index: int)
+signal skill_cooldown_started(skill_index: int, duration: float)
+signal skill_cooldown_ready(skill_index: int)

@@ -29,7 +29,7 @@ var _spawn_generation: int = 0  ## Cancels stale spawn coroutines when a new wav
 var _current_tile_layer: TileMapLayer = null
 
 ## Positions from the current room build
-var _player_spawn: Vector2 = Vector2(240, 400)
+var _player_spawn: Vector2 = Vector2(320, 533)
 var _portal_position: Vector2 = Vector2.ZERO
 var _shrine_position: Vector2 = Vector2.ZERO
 var _boss_spawn: Vector2 = Vector2.ZERO
@@ -253,7 +253,7 @@ func _setup_heal_room() -> void:
 func _setup_boss_room() -> void:
 	var boss_type := &"shadow_boar"
 
-	var spawn_pos := _boss_spawn if _boss_spawn != Vector2.ZERO else Vector2(240, 120)
+	var spawn_pos := _boss_spawn if _boss_spawn != Vector2.ZERO else Vector2(320, 160)
 	_spawn_boss(boss_type, spawn_pos)
 
 
@@ -390,7 +390,7 @@ func _spawn_portal() -> void:
 		push_warning("RoomManager: Portal scene not found!")
 		return
 
-	var portal_pos := _portal_position if _portal_position != Vector2.ZERO else Vector2(240, 80)
+	var portal_pos := _portal_position if _portal_position != Vector2.ZERO else Vector2(320, 107)
 
 	# Check if portal_scene has RoomPortal class
 	var portal := portal_scene.instantiate()
@@ -507,7 +507,7 @@ func _spawn_vegetation() -> void:
 		var pos := _get_random_vegetation_position()
 		var obj := scene.instantiate() as Node2D
 		obj.global_position = pos
-		obj.scale = Vector2(0.2, 0.2) * randf_range(0.8, 1.2)
+		obj.scale = Vector2(0.27, 0.27) * randf_range(0.8, 1.2)
 
 		if interactables_node:
 			interactables_node.add_child(obj)
@@ -521,7 +521,7 @@ func _spawn_vegetation() -> void:
 			var obj := fern_scene.instantiate() as Node2D
 			obj.global_position = pos
 			# Fern bushes are 80% smaller than trees
-			obj.scale = Vector2(0.04, 0.04) * randf_range(0.8, 1.2)
+			obj.scale = Vector2(0.05, 0.05) * randf_range(0.8, 1.2)
 
 			if interactables_node:
 				interactables_node.add_child(obj)
@@ -532,7 +532,7 @@ func _spawn_vegetation() -> void:
 ## Get random position for vegetation (avoid center combat area)
 func _get_random_vegetation_position() -> Vector2:
 	var angle := randf() * TAU
-	var dist := 80.0 + randf() * 60.0  # 80-140 pixels from center
-	var pos := Vector2(240, 200) + Vector2(cos(angle), sin(angle)) * dist
-	pos += Vector2(randf_range(-20, 20), randf_range(-20, 20))
+	var dist := 107.0 + randf() * 80.0  # 107-187 pixels from center
+	var pos := Vector2(320, 267) + Vector2(cos(angle), sin(angle)) * dist
+	pos += Vector2(randf_range(-27, 27), randf_range(-27, 27))
 	return pos

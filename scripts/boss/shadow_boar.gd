@@ -17,26 +17,26 @@ var current_phase: int = 1
 var _phase_transition_done: bool = false
 
 # --- Phase 1 values ---
-const P1_CHARGE_SPEED: float = 350.0
+const P1_CHARGE_SPEED: float = 467.0
 const P1_CHARGE_COOLDOWN: float = 4.0
 const P1_TELEGRAPH_DURATION: float = 1.0
 const P1_STUN_DURATION: float = 2.0
 
 # --- Phase 2 values ---
-const P2_CHARGE_SPEED: float = 455.0
+const P2_CHARGE_SPEED: float = 607.0
 const P2_CHARGE_COOLDOWN: float = 3.0
 const P2_TELEGRAPH_DURATION: float = 0.7
 const P2_STUN_DURATION: float = 1.5
 
 # Charge settings
-const CHARGE_RANGE: float = 200.0
+const CHARGE_RANGE: float = 267.0
 const CHARGE_DURATION: float = 0.6
 const CHARGE_DAMAGE: int = 40
 
 # Slam settings (Phase 2 only)
-const SLAM_RANGE: float = 80.0
+const SLAM_RANGE: float = 107.0
 const SLAM_COOLDOWN: float = 5.0
-const SHOCKWAVE_RADIUS: float = 120.0
+const SHOCKWAVE_RADIUS: float = 160.0
 const SHOCKWAVE_EXPAND_TIME: float = 0.5
 const SHOCKWAVE_DAMAGE: int = 20
 
@@ -44,8 +44,8 @@ const SHOCKWAVE_DAMAGE: int = 20
 const WISP_SUMMON_INTERVAL: float = 8.0
 const WISP_SUMMON_COUNT: int = 2
 const WISP_MAX_ALIVE: int = 4
-const WISP_SPAWN_MIN_DIST: float = 80.0
-const WISP_SPAWN_MAX_DIST: float = 120.0
+const WISP_SPAWN_MIN_DIST: float = 107.0
+const WISP_SPAWN_MAX_DIST: float = 160.0
 
 # Phase transition
 const PHASE_2_HP_THRESHOLD: int = 250
@@ -75,7 +75,7 @@ var _sfx_boss_roar: AudioStream = preload("res://assets/audio/sfx/boss_roar.wav"
 func _ready() -> void:
 	max_hp = 500
 	contact_damage = 25
-	move_speed = 80.0
+	move_speed = 107.0
 	glow_color = Color(0.6, 0.1, 0.8, 0.6)  # Dark purple shadow aura
 	super._ready()
 	add_to_group("boss")
@@ -262,7 +262,7 @@ func _destroy_collided_destructibles() -> void:
 	for node in get_tree().get_nodes_in_group("destructible"):
 		if node.has_method("take_damage"):
 			var dist := global_position.distance_to(node.global_position)
-			if dist < 40.0:
+			if dist < 53.0:
 				node.take_damage(999)  # Instant destroy
 
 
@@ -392,7 +392,7 @@ func take_damage(damage: int, type: StringName = &"arrow_hit") -> void:
 
 	# Boss has reduced knockback resistance
 	var is_melee := type == &"melee_hit"
-	var boss_kb := 40.0 if is_melee else 20.0
+	var boss_kb := 53.0 if is_melee else 27.0
 	_apply_knockback(boss_kb)
 
 	# Camera trauma on boss hit (+0.06)

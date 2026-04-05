@@ -5,7 +5,7 @@ extends BaseEnemy
 ## Behavior: Chase player → Bounce back on contact → Chase again
 
 # Bounce settings
-const BOUNCE_DISTANCE: float = 100.0
+const BOUNCE_DISTANCE: float = 133.0
 const BOUNCE_DURATION: float = 0.3
 const ATTACK_COOLDOWN: float = 0.5
 
@@ -18,7 +18,7 @@ var _attack_on_cooldown: bool = false
 func _ready() -> void:
 	max_hp = 25
 	contact_damage = 10
-	move_speed = 80.0
+	move_speed = 107.0
 	glow_color = Color(0.3, 0.8, 1.0, 0.5)  # Cyan glow
 	super._ready()
 

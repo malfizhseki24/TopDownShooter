@@ -12,24 +12,24 @@
 [ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_brute/animations/breathing-idle/east/frame_001.png" id="idle_e_1"]
 [ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_brute/animations/breathing-idle/east/frame_002.png" id="idle_e_2"]
 [ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_brute/animations/breathing-idle/east/frame_003.png" id="idle_e_3"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_brute/animations/walking-6/south/frame_000.png" id="walk_s_0"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_brute/animations/walking-6/south/frame_001.png" id="walk_s_1"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_brute/animations/walking-6/south/frame_002.png" id="walk_s_2"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_brute/animations/walking-6/south/frame_003.png" id="walk_s_3"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_brute/animations/walking-6/south/frame_004.png" id="walk_s_4"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_brute/animations/walking-6/south/frame_005.png" id="walk_s_5"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_brute/animations/walking-6/north/frame_000.png" id="walk_n_0"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_brute/animations/walking-6/north/frame_001.png" id="walk_n_1"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_brute/animations/walking-6/north/frame_002.png" id="walk_n_2"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_brute/animations/walking-6/north/frame_003.png" id="walk_n_3"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_brute/animations/walking-6/north/frame_004.png" id="walk_n_4"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_brute/animations/walking-6/north/frame_005.png" id="walk_n_5"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_brute/animations/walking-6/east/frame_000.png" id="walk_e_0"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_brute/animations/walking-6/east/frame_001.png" id="walk_e_1"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_brute/animations/walking-6/east/frame_002.png" id="walk_e_2"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_brute/animations/walking-6/east/frame_003.png" id="walk_e_3"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_brute/animations/walking-6/east/frame_004.png" id="walk_e_4"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_brute/animations/walking-6/east/frame_005.png" id="walk_e_5"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_brute/animations/walking-6-frames/south/frame_000.png" id="walk_s_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_brute/animations/walking-6-frames/south/frame_001.png" id="walk_s_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_brute/animations/walking-6-frames/south/frame_002.png" id="walk_s_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_brute/animations/walking-6-frames/south/frame_003.png" id="walk_s_3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_brute/animations/walking-6-frames/south/frame_004.png" id="walk_s_4"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_brute/animations/walking-6-frames/south/frame_005.png" id="walk_s_5"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_brute/animations/walking-6-frames/north/frame_000.png" id="walk_n_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_brute/animations/walking-6-frames/north/frame_001.png" id="walk_n_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_brute/animations/walking-6-frames/north/frame_002.png" id="walk_n_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_brute/animations/walking-6-frames/north/frame_003.png" id="walk_n_3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_brute/animations/walking-6-frames/north/frame_004.png" id="walk_n_4"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_brute/animations/walking-6-frames/north/frame_005.png" id="walk_n_5"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_brute/animations/walking-6-frames/east/frame_000.png" id="walk_e_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_brute/animations/walking-6-frames/east/frame_001.png" id="walk_e_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_brute/animations/walking-6-frames/east/frame_002.png" id="walk_e_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_brute/animations/walking-6-frames/east/frame_003.png" id="walk_e_3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_brute/animations/walking-6-frames/east/frame_004.png" id="walk_e_4"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_brute/animations/walking-6-frames/east/frame_005.png" id="walk_e_5"]
 [ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_brute/animations/crouched-walking/south/frame_000.png" id="charge_s_0"]
 [ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_brute/animations/crouched-walking/south/frame_001.png" id="charge_s_1"]
 [ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_brute/animations/crouched-walking/south/frame_002.png" id="charge_s_2"]
@@ -48,27 +48,6 @@
 [ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_brute/animations/crouched-walking/east/frame_003.png" id="charge_e_3"]
 [ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_brute/animations/crouched-walking/east/frame_004.png" id="charge_e_4"]
 [ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_brute/animations/crouched-walking/east/frame_005.png" id="charge_e_5"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_brute/animations/two-footed-jump/south/frame_000.png" id="attack_s_0"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_brute/animations/two-footed-jump/south/frame_001.png" id="attack_s_1"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_brute/animations/two-footed-jump/south/frame_002.png" id="attack_s_2"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_brute/animations/two-footed-jump/south/frame_003.png" id="attack_s_3"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_brute/animations/two-footed-jump/south/frame_004.png" id="attack_s_4"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_brute/animations/two-footed-jump/south/frame_005.png" id="attack_s_5"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_brute/animations/two-footed-jump/south/frame_006.png" id="attack_s_6"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_brute/animations/two-footed-jump/north/frame_000.png" id="attack_n_0"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_brute/animations/two-footed-jump/north/frame_001.png" id="attack_n_1"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_brute/animations/two-footed-jump/north/frame_002.png" id="attack_n_2"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_brute/animations/two-footed-jump/north/frame_003.png" id="attack_n_3"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_brute/animations/two-footed-jump/north/frame_004.png" id="attack_n_4"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_brute/animations/two-footed-jump/north/frame_005.png" id="attack_n_5"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_brute/animations/two-footed-jump/north/frame_006.png" id="attack_n_6"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_brute/animations/two-footed-jump/east/frame_000.png" id="attack_e_0"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_brute/animations/two-footed-jump/east/frame_001.png" id="attack_e_1"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_brute/animations/two-footed-jump/east/frame_002.png" id="attack_e_2"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_brute/animations/two-footed-jump/east/frame_003.png" id="attack_e_3"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_brute/animations/two-footed-jump/east/frame_004.png" id="attack_e_4"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_brute/animations/two-footed-jump/east/frame_005.png" id="attack_e_5"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_brute/animations/two-footed-jump/east/frame_006.png" id="attack_e_6"]
 [ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_brute/animations/falling-back-death/south/frame_000.png" id="death_s_0"]
 [ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_brute/animations/falling-back-death/south/frame_001.png" id="death_s_1"]
 [ext_resource type="Texture2D" path="res://assets/sprites/characters/enemies/shadow_brute/animations/falling-back-death/south/frame_002.png" id="death_s_2"]
@@ -280,84 +259,6 @@ animations = [{
 }],
 "loop": true,
 "name": &"crouched-walking_east",
-"speed": 10.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("attack_s_0")
-}, {
-"duration": 1.0,
-"texture": ExtResource("attack_s_1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("attack_s_2")
-}, {
-"duration": 1.0,
-"texture": ExtResource("attack_s_3")
-}, {
-"duration": 1.0,
-"texture": ExtResource("attack_s_4")
-}, {
-"duration": 1.0,
-"texture": ExtResource("attack_s_5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("attack_s_6")
-}],
-"loop": false,
-"name": &"two-footed-jump_south",
-"speed": 10.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("attack_n_0")
-}, {
-"duration": 1.0,
-"texture": ExtResource("attack_n_1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("attack_n_2")
-}, {
-"duration": 1.0,
-"texture": ExtResource("attack_n_3")
-}, {
-"duration": 1.0,
-"texture": ExtResource("attack_n_4")
-}, {
-"duration": 1.0,
-"texture": ExtResource("attack_n_5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("attack_n_6")
-}],
-"loop": false,
-"name": &"two-footed-jump_north",
-"speed": 10.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("attack_e_0")
-}, {
-"duration": 1.0,
-"texture": ExtResource("attack_e_1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("attack_e_2")
-}, {
-"duration": 1.0,
-"texture": ExtResource("attack_e_3")
-}, {
-"duration": 1.0,
-"texture": ExtResource("attack_e_4")
-}, {
-"duration": 1.0,
-"texture": ExtResource("attack_e_5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("attack_e_6")
-}],
-"loop": false,
-"name": &"two-footed-jump_east",
 "speed": 10.0
 }, {
 "frames": [{

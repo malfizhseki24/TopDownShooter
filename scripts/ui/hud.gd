@@ -10,6 +10,7 @@ extends CanvasLayer
 @onready var dash_cooldown: Control = $LeftPanel/DashCooldown
 @onready var dash_bar_fill: ColorRect = $LeftPanel/DashCooldown/DashBarFill
 @onready var energy_meter: Control = $LeftPanel/HealthRow/EnergyMeter
+@onready var skill_bar: HBoxContainer = $SkillBar
 @onready var room_progress: HBoxContainer = $RoomProgress
 @onready var fade_rect: ColorRect = $FadeRect
 
@@ -262,21 +263,21 @@ func set_damage_number_layer(layer_node: Node2D) -> void:
 func _on_damage_dealt(pos: Vector2, amount: int, type: StringName) -> void:
 	match type:
 		&"arrow_hit":
-			_spawn_damage_number(pos, amount, COLOR_DMG_ARROW, 6, false, true)
+			_spawn_damage_number(pos, amount, COLOR_DMG_ARROW, 8, false, true)
 		&"melee_hit":
-			_spawn_damage_number(pos, amount, COLOR_DMG_MELEE, 7, false, true)
+			_spawn_damage_number(pos, amount, COLOR_DMG_MELEE, 9, false, true)
 		&"special_attack":
-			_spawn_damage_number(pos, amount, COLOR_DMG_SPECIAL, 9, false, true)
+			_spawn_damage_number(pos, amount, COLOR_DMG_SPECIAL, 12, false, true)
 		&"heal":
-			_spawn_damage_number(pos, amount, COLOR_DMG_HEAL, 8, true, true)
+			_spawn_damage_number(pos, amount, COLOR_DMG_HEAL, 11, true, true)
 
 
 func _on_damage_taken(pos: Vector2, amount: int, type: StringName) -> void:
 	match type:
 		&"player_hurt":
-			_spawn_damage_number(pos, amount, COLOR_DMG_PLAYER_HURT, 7, false, false)
+			_spawn_damage_number(pos, amount, COLOR_DMG_PLAYER_HURT, 9, false, false)
 		&"boss_hurt_player":
-			_spawn_damage_number(pos, amount, COLOR_DMG_BOSS_HURT, 8, false, false)
+			_spawn_damage_number(pos, amount, COLOR_DMG_BOSS_HURT, 11, false, false)
 
 
 func _spawn_damage_number(pos: Vector2, amount: int, color: Color, font_size: int, is_heal: bool, float_up: bool) -> void:

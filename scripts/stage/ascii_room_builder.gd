@@ -241,7 +241,7 @@ static func create_navigation_polygon(floor_cells: Array[Vector2i], obstacle_cel
 
 	# Create the main outline (clockwise) from floor bounds
 	# Add a small inset to keep navigation away from border walls
-	var inset := 8.0
+	var inset := 11.0
 	var outline: PackedVector2Array = [
 		Vector2(min_x * tile_size + padding + inset, min_y * tile_size + padding + inset),
 		Vector2((max_x + 1) * tile_size + padding - inset, min_y * tile_size + padding + inset),

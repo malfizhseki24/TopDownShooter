@@ -47,7 +47,7 @@ const PATH_UPDATE_INTERVAL: float = 0.25  # seconds
 
 # Knockback impulse velocity (decays via friction)
 var knockback_velocity: Vector2 = Vector2.ZERO
-const KNOCKBACK_FRICTION: float = 600.0
+const KNOCKBACK_FRICTION: float = 800.0
 
 # Hit flash + dissolve shader (shared resources)
 var _hit_flash_shader: Shader = preload("res://shaders/hit_flash.gdshader")
@@ -248,9 +248,9 @@ func take_damage(damage: int, type: StringName = &"arrow_hit") -> void:
 	var is_melee := type == &"melee_hit"
 	var kb_dist: float
 	if is_kill:
-		kb_dist = 200.0 if is_melee else 120.0
+		kb_dist = 267.0 if is_melee else 160.0
 	else:
-		kb_dist = 150.0 if is_melee else 80.0
+		kb_dist = 200.0 if is_melee else 107.0
 	_apply_knockback(kb_dist)
 
 	# Camera trauma — different values for arrow vs melee, hit vs kill

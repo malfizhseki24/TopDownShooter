@@ -17,8 +17,8 @@ extends Camera2D
 # --- Trauma shake ---
 var _trauma: float = 0.0
 const TRAUMA_DECAY: float = 3.0
-const MAX_OFFSET_X: float = 8.0
-const MAX_OFFSET_Y: float = 6.0
+const MAX_OFFSET_X: float = 11.0
+const MAX_OFFSET_Y: float = 8.0
 const MAX_ROTATION_DEG: float = 2.0
 
 var _noise: FastNoiseLite
@@ -26,7 +26,7 @@ var _noise_y: float = 0.0  # Scrolling sample position for organic movement
 
 # --- Look-ahead ---
 var _aim_offset: Vector2 = Vector2.ZERO
-const LOOK_AHEAD_DISTANCE: float = 40.0
+const LOOK_AHEAD_DISTANCE: float = 53.0
 const LOOK_AHEAD_WEIGHT: float = 4.0
 
 

@@ -5,8 +5,8 @@ extends BaseEnemy
 ## Behavior: Slow chase → Telegraph charge → Charge at high speed → Cooldown
 
 # Charge settings
-const CHARGE_RANGE: float = 150.0
-const CHARGE_SPEED: float = 300.0
+const CHARGE_RANGE: float = 200.0
+const CHARGE_SPEED: float = 400.0
 const CHARGE_DURATION: float = 0.5
 const CHARGE_COOLDOWN: float = 3.0
 const TELEGRAPH_DURATION: float = 0.3
@@ -24,7 +24,7 @@ var _attack_on_cooldown: bool = false
 func _ready() -> void:
 	max_hp = 150
 	contact_damage = 30
-	move_speed = 60.0
+	move_speed = 80.0
 	glow_color = Color(1.0, 0.3, 0.1, 0.5)  # Deep red-orange glow
 	super._ready()
 

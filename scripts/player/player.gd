@@ -4,20 +4,27 @@ extends CharacterBody2D
 
 # Stats (from GDD)
 const MAX_HP: int = 100
-const MOVE_SPEED: float = 200.0
-const DASH_SPEED: float = 400.0
+const MOVE_SPEED: float = 267.0
+const SKILL_COOLDOWN_1: float = 5.0   # Talon Kick
+const SKILL_COOLDOWN_2: float = 9.0   # Feather Volley
+const SKILL_COOLDOWN_3: float = 14.0  # Ancestor's Ward
+const TALON_KICK_DAMAGE: int = 45
+const TALON_KICK_RADIUS: float = 100.0
+const FEATHER_VOLLEY_DAMAGE: int = 20
+const WARD_DURATION: float = 3.0
+const DASH_SPEED: float = 533.0
 const DASH_DURATION: float = 0.2
 const DASH_COOLDOWN: float = 1.0
 const DASH_IFRAMES: float = 0.15
 const MELEE_DAMAGE: int = 35
-const MELEE_RANGE: float = 64.0
+const MELEE_RANGE: float = 85.0
 const ARROW_DAMAGE: int = 25
-const ARROW_SPEED: float = 600.0
+const ARROW_SPEED: float = 800.0
 const FIRE_RATE: float = 0.5
 const RESPAWN_INVINCIBILITY: float = 1.0
 const MAX_ENERGY: int = 10
 const SUN_PIERCER_DAMAGE: int = 80
-const SUN_PIERCER_SPEED: float = 400.0
+const SUN_PIERCER_SPEED: float = 533.0
 const SUN_PIERCER_WINDUP: float = 0.25
 
 # Forgiveness constants (tunable)
@@ -27,7 +34,7 @@ const INPUT_BUFFER_WINDOW: float = 0.15
 const DASH_FORGIVENESS_WINDOW: float = 0.12
 const AIM_CONE_HALF_ANGLE: float = deg_to_rad(12.0)
 const AIM_MAX_CORRECTION: float = deg_to_rad(8.0)
-const AIM_ASSIST_RANGE: float = 300.0
+const AIM_ASSIST_RANGE: float = 400.0
 
 # Hit flash constants
 const HIT_FLASH_RED_DURATION: float = 0.12
@@ -39,6 +46,10 @@ const HIT_FLASH_RED_DURATION: float = 0.12
 @onready var melee_area: Area2D = $MeleeArea
 @onready var iframe_timer: Timer = $IFrameTimer
 @onready var flicker_timer: Timer = $FlickerTimer
+@onready var skill_timer_1: Timer = $SkillTimer1
+@onready var skill_timer_2: Timer = $SkillTimer2
+@onready var skill_timer_3: Timer = $SkillTimer3
+@onready var ward_timer: Timer = $WardTimer
 
 var hp: int = MAX_HP
 var is_dashing: bool = false
@@ -51,6 +62,10 @@ var is_dead: bool = false
 var current_energy: int = 0
 var is_energy_full: bool = false
 var is_windup: bool = false
+
+# Skill state
+var is_warded: bool = false
+var _ward_vfx: GPUParticles2D = null
 
 var aim_direction: Vector2 = Vector2.RIGHT
 
@@ -73,7 +88,7 @@ var _afterimage_scene: PackedScene = preload("res://scenes/vfx/dash_afterimage.t
 
 # Knockback impulse velocity (decays via friction)
 var knockback_velocity: Vector2 = Vector2.ZERO
-const KNOCKBACK_FRICTION: float = 600.0
+const KNOCKBACK_FRICTION: float = 800.0
 
 # SFX
 var _sfx_bow_shoot: AudioStream = preload("res://assets/audio/sfx/bow_shoot.wav")
@@ -83,6 +98,12 @@ var _sfx_player_death: AudioStream = preload("res://assets/audio/sfx/player_deat
 # SFX for Sun-Piercer
 var _sfx_sun_piercer_windup: AudioStream = preload("res://assets/audio/sfx/boss_charge.wav")
 var _sfx_sun_piercer_fire: AudioStream = preload("res://assets/audio/sfx/dash_whoosh.wav")
+
+# SFX for skills (TODO: replace with custom audio when sourced)
+var _sfx_talon_kick: AudioStream = preload("res://assets/audio/sfx/boss_slam.wav")
+var _sfx_feather_volley: AudioStream = preload("res://assets/audio/sfx/bow_shoot.wav")
+var _sfx_ward_activate: AudioStream = preload("res://assets/audio/sfx/pickup_chime.wav")
+var _sfx_ward_break: AudioStream = preload("res://assets/audio/sfx/player_hurt.wav")
 
 # Scene references
 var sun_piercer_scene: PackedScene = preload("res://scenes/player/sun_piercer.tscn")
@@ -101,6 +122,12 @@ func _ready() -> void:
 	# Connect i-frame timers
 	iframe_timer.timeout.connect(_on_iframe_timer_timeout)
 	flicker_timer.timeout.connect(_on_flicker_timer_timeout)
+
+	# Connect skill timers
+	skill_timer_1.timeout.connect(func(): _on_skill_timer_timeout(0))
+	skill_timer_2.timeout.connect(func(): _on_skill_timer_timeout(1))
+	skill_timer_3.timeout.connect(func(): _on_skill_timer_timeout(2))
+	ward_timer.timeout.connect(_on_ward_timer_timeout)
 
 	# Connect to shard collection signal
 	EventBus.shard_collected.connect(_on_shard_collected)
@@ -184,6 +211,8 @@ func _handle_actions(_delta: float) -> void:
 	# Special attack (Sun-Piercer)
 	if Input.is_action_just_pressed("special_attack") and is_energy_full and not is_dashing:
 		_fire_sun_piercer()
+
+	_handle_skills()
 
 
 func _shoot() -> void:
@@ -276,6 +305,11 @@ func take_damage(damage: int, type: StringName = &"player_hurt") -> void:
 	if is_invincible or is_dead:
 		return
 
+	# Ancestor's Ward absorbs one hit
+	if is_warded:
+		_consume_ward()
+		return
+
 	hp -= damage
 	hp = maxi(hp, 0)
 
@@ -292,7 +326,7 @@ func take_damage(damage: int, type: StringName = &"player_hurt") -> void:
 
 	# Knockback — away from nearest enemy/boss
 	var is_boss_damage := type == &"boss_hurt_player"
-	var kb_dist := 100.0 if is_boss_damage else 60.0
+	var kb_dist := 133.0 if is_boss_damage else 80.0
 	_apply_knockback(kb_dist)
 
 	# Screen flash — red overlay, stronger from boss
@@ -372,6 +406,16 @@ func respawn() -> void:
 
 	# Clear buffer
 	_buffered_action = &""
+
+	# Reset skills
+	skill_timer_1.stop()
+	skill_timer_2.stop()
+	skill_timer_3.stop()
+	ward_timer.stop()
+	if is_warded:
+		is_warded = false
+		sprite.modulate = Color.WHITE
+	_clear_ward_vfx()
 
 	# Post-respawn invincibility
 	is_invincible = true
@@ -518,21 +562,17 @@ func _get_animation_direction() -> String:
 
 
 ## Get animation direction for actions (shoot, dash, death)
-## Available sprites:
-## - shoot: north, east, west, south (complete)
-## - dash: south, east, north, west (complete)
-## - death: south, east, north (no west - use flip_h on east)
-func _get_action_animation_direction(action: String) -> String:
-	if aim_direction.y < -0.5:
+## West is NEVER returned — all actions use east sprites + flip_h for west,
+## consistent with how idle/walk handle west direction.
+func _get_action_animation_direction(_action: String) -> String:
+	var ax := absf(aim_direction.x)
+	var ay := absf(aim_direction.y)
+	if ax >= ay:
+		return "east"  # west handled via flip_h in _play_action_animation
+	elif aim_direction.y < 0:
 		return "north"
-	elif aim_direction.y > 0.5:
-		return "south"  # shoot and dash have south sprites
-	elif action == "dash" and aim_direction.x < 0:
-		return "west"  # dash has west sprites
-	elif action == "shoot" and aim_direction.x < 0:
-		return "west"  # shoot has west sprites
 	else:
-		return "east"  # west for death uses flip_h on east
+		return "south"
 
 
 ## Update animation based on current state
@@ -565,21 +605,17 @@ func _update_animation() -> void:
 func _play_action_animation(action: String) -> void:
 	_is_playing_action = true
 	var direction := _get_action_animation_direction(action)
+	var is_horizontal := direction == "east"  # covers both east and west aim
+	var facing_west := is_horizontal and aim_direction.x < 0
 
-	# Set flip_h based on action and direction:
-	# - shoot: has west sprites (no flip), no south (uses north, no flip)
-	# - dash: has all 4 directions (no flip needed)
-	# - death: no west sprite (use flip_h on east)
-	match action:
-		"shoot":
-			sprite.flip_h = false  # shoot has west, no flip needed
-		"dash":
-			sprite.flip_h = false  # dash has all directions
-		_:
-			# death and others: flip for west
-			sprite.flip_h = aim_direction.x < 0 and abs(aim_direction.y) <= 0.5
+	# All actions use east sprites flipped for west — same convention as idle/walk.
+	# death has no south sprite, so clamp south → east (flip if needed).
+	var anim_dir := direction
+	if action == "death" and direction == "south":
+		anim_dir = "east"
 
-	sprite.play(action + "_" + direction)
+	sprite.play(action + "_" + anim_dir)
+	sprite.flip_h = facing_west
 
 
 ## Called when action animation finishes
@@ -658,3 +694,163 @@ func _fire_sun_piercer() -> void:
 
 	# Reset playing action
 	_is_playing_action = false
+
+
+# --- Active Skills ---
+
+func _handle_skills() -> void:
+	if is_windup or is_dead:
+		return
+
+	if Input.is_action_just_pressed("skill_1") and skill_timer_1.is_stopped():
+		_talon_kick()
+
+	if Input.is_action_just_pressed("skill_2") and skill_timer_2.is_stopped():
+		_feather_volley()
+
+	if Input.is_action_just_pressed("skill_3") and skill_timer_3.is_stopped() and not is_warded:
+		_activate_ward()
+
+
+func _talon_kick() -> void:
+	const LUNGE_SPEED: float = 600.0
+	const LUNGE_DURATION: float = 0.18
+
+	# Capture aim direction immediately — aim_direction may change mid-await
+	var lunge_dir := aim_direction
+
+	# Start cooldown immediately — prevents re-triggering during lunge
+	skill_timer_1.start(SKILL_COOLDOWN_1)
+	EventBus.skill_cooldown_started.emit(0, SKILL_COOLDOWN_1)
+	EventBus.skill_activated.emit(0)
+
+	# Lunge setup — reuse dash state so _handle_movement() doesn't override velocity
+	_is_playing_action = true
+	is_dashing = true
+	is_invincible = true
+
+	# Play dash (running-slide) animation in the locked lunge direction
+	aim_direction = lunge_dir  # lock aim for animation direction
+	_play_action_animation("dash")
+	velocity = lunge_dir * LUNGE_SPEED
+
+	# Orange fiery tint to sell the power charge
+	sprite.modulate = Color(1.6, 0.75, 0.2, 1.0)
+
+	# Trail + afterimages (afterimages run as background coroutine — fine)
+	var lunge_trail: GPUParticles2D = VFXManager.spawn_attached("dash_trail", self)
+	_spawn_dash_afterimages()
+
+	AudioManager.play_sfx(_sfx_talon_kick, global_position)
+
+	# --- Lunge ---
+	await get_tree().create_timer(LUNGE_DURATION).timeout
+
+	if is_dead:
+		return
+
+	# --- Impact: hit detection at final position ---
+	var space := get_world_2d().direct_space_state
+	var shape := CircleShape2D.new()
+	shape.radius = TALON_KICK_RADIUS
+	var params := PhysicsShapeQueryParameters2D.new()
+	params.shape = shape
+	params.transform = Transform2D(0.0, global_position)
+	params.collision_mask = 2  # Enemy layer only
+
+	for result in space.intersect_shape(params, 16):
+		var body = result["collider"]
+		if body.is_in_group("enemy") and body.has_method("take_damage"):
+			body.take_damage(TALON_KICK_DAMAGE, &"melee_hit")
+			VFXManager.spawn("hit_spark", (body as Node2D).global_position)
+
+	# Impact juice
+	VFXManager.spawn("explosion", global_position)
+	HitstopManager.freeze(0.10)
+	EventBus.camera_trauma.emit(0.45)
+	_squash_stretch(Vector2(1.3, 0.7), 0.12)
+
+	# Restore state
+	velocity = Vector2.ZERO
+	is_dashing = false
+	if not iframe_timer.is_stopped():
+		pass  # damage i-frames still active — stay invincible
+	else:
+		is_invincible = false
+	_is_playing_action = false
+
+	# Fade tint back to white
+	var tween := create_tween()
+	tween.tween_property(sprite, "modulate", Color.WHITE, 0.12)
+
+	# Stop and remove lunge trail
+	if lunge_trail and is_instance_valid(lunge_trail):
+		lunge_trail.emitting = false
+		lunge_trail.queue_free()
+
+
+func _feather_volley() -> void:
+	var arrow_scene := preload("res://scenes/player/arrow.tscn")
+	var offsets := [-45.0, -22.5, 0.0, 22.5, 45.0]
+	for offset_deg in offsets:
+		var arrow := arrow_scene.instantiate()
+		arrow.global_position = arrow_spawn.global_position
+		arrow.direction = aim_direction.rotated(deg_to_rad(offset_deg))
+		arrow.damage = FEATHER_VOLLEY_DAMAGE
+		arrow.speed = ARROW_SPEED
+		get_tree().current_scene.add_child(arrow)
+
+	VFXManager.spawn("hit_spark", global_position)
+	AudioManager.play_sfx(_sfx_feather_volley, global_position)
+	EventBus.skill_activated.emit(1)
+	skill_timer_2.start(SKILL_COOLDOWN_2)
+	EventBus.skill_cooldown_started.emit(1, SKILL_COOLDOWN_2)
+
+
+func _activate_ward() -> void:
+	is_warded = true
+	ward_timer.start(WARD_DURATION)
+	sprite.modulate = Color(0.5, 1.0, 1.0, 1.0)
+	# Activation burst at player position
+	VFXManager.spawn("heal_burst", global_position)
+	# Looping aura attached to player (follows movement)
+	_ward_vfx = VFXManager.spawn_attached("ward_aura", self)
+	if _ward_vfx:
+		_ward_vfx.emitting = true
+	AudioManager.play_sfx(_sfx_ward_activate, global_position)
+	EventBus.skill_activated.emit(2)
+
+
+func _consume_ward() -> void:
+	is_warded = false
+	ward_timer.stop()
+	sprite.modulate = Color.WHITE
+	_clear_ward_vfx()
+	VFXManager.spawn("hit_spark", global_position)
+	AudioManager.play_sfx(_sfx_ward_break, global_position)
+	EventBus.camera_trauma.emit(0.15)
+	EventBus.screen_flash_requested.emit(Color(0.44, 0.75, 0.75), 0.25, 0.2)
+	skill_timer_3.start(SKILL_COOLDOWN_3)
+	EventBus.skill_cooldown_started.emit(2, SKILL_COOLDOWN_3)
+	# Start i-frames to block the duplicate take_damage() call that fires in the same
+	# frame from the other collision signal (enemy Hitbox vs player HurtboxArea)
+	_start_damage_iframes()
+
+
+func _on_ward_timer_timeout() -> void:
+	# Ward expired without absorbing a hit
+	is_warded = false
+	sprite.modulate = Color.WHITE
+	_clear_ward_vfx()
+	skill_timer_3.start(SKILL_COOLDOWN_3)
+	EventBus.skill_cooldown_started.emit(2, SKILL_COOLDOWN_3)
+
+
+func _clear_ward_vfx() -> void:
+	if _ward_vfx and is_instance_valid(_ward_vfx):
+		_ward_vfx.queue_free()
+	_ward_vfx = null
+
+
+func _on_skill_timer_timeout(index: int) -> void:
+	EventBus.skill_cooldown_ready.emit(index)

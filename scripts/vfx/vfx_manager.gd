@@ -22,6 +22,8 @@ const VFX_SCENES := {
 	"shard_spawn_burst": preload("res://assets/vfx/scenes/shard_spawn_burst.tscn"),
 	"shard_collect_burst": preload("res://assets/vfx/scenes/shard_collect_burst.tscn"),
 	"sun_piercer_impact": preload("res://assets/vfx/scenes/sun_piercer_impact.tscn"),
+	# Skill VFX
+	"ward_aura": preload("res://assets/vfx/scenes/ward_aura.tscn"),
 }
 
 # Container for spawned effects

@@ -10,8 +10,8 @@ const TELEPORT_SMOKE := preload("res://assets/vfx/scenes/teleport_smoke.tscn")
 
 # Teleport settings
 const TELEPORT_INTERVAL: float = 2.0
-const TELEPORT_MIN_DISTANCE: float = 80.0
-const TELEPORT_MAX_DISTANCE: float = 120.0
+const TELEPORT_MIN_DISTANCE: float = 107.0
+const TELEPORT_MAX_DISTANCE: float = 160.0
 const VISIBLE_AFTER_TELEPORT: float = 0.5
 
 # State tracking
@@ -24,7 +24,7 @@ var _visible_timer: float = 0.0
 func _ready() -> void:
 	max_hp = 60
 	contact_damage = 20
-	move_speed = 100.0
+	move_speed = 133.0
 	glow_color = Color(0.8, 0.3, 0.5, 0.4)  # Dark magenta glow
 	super._ready()
 

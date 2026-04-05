@@ -1,629 +1,593 @@
 [gd_resource type="SpriteFrames" format=3 uid="uid://shadow_boar_frames"]
 
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/idle/south/frame_000.png" id="idle_south_f0"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/idle/south/frame_001.png" id="idle_south_f1"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/idle/south/frame_002.png" id="idle_south_f2"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/idle/south/frame_003.png" id="idle_south_f3"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/idle/south/frame_004.png" id="idle_south_f4"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/idle/south/frame_005.png" id="idle_south_f5"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/idle/south/frame_006.png" id="idle_south_f6"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/idle/south/frame_007.png" id="idle_south_f7"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/idle/south/frame_008.png" id="idle_south_f8"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/idle/east/frame_000.png" id="idle_east_f0"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/idle/east/frame_001.png" id="idle_east_f1"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/idle/east/frame_002.png" id="idle_east_f2"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/idle/east/frame_003.png" id="idle_east_f3"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/idle/east/frame_004.png" id="idle_east_f4"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/idle/east/frame_005.png" id="idle_east_f5"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/idle/east/frame_006.png" id="idle_east_f6"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/idle/east/frame_007.png" id="idle_east_f7"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/idle/east/frame_008.png" id="idle_east_f8"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/idle/north/frame_000.png" id="idle_north_f0"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/idle/north/frame_001.png" id="idle_north_f1"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/idle/north/frame_002.png" id="idle_north_f2"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/idle/north/frame_003.png" id="idle_north_f3"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/idle/north/frame_004.png" id="idle_north_f4"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/idle/north/frame_005.png" id="idle_north_f5"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/idle/north/frame_006.png" id="idle_north_f6"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/idle/north/frame_007.png" id="idle_north_f7"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/idle/north/frame_008.png" id="idle_north_f8"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/idle/west/frame_000.png" id="idle_west_f0"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/idle/west/frame_001.png" id="idle_west_f1"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/idle/west/frame_002.png" id="idle_west_f2"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/idle/west/frame_003.png" id="idle_west_f3"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/idle/west/frame_004.png" id="idle_west_f4"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/idle/west/frame_005.png" id="idle_west_f5"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/idle/west/frame_006.png" id="idle_west_f6"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/idle/west/frame_007.png" id="idle_west_f7"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/idle/west/frame_008.png" id="idle_west_f8"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/walk-8-frames/south/frame_000.png" id="walk_8_frames_south_f0"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/walk-8-frames/south/frame_001.png" id="walk_8_frames_south_f1"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/walk-8-frames/south/frame_002.png" id="walk_8_frames_south_f2"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/walk-8-frames/south/frame_003.png" id="walk_8_frames_south_f3"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/walk-8-frames/south/frame_004.png" id="walk_8_frames_south_f4"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/walk-8-frames/south/frame_005.png" id="walk_8_frames_south_f5"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/walk-8-frames/south/frame_006.png" id="walk_8_frames_south_f6"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/walk-8-frames/south/frame_007.png" id="walk_8_frames_south_f7"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/walk-8-frames/east/frame_000.png" id="walk_8_frames_east_f0"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/walk-8-frames/east/frame_001.png" id="walk_8_frames_east_f1"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/walk-8-frames/east/frame_002.png" id="walk_8_frames_east_f2"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/walk-8-frames/east/frame_003.png" id="walk_8_frames_east_f3"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/walk-8-frames/east/frame_004.png" id="walk_8_frames_east_f4"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/walk-8-frames/east/frame_005.png" id="walk_8_frames_east_f5"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/walk-8-frames/east/frame_006.png" id="walk_8_frames_east_f6"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/walk-8-frames/east/frame_007.png" id="walk_8_frames_east_f7"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/walk-8-frames/north/frame_000.png" id="walk_8_frames_north_f0"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/walk-8-frames/north/frame_001.png" id="walk_8_frames_north_f1"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/walk-8-frames/north/frame_002.png" id="walk_8_frames_north_f2"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/walk-8-frames/north/frame_003.png" id="walk_8_frames_north_f3"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/walk-8-frames/north/frame_004.png" id="walk_8_frames_north_f4"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/walk-8-frames/north/frame_005.png" id="walk_8_frames_north_f5"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/walk-8-frames/north/frame_006.png" id="walk_8_frames_north_f6"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/walk-8-frames/north/frame_007.png" id="walk_8_frames_north_f7"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/walk-8-frames/west/frame_000.png" id="walk_8_frames_west_f0"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/walk-8-frames/west/frame_001.png" id="walk_8_frames_west_f1"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/walk-8-frames/west/frame_002.png" id="walk_8_frames_west_f2"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/walk-8-frames/west/frame_003.png" id="walk_8_frames_west_f3"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/walk-8-frames/west/frame_004.png" id="walk_8_frames_west_f4"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/walk-8-frames/west/frame_005.png" id="walk_8_frames_west_f5"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/walk-8-frames/west/frame_006.png" id="walk_8_frames_west_f6"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/walk-8-frames/west/frame_007.png" id="walk_8_frames_west_f7"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/running-8-frames/south/frame_000.png" id="running_8_frames_south_f0"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/running-8-frames/south/frame_001.png" id="running_8_frames_south_f1"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/running-8-frames/south/frame_002.png" id="running_8_frames_south_f2"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/running-8-frames/south/frame_003.png" id="running_8_frames_south_f3"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/running-8-frames/south/frame_004.png" id="running_8_frames_south_f4"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/running-8-frames/south/frame_005.png" id="running_8_frames_south_f5"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/running-8-frames/south/frame_006.png" id="running_8_frames_south_f6"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/running-8-frames/south/frame_007.png" id="running_8_frames_south_f7"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/running-8-frames/east/frame_000.png" id="running_8_frames_east_f0"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/running-8-frames/east/frame_001.png" id="running_8_frames_east_f1"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/running-8-frames/east/frame_002.png" id="running_8_frames_east_f2"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/running-8-frames/east/frame_003.png" id="running_8_frames_east_f3"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/running-8-frames/east/frame_004.png" id="running_8_frames_east_f4"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/running-8-frames/east/frame_005.png" id="running_8_frames_east_f5"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/running-8-frames/east/frame_006.png" id="running_8_frames_east_f6"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/running-8-frames/east/frame_007.png" id="running_8_frames_east_f7"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/running-8-frames/north/frame_000.png" id="running_8_frames_north_f0"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/running-8-frames/north/frame_001.png" id="running_8_frames_north_f1"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/running-8-frames/north/frame_002.png" id="running_8_frames_north_f2"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/running-8-frames/north/frame_003.png" id="running_8_frames_north_f3"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/running-8-frames/north/frame_004.png" id="running_8_frames_north_f4"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/running-8-frames/north/frame_005.png" id="running_8_frames_north_f5"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/running-8-frames/north/frame_006.png" id="running_8_frames_north_f6"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/running-8-frames/north/frame_007.png" id="running_8_frames_north_f7"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/running-8-frames/west/frame_000.png" id="running_8_frames_west_f0"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/running-8-frames/west/frame_001.png" id="running_8_frames_west_f1"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/running-8-frames/west/frame_002.png" id="running_8_frames_west_f2"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/running-8-frames/west/frame_003.png" id="running_8_frames_west_f3"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/running-8-frames/west/frame_004.png" id="running_8_frames_west_f4"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/running-8-frames/west/frame_005.png" id="running_8_frames_west_f5"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/running-8-frames/west/frame_006.png" id="running_8_frames_west_f6"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/running-8-frames/west/frame_007.png" id="running_8_frames_west_f7"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/attack/south/frame_000.png" id="attack_south_f0"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/attack/south/frame_001.png" id="attack_south_f1"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/attack/south/frame_002.png" id="attack_south_f2"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/attack/south/frame_003.png" id="attack_south_f3"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/attack/south/frame_004.png" id="attack_south_f4"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/attack/south/frame_005.png" id="attack_south_f5"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/attack/south/frame_006.png" id="attack_south_f6"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/attack/south/frame_007.png" id="attack_south_f7"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/attack/south/frame_008.png" id="attack_south_f8"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/attack/east/frame_000.png" id="attack_east_f0"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/attack/east/frame_001.png" id="attack_east_f1"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/attack/east/frame_002.png" id="attack_east_f2"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/attack/east/frame_003.png" id="attack_east_f3"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/attack/east/frame_004.png" id="attack_east_f4"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/attack/east/frame_005.png" id="attack_east_f5"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/attack/east/frame_006.png" id="attack_east_f6"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/attack/east/frame_007.png" id="attack_east_f7"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/attack/east/frame_008.png" id="attack_east_f8"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/attack/north/frame_000.png" id="attack_north_f0"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/attack/north/frame_001.png" id="attack_north_f1"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/attack/north/frame_002.png" id="attack_north_f2"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/attack/north/frame_003.png" id="attack_north_f3"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/attack/north/frame_004.png" id="attack_north_f4"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/attack/north/frame_005.png" id="attack_north_f5"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/attack/north/frame_006.png" id="attack_north_f6"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/attack/north/frame_007.png" id="attack_north_f7"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/attack/north/frame_008.png" id="attack_north_f8"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/attack/west/frame_000.png" id="attack_west_f0"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/attack/west/frame_001.png" id="attack_west_f1"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/attack/west/frame_002.png" id="attack_west_f2"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/attack/west/frame_003.png" id="attack_west_f3"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/attack/west/frame_004.png" id="attack_west_f4"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/attack/west/frame_005.png" id="attack_west_f5"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/attack/west/frame_006.png" id="attack_west_f6"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/attack/west/frame_007.png" id="attack_west_f7"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/attack/west/frame_008.png" id="attack_west_f8"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/jump-attack/south/frame_000.png" id="jump_attack_south_f0"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/jump-attack/south/frame_001.png" id="jump_attack_south_f1"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/jump-attack/south/frame_002.png" id="jump_attack_south_f2"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/jump-attack/south/frame_003.png" id="jump_attack_south_f3"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/jump-attack/south/frame_004.png" id="jump_attack_south_f4"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/jump-attack/south/frame_005.png" id="jump_attack_south_f5"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/jump-attack/south/frame_006.png" id="jump_attack_south_f6"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/jump-attack/south/frame_007.png" id="jump_attack_south_f7"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/jump-attack/east/frame_000.png" id="jump_attack_east_f0"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/jump-attack/east/frame_001.png" id="jump_attack_east_f1"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/jump-attack/east/frame_002.png" id="jump_attack_east_f2"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/jump-attack/east/frame_003.png" id="jump_attack_east_f3"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/jump-attack/east/frame_004.png" id="jump_attack_east_f4"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/jump-attack/east/frame_005.png" id="jump_attack_east_f5"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/jump-attack/east/frame_006.png" id="jump_attack_east_f6"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/jump-attack/east/frame_007.png" id="jump_attack_east_f7"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/jump-attack/north/frame_000.png" id="jump_attack_north_f0"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/jump-attack/north/frame_001.png" id="jump_attack_north_f1"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/jump-attack/north/frame_002.png" id="jump_attack_north_f2"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/jump-attack/north/frame_003.png" id="jump_attack_north_f3"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/jump-attack/north/frame_004.png" id="jump_attack_north_f4"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/jump-attack/north/frame_005.png" id="jump_attack_north_f5"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/jump-attack/north/frame_006.png" id="jump_attack_north_f6"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/jump-attack/north/frame_007.png" id="jump_attack_north_f7"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/jump-attack/west/frame_000.png" id="jump_attack_west_f0"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/jump-attack/west/frame_001.png" id="jump_attack_west_f1"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/jump-attack/west/frame_002.png" id="jump_attack_west_f2"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/jump-attack/west/frame_003.png" id="jump_attack_west_f3"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/jump-attack/west/frame_004.png" id="jump_attack_west_f4"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/jump-attack/west/frame_005.png" id="jump_attack_west_f5"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/jump-attack/west/frame_006.png" id="jump_attack_west_f6"]
-[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/jump-attack/west/frame_007.png" id="jump_attack_west_f7"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/breathing-idle/south/frame_000.png" id="idle_south_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/breathing-idle/south/frame_001.png" id="idle_south_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/breathing-idle/south/frame_002.png" id="idle_south_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/breathing-idle/south/frame_003.png" id="idle_south_3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/breathing-idle/south/frame_004.png" id="idle_south_4"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/breathing-idle/south/frame_005.png" id="idle_south_5"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/breathing-idle/south/frame_006.png" id="idle_south_6"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/breathing-idle/south/frame_007.png" id="idle_south_7"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/breathing-idle/south/frame_008.png" id="idle_south_8"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/breathing-idle/south/frame_009.png" id="idle_south_9"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/breathing-idle/south/frame_010.png" id="idle_south_10"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/breathing-idle/south/frame_011.png" id="idle_south_11"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/breathing-idle/south/frame_012.png" id="idle_south_12"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/breathing-idle/south/frame_013.png" id="idle_south_13"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/breathing-idle/south/frame_014.png" id="idle_south_14"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/breathing-idle/south/frame_015.png" id="idle_south_15"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/breathing-idle/south/frame_016.png" id="idle_south_16"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/breathing-idle/east/frame_000.png" id="idle_east_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/breathing-idle/east/frame_001.png" id="idle_east_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/breathing-idle/east/frame_002.png" id="idle_east_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/breathing-idle/east/frame_003.png" id="idle_east_3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/breathing-idle/east/frame_004.png" id="idle_east_4"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/breathing-idle/east/frame_005.png" id="idle_east_5"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/breathing-idle/east/frame_006.png" id="idle_east_6"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/breathing-idle/east/frame_007.png" id="idle_east_7"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/breathing-idle/east/frame_008.png" id="idle_east_8"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/breathing-idle/east/frame_009.png" id="idle_east_9"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/breathing-idle/east/frame_010.png" id="idle_east_10"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/breathing-idle/east/frame_011.png" id="idle_east_11"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/breathing-idle/east/frame_012.png" id="idle_east_12"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/breathing-idle/east/frame_013.png" id="idle_east_13"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/breathing-idle/east/frame_014.png" id="idle_east_14"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/breathing-idle/east/frame_015.png" id="idle_east_15"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/breathing-idle/east/frame_016.png" id="idle_east_16"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/breathing-idle/north/frame_000.png" id="idle_north_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/breathing-idle/north/frame_001.png" id="idle_north_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/breathing-idle/north/frame_002.png" id="idle_north_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/breathing-idle/north/frame_003.png" id="idle_north_3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/breathing-idle/north/frame_004.png" id="idle_north_4"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/breathing-idle/north/frame_005.png" id="idle_north_5"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/breathing-idle/north/frame_006.png" id="idle_north_6"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/breathing-idle/north/frame_007.png" id="idle_north_7"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/breathing-idle/north/frame_008.png" id="idle_north_8"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/breathing-idle/north/frame_009.png" id="idle_north_9"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/breathing-idle/north/frame_010.png" id="idle_north_10"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/breathing-idle/north/frame_011.png" id="idle_north_11"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/breathing-idle/north/frame_012.png" id="idle_north_12"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/breathing-idle/north/frame_013.png" id="idle_north_13"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/breathing-idle/north/frame_014.png" id="idle_north_14"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/breathing-idle/north/frame_015.png" id="idle_north_15"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/breathing-idle/north/frame_016.png" id="idle_north_16"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/walking-4-frames/south/frame_000.png" id="walk_8_frames_south_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/walking-4-frames/south/frame_001.png" id="walk_8_frames_south_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/walking-4-frames/south/frame_002.png" id="walk_8_frames_south_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/walking-4-frames/south/frame_003.png" id="walk_8_frames_south_3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/walking-4-frames/east/frame_000.png" id="walk_8_frames_east_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/walking-4-frames/east/frame_001.png" id="walk_8_frames_east_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/walking-4-frames/east/frame_002.png" id="walk_8_frames_east_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/walking-4-frames/east/frame_003.png" id="walk_8_frames_east_3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/walking-4-frames/north/frame_000.png" id="walk_8_frames_north_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/walking-4-frames/north/frame_001.png" id="walk_8_frames_north_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/walking-4-frames/north/frame_002.png" id="walk_8_frames_north_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/walking-4-frames/north/frame_003.png" id="walk_8_frames_north_3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/running-8-frames/south/frame_000.png" id="running_8_frames_south_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/running-8-frames/south/frame_001.png" id="running_8_frames_south_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/running-8-frames/south/frame_002.png" id="running_8_frames_south_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/running-8-frames/south/frame_003.png" id="running_8_frames_south_3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/running-8-frames/south/frame_004.png" id="running_8_frames_south_4"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/running-8-frames/south/frame_005.png" id="running_8_frames_south_5"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/running-8-frames/south/frame_006.png" id="running_8_frames_south_6"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/running-8-frames/south/frame_007.png" id="running_8_frames_south_7"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/running-8-frames/east/frame_000.png" id="running_8_frames_east_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/running-8-frames/east/frame_001.png" id="running_8_frames_east_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/running-8-frames/east/frame_002.png" id="running_8_frames_east_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/running-8-frames/east/frame_003.png" id="running_8_frames_east_3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/running-8-frames/east/frame_004.png" id="running_8_frames_east_4"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/running-8-frames/east/frame_005.png" id="running_8_frames_east_5"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/running-8-frames/east/frame_006.png" id="running_8_frames_east_6"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/running-8-frames/east/frame_007.png" id="running_8_frames_east_7"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/running-8-frames/north/frame_000.png" id="running_8_frames_north_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/running-8-frames/north/frame_001.png" id="running_8_frames_north_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/running-8-frames/north/frame_002.png" id="running_8_frames_north_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/running-8-frames/north/frame_003.png" id="running_8_frames_north_3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/running-8-frames/north/frame_004.png" id="running_8_frames_north_4"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/running-8-frames/north/frame_005.png" id="running_8_frames_north_5"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/running-8-frames/north/frame_006.png" id="running_8_frames_north_6"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/running-8-frames/north/frame_007.png" id="running_8_frames_north_7"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/jump-attack/south/frame_000.png" id="jump_attack_south_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/jump-attack/south/frame_001.png" id="jump_attack_south_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/jump-attack/south/frame_002.png" id="jump_attack_south_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/jump-attack/south/frame_003.png" id="jump_attack_south_3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/jump-attack/south/frame_004.png" id="jump_attack_south_4"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/jump-attack/south/frame_005.png" id="jump_attack_south_5"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/jump-attack/south/frame_006.png" id="jump_attack_south_6"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/jump-attack/south/frame_007.png" id="jump_attack_south_7"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/jump-attack/east/frame_000.png" id="jump_attack_east_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/jump-attack/east/frame_001.png" id="jump_attack_east_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/jump-attack/east/frame_002.png" id="jump_attack_east_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/jump-attack/east/frame_003.png" id="jump_attack_east_3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/jump-attack/east/frame_004.png" id="jump_attack_east_4"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/jump-attack/east/frame_005.png" id="jump_attack_east_5"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/jump-attack/east/frame_006.png" id="jump_attack_east_6"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/jump-attack/east/frame_007.png" id="jump_attack_east_7"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/jump-attack/north/frame_000.png" id="jump_attack_north_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/jump-attack/north/frame_001.png" id="jump_attack_north_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/jump-attack/north/frame_002.png" id="jump_attack_north_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/jump-attack/north/frame_003.png" id="jump_attack_north_3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/jump-attack/north/frame_004.png" id="jump_attack_north_4"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/jump-attack/north/frame_005.png" id="jump_attack_north_5"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/jump-attack/north/frame_006.png" id="jump_attack_north_6"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/jump-attack/north/frame_007.png" id="jump_attack_north_7"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/attack/south/frame_000.png" id="attack_south_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/attack/south/frame_001.png" id="attack_south_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/attack/south/frame_002.png" id="attack_south_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/attack/south/frame_003.png" id="attack_south_3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/attack/south/frame_004.png" id="attack_south_4"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/attack/south/frame_005.png" id="attack_south_5"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/attack/south/frame_006.png" id="attack_south_6"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/attack/east/frame_000.png" id="attack_east_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/attack/east/frame_001.png" id="attack_east_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/attack/east/frame_002.png" id="attack_east_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/attack/east/frame_003.png" id="attack_east_3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/attack/east/frame_004.png" id="attack_east_4"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/attack/east/frame_005.png" id="attack_east_5"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/attack/east/frame_006.png" id="attack_east_6"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/attack/north/frame_000.png" id="attack_north_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/attack/north/frame_001.png" id="attack_north_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/attack/north/frame_002.png" id="attack_north_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/attack/north/frame_003.png" id="attack_north_3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/attack/north/frame_004.png" id="attack_north_4"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/attack/north/frame_005.png" id="attack_north_5"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/boss/shadow_boar/animations/attack/north/frame_006.png" id="attack_north_6"]
+
 [resource]
-animations = [
-{
-"frames": [
-{"duration": 1.0, "texture": ExtResource("idle_south_f0")}
-,
-{"duration": 1.0, "texture": ExtResource("idle_south_f1")}
-,
-{"duration": 1.0, "texture": ExtResource("idle_south_f2")}
-,
-{"duration": 1.0, "texture": ExtResource("idle_south_f3")}
-,
-{"duration": 1.0, "texture": ExtResource("idle_south_f4")}
-,
-{"duration": 1.0, "texture": ExtResource("idle_south_f5")}
-,
-{"duration": 1.0, "texture": ExtResource("idle_south_f6")}
-,
-{"duration": 1.0, "texture": ExtResource("idle_south_f7")}
-,
-{"duration": 1.0, "texture": ExtResource("idle_south_f8")}
-],
+animations = [{
+"frames": [{"duration": 1.0,
+"texture": ExtResource("idle_south_0")
+},
+{"duration": 1.0,
+"texture": ExtResource("idle_south_1")
+},
+{"duration": 1.0,
+"texture": ExtResource("idle_south_2")
+},
+{"duration": 1.0,
+"texture": ExtResource("idle_south_3")
+},
+{"duration": 1.0,
+"texture": ExtResource("idle_south_4")
+},
+{"duration": 1.0,
+"texture": ExtResource("idle_south_5")
+},
+{"duration": 1.0,
+"texture": ExtResource("idle_south_6")
+},
+{"duration": 1.0,
+"texture": ExtResource("idle_south_7")
+},
+{"duration": 1.0,
+"texture": ExtResource("idle_south_8")
+},
+{"duration": 1.0,
+"texture": ExtResource("idle_south_9")
+},
+{"duration": 1.0,
+"texture": ExtResource("idle_south_10")
+},
+{"duration": 1.0,
+"texture": ExtResource("idle_south_11")
+},
+{"duration": 1.0,
+"texture": ExtResource("idle_south_12")
+},
+{"duration": 1.0,
+"texture": ExtResource("idle_south_13")
+},
+{"duration": 1.0,
+"texture": ExtResource("idle_south_14")
+},
+{"duration": 1.0,
+"texture": ExtResource("idle_south_15")
+},
+{"duration": 1.0,
+"texture": ExtResource("idle_south_16")
+}],
 "loop": true,
 "name": &"idle_south",
-"speed": 8.0
-},
+"speed": 8.0},
 {
-"frames": [
-{"duration": 1.0, "texture": ExtResource("idle_east_f0")}
-,
-{"duration": 1.0, "texture": ExtResource("idle_east_f1")}
-,
-{"duration": 1.0, "texture": ExtResource("idle_east_f2")}
-,
-{"duration": 1.0, "texture": ExtResource("idle_east_f3")}
-,
-{"duration": 1.0, "texture": ExtResource("idle_east_f4")}
-,
-{"duration": 1.0, "texture": ExtResource("idle_east_f5")}
-,
-{"duration": 1.0, "texture": ExtResource("idle_east_f6")}
-,
-{"duration": 1.0, "texture": ExtResource("idle_east_f7")}
-,
-{"duration": 1.0, "texture": ExtResource("idle_east_f8")}
-],
+"frames": [{"duration": 1.0,
+"texture": ExtResource("idle_east_0")
+},
+{"duration": 1.0,
+"texture": ExtResource("idle_east_1")
+},
+{"duration": 1.0,
+"texture": ExtResource("idle_east_2")
+},
+{"duration": 1.0,
+"texture": ExtResource("idle_east_3")
+},
+{"duration": 1.0,
+"texture": ExtResource("idle_east_4")
+},
+{"duration": 1.0,
+"texture": ExtResource("idle_east_5")
+},
+{"duration": 1.0,
+"texture": ExtResource("idle_east_6")
+},
+{"duration": 1.0,
+"texture": ExtResource("idle_east_7")
+},
+{"duration": 1.0,
+"texture": ExtResource("idle_east_8")
+},
+{"duration": 1.0,
+"texture": ExtResource("idle_east_9")
+},
+{"duration": 1.0,
+"texture": ExtResource("idle_east_10")
+},
+{"duration": 1.0,
+"texture": ExtResource("idle_east_11")
+},
+{"duration": 1.0,
+"texture": ExtResource("idle_east_12")
+},
+{"duration": 1.0,
+"texture": ExtResource("idle_east_13")
+},
+{"duration": 1.0,
+"texture": ExtResource("idle_east_14")
+},
+{"duration": 1.0,
+"texture": ExtResource("idle_east_15")
+},
+{"duration": 1.0,
+"texture": ExtResource("idle_east_16")
+}],
 "loop": true,
 "name": &"idle_east",
-"speed": 8.0
-},
+"speed": 8.0},
 {
-"frames": [
-{"duration": 1.0, "texture": ExtResource("idle_north_f0")}
-,
-{"duration": 1.0, "texture": ExtResource("idle_north_f1")}
-,
-{"duration": 1.0, "texture": ExtResource("idle_north_f2")}
-,
-{"duration": 1.0, "texture": ExtResource("idle_north_f3")}
-,
-{"duration": 1.0, "texture": ExtResource("idle_north_f4")}
-,
-{"duration": 1.0, "texture": ExtResource("idle_north_f5")}
-,
-{"duration": 1.0, "texture": ExtResource("idle_north_f6")}
-,
-{"duration": 1.0, "texture": ExtResource("idle_north_f7")}
-,
-{"duration": 1.0, "texture": ExtResource("idle_north_f8")}
-],
+"frames": [{"duration": 1.0,
+"texture": ExtResource("idle_north_0")
+},
+{"duration": 1.0,
+"texture": ExtResource("idle_north_1")
+},
+{"duration": 1.0,
+"texture": ExtResource("idle_north_2")
+},
+{"duration": 1.0,
+"texture": ExtResource("idle_north_3")
+},
+{"duration": 1.0,
+"texture": ExtResource("idle_north_4")
+},
+{"duration": 1.0,
+"texture": ExtResource("idle_north_5")
+},
+{"duration": 1.0,
+"texture": ExtResource("idle_north_6")
+},
+{"duration": 1.0,
+"texture": ExtResource("idle_north_7")
+},
+{"duration": 1.0,
+"texture": ExtResource("idle_north_8")
+},
+{"duration": 1.0,
+"texture": ExtResource("idle_north_9")
+},
+{"duration": 1.0,
+"texture": ExtResource("idle_north_10")
+},
+{"duration": 1.0,
+"texture": ExtResource("idle_north_11")
+},
+{"duration": 1.0,
+"texture": ExtResource("idle_north_12")
+},
+{"duration": 1.0,
+"texture": ExtResource("idle_north_13")
+},
+{"duration": 1.0,
+"texture": ExtResource("idle_north_14")
+},
+{"duration": 1.0,
+"texture": ExtResource("idle_north_15")
+},
+{"duration": 1.0,
+"texture": ExtResource("idle_north_16")
+}],
 "loop": true,
 "name": &"idle_north",
-"speed": 8.0
-},
+"speed": 8.0},
 {
-"frames": [
-{"duration": 1.0, "texture": ExtResource("idle_west_f0")}
-,
-{"duration": 1.0, "texture": ExtResource("idle_west_f1")}
-,
-{"duration": 1.0, "texture": ExtResource("idle_west_f2")}
-,
-{"duration": 1.0, "texture": ExtResource("idle_west_f3")}
-,
-{"duration": 1.0, "texture": ExtResource("idle_west_f4")}
-,
-{"duration": 1.0, "texture": ExtResource("idle_west_f5")}
-,
-{"duration": 1.0, "texture": ExtResource("idle_west_f6")}
-,
-{"duration": 1.0, "texture": ExtResource("idle_west_f7")}
-,
-{"duration": 1.0, "texture": ExtResource("idle_west_f8")}
-],
-"loop": true,
-"name": &"idle_west",
-"speed": 8.0
+"frames": [{"duration": 1.0,
+"texture": ExtResource("walk_8_frames_south_0")
 },
-{
-"frames": [
-{"duration": 1.0, "texture": ExtResource("walk_8_frames_south_f0")}
-,
-{"duration": 1.0, "texture": ExtResource("walk_8_frames_south_f1")}
-,
-{"duration": 1.0, "texture": ExtResource("walk_8_frames_south_f2")}
-,
-{"duration": 1.0, "texture": ExtResource("walk_8_frames_south_f3")}
-,
-{"duration": 1.0, "texture": ExtResource("walk_8_frames_south_f4")}
-,
-{"duration": 1.0, "texture": ExtResource("walk_8_frames_south_f5")}
-,
-{"duration": 1.0, "texture": ExtResource("walk_8_frames_south_f6")}
-,
-{"duration": 1.0, "texture": ExtResource("walk_8_frames_south_f7")}
-],
+{"duration": 1.0,
+"texture": ExtResource("walk_8_frames_south_1")
+},
+{"duration": 1.0,
+"texture": ExtResource("walk_8_frames_south_2")
+},
+{"duration": 1.0,
+"texture": ExtResource("walk_8_frames_south_3")
+}],
 "loop": true,
 "name": &"walk-8-frames_south",
-"speed": 8.0
-},
+"speed": 8.0},
 {
-"frames": [
-{"duration": 1.0, "texture": ExtResource("walk_8_frames_east_f0")}
-,
-{"duration": 1.0, "texture": ExtResource("walk_8_frames_east_f1")}
-,
-{"duration": 1.0, "texture": ExtResource("walk_8_frames_east_f2")}
-,
-{"duration": 1.0, "texture": ExtResource("walk_8_frames_east_f3")}
-,
-{"duration": 1.0, "texture": ExtResource("walk_8_frames_east_f4")}
-,
-{"duration": 1.0, "texture": ExtResource("walk_8_frames_east_f5")}
-,
-{"duration": 1.0, "texture": ExtResource("walk_8_frames_east_f6")}
-,
-{"duration": 1.0, "texture": ExtResource("walk_8_frames_east_f7")}
-],
+"frames": [{"duration": 1.0,
+"texture": ExtResource("walk_8_frames_east_0")
+},
+{"duration": 1.0,
+"texture": ExtResource("walk_8_frames_east_1")
+},
+{"duration": 1.0,
+"texture": ExtResource("walk_8_frames_east_2")
+},
+{"duration": 1.0,
+"texture": ExtResource("walk_8_frames_east_3")
+}],
 "loop": true,
 "name": &"walk-8-frames_east",
-"speed": 8.0
-},
+"speed": 8.0},
 {
-"frames": [
-{"duration": 1.0, "texture": ExtResource("walk_8_frames_north_f0")}
-,
-{"duration": 1.0, "texture": ExtResource("walk_8_frames_north_f1")}
-,
-{"duration": 1.0, "texture": ExtResource("walk_8_frames_north_f2")}
-,
-{"duration": 1.0, "texture": ExtResource("walk_8_frames_north_f3")}
-,
-{"duration": 1.0, "texture": ExtResource("walk_8_frames_north_f4")}
-,
-{"duration": 1.0, "texture": ExtResource("walk_8_frames_north_f5")}
-,
-{"duration": 1.0, "texture": ExtResource("walk_8_frames_north_f6")}
-,
-{"duration": 1.0, "texture": ExtResource("walk_8_frames_north_f7")}
-],
+"frames": [{"duration": 1.0,
+"texture": ExtResource("walk_8_frames_north_0")
+},
+{"duration": 1.0,
+"texture": ExtResource("walk_8_frames_north_1")
+},
+{"duration": 1.0,
+"texture": ExtResource("walk_8_frames_north_2")
+},
+{"duration": 1.0,
+"texture": ExtResource("walk_8_frames_north_3")
+}],
 "loop": true,
 "name": &"walk-8-frames_north",
-"speed": 8.0
-},
+"speed": 8.0},
 {
-"frames": [
-{"duration": 1.0, "texture": ExtResource("walk_8_frames_west_f0")}
-,
-{"duration": 1.0, "texture": ExtResource("walk_8_frames_west_f1")}
-,
-{"duration": 1.0, "texture": ExtResource("walk_8_frames_west_f2")}
-,
-{"duration": 1.0, "texture": ExtResource("walk_8_frames_west_f3")}
-,
-{"duration": 1.0, "texture": ExtResource("walk_8_frames_west_f4")}
-,
-{"duration": 1.0, "texture": ExtResource("walk_8_frames_west_f5")}
-,
-{"duration": 1.0, "texture": ExtResource("walk_8_frames_west_f6")}
-,
-{"duration": 1.0, "texture": ExtResource("walk_8_frames_west_f7")}
-],
-"loop": true,
-"name": &"walk-8-frames_west",
-"speed": 8.0
+"frames": [{"duration": 1.0,
+"texture": ExtResource("running_8_frames_south_0")
 },
-{
-"frames": [
-{"duration": 1.0, "texture": ExtResource("running_8_frames_south_f0")}
-,
-{"duration": 1.0, "texture": ExtResource("running_8_frames_south_f1")}
-,
-{"duration": 1.0, "texture": ExtResource("running_8_frames_south_f2")}
-,
-{"duration": 1.0, "texture": ExtResource("running_8_frames_south_f3")}
-,
-{"duration": 1.0, "texture": ExtResource("running_8_frames_south_f4")}
-,
-{"duration": 1.0, "texture": ExtResource("running_8_frames_south_f5")}
-,
-{"duration": 1.0, "texture": ExtResource("running_8_frames_south_f6")}
-,
-{"duration": 1.0, "texture": ExtResource("running_8_frames_south_f7")}
-],
+{"duration": 1.0,
+"texture": ExtResource("running_8_frames_south_1")
+},
+{"duration": 1.0,
+"texture": ExtResource("running_8_frames_south_2")
+},
+{"duration": 1.0,
+"texture": ExtResource("running_8_frames_south_3")
+},
+{"duration": 1.0,
+"texture": ExtResource("running_8_frames_south_4")
+},
+{"duration": 1.0,
+"texture": ExtResource("running_8_frames_south_5")
+},
+{"duration": 1.0,
+"texture": ExtResource("running_8_frames_south_6")
+},
+{"duration": 1.0,
+"texture": ExtResource("running_8_frames_south_7")
+}],
 "loop": true,
 "name": &"running-8-frames_south",
-"speed": 8.0
-},
+"speed": 12.0},
 {
-"frames": [
-{"duration": 1.0, "texture": ExtResource("running_8_frames_east_f0")}
-,
-{"duration": 1.0, "texture": ExtResource("running_8_frames_east_f1")}
-,
-{"duration": 1.0, "texture": ExtResource("running_8_frames_east_f2")}
-,
-{"duration": 1.0, "texture": ExtResource("running_8_frames_east_f3")}
-,
-{"duration": 1.0, "texture": ExtResource("running_8_frames_east_f4")}
-,
-{"duration": 1.0, "texture": ExtResource("running_8_frames_east_f5")}
-,
-{"duration": 1.0, "texture": ExtResource("running_8_frames_east_f6")}
-,
-{"duration": 1.0, "texture": ExtResource("running_8_frames_east_f7")}
-],
+"frames": [{"duration": 1.0,
+"texture": ExtResource("running_8_frames_east_0")
+},
+{"duration": 1.0,
+"texture": ExtResource("running_8_frames_east_1")
+},
+{"duration": 1.0,
+"texture": ExtResource("running_8_frames_east_2")
+},
+{"duration": 1.0,
+"texture": ExtResource("running_8_frames_east_3")
+},
+{"duration": 1.0,
+"texture": ExtResource("running_8_frames_east_4")
+},
+{"duration": 1.0,
+"texture": ExtResource("running_8_frames_east_5")
+},
+{"duration": 1.0,
+"texture": ExtResource("running_8_frames_east_6")
+},
+{"duration": 1.0,
+"texture": ExtResource("running_8_frames_east_7")
+}],
 "loop": true,
 "name": &"running-8-frames_east",
-"speed": 8.0
-},
+"speed": 12.0},
 {
-"frames": [
-{"duration": 1.0, "texture": ExtResource("running_8_frames_north_f0")}
-,
-{"duration": 1.0, "texture": ExtResource("running_8_frames_north_f1")}
-,
-{"duration": 1.0, "texture": ExtResource("running_8_frames_north_f2")}
-,
-{"duration": 1.0, "texture": ExtResource("running_8_frames_north_f3")}
-,
-{"duration": 1.0, "texture": ExtResource("running_8_frames_north_f4")}
-,
-{"duration": 1.0, "texture": ExtResource("running_8_frames_north_f5")}
-,
-{"duration": 1.0, "texture": ExtResource("running_8_frames_north_f6")}
-,
-{"duration": 1.0, "texture": ExtResource("running_8_frames_north_f7")}
-],
+"frames": [{"duration": 1.0,
+"texture": ExtResource("running_8_frames_north_0")
+},
+{"duration": 1.0,
+"texture": ExtResource("running_8_frames_north_1")
+},
+{"duration": 1.0,
+"texture": ExtResource("running_8_frames_north_2")
+},
+{"duration": 1.0,
+"texture": ExtResource("running_8_frames_north_3")
+},
+{"duration": 1.0,
+"texture": ExtResource("running_8_frames_north_4")
+},
+{"duration": 1.0,
+"texture": ExtResource("running_8_frames_north_5")
+},
+{"duration": 1.0,
+"texture": ExtResource("running_8_frames_north_6")
+},
+{"duration": 1.0,
+"texture": ExtResource("running_8_frames_north_7")
+}],
 "loop": true,
 "name": &"running-8-frames_north",
-"speed": 8.0
-},
+"speed": 12.0},
 {
-"frames": [
-{"duration": 1.0, "texture": ExtResource("running_8_frames_west_f0")}
-,
-{"duration": 1.0, "texture": ExtResource("running_8_frames_west_f1")}
-,
-{"duration": 1.0, "texture": ExtResource("running_8_frames_west_f2")}
-,
-{"duration": 1.0, "texture": ExtResource("running_8_frames_west_f3")}
-,
-{"duration": 1.0, "texture": ExtResource("running_8_frames_west_f4")}
-,
-{"duration": 1.0, "texture": ExtResource("running_8_frames_west_f5")}
-,
-{"duration": 1.0, "texture": ExtResource("running_8_frames_west_f6")}
-,
-{"duration": 1.0, "texture": ExtResource("running_8_frames_west_f7")}
-],
-"loop": true,
-"name": &"running-8-frames_west",
-"speed": 8.0
+"frames": [{"duration": 1.0,
+"texture": ExtResource("jump_attack_south_0")
 },
+{"duration": 1.0,
+"texture": ExtResource("jump_attack_south_1")
+},
+{"duration": 1.0,
+"texture": ExtResource("jump_attack_south_2")
+},
+{"duration": 1.0,
+"texture": ExtResource("jump_attack_south_3")
+},
+{"duration": 1.0,
+"texture": ExtResource("jump_attack_south_4")
+},
+{"duration": 1.0,
+"texture": ExtResource("jump_attack_south_5")
+},
+{"duration": 1.0,
+"texture": ExtResource("jump_attack_south_6")
+},
+{"duration": 1.0,
+"texture": ExtResource("jump_attack_south_7")
+}],
+"loop": false,
+"name": &"jump-attack_south",
+"speed": 10.0},
 {
-"frames": [
-{"duration": 1.0, "texture": ExtResource("attack_south_f0")}
-,
-{"duration": 1.0, "texture": ExtResource("attack_south_f1")}
-,
-{"duration": 1.0, "texture": ExtResource("attack_south_f2")}
-,
-{"duration": 1.0, "texture": ExtResource("attack_south_f3")}
-,
-{"duration": 1.0, "texture": ExtResource("attack_south_f4")}
-,
-{"duration": 1.0, "texture": ExtResource("attack_south_f5")}
-,
-{"duration": 1.0, "texture": ExtResource("attack_south_f6")}
-,
-{"duration": 1.0, "texture": ExtResource("attack_south_f7")}
-,
-{"duration": 1.0, "texture": ExtResource("attack_south_f8")}
-],
+"frames": [{"duration": 1.0,
+"texture": ExtResource("jump_attack_east_0")
+},
+{"duration": 1.0,
+"texture": ExtResource("jump_attack_east_1")
+},
+{"duration": 1.0,
+"texture": ExtResource("jump_attack_east_2")
+},
+{"duration": 1.0,
+"texture": ExtResource("jump_attack_east_3")
+},
+{"duration": 1.0,
+"texture": ExtResource("jump_attack_east_4")
+},
+{"duration": 1.0,
+"texture": ExtResource("jump_attack_east_5")
+},
+{"duration": 1.0,
+"texture": ExtResource("jump_attack_east_6")
+},
+{"duration": 1.0,
+"texture": ExtResource("jump_attack_east_7")
+}],
+"loop": false,
+"name": &"jump-attack_east",
+"speed": 10.0},
+{
+"frames": [{"duration": 1.0,
+"texture": ExtResource("jump_attack_north_0")
+},
+{"duration": 1.0,
+"texture": ExtResource("jump_attack_north_1")
+},
+{"duration": 1.0,
+"texture": ExtResource("jump_attack_north_2")
+},
+{"duration": 1.0,
+"texture": ExtResource("jump_attack_north_3")
+},
+{"duration": 1.0,
+"texture": ExtResource("jump_attack_north_4")
+},
+{"duration": 1.0,
+"texture": ExtResource("jump_attack_north_5")
+},
+{"duration": 1.0,
+"texture": ExtResource("jump_attack_north_6")
+},
+{"duration": 1.0,
+"texture": ExtResource("jump_attack_north_7")
+}],
+"loop": false,
+"name": &"jump-attack_north",
+"speed": 10.0},
+{
+"frames": [{"duration": 1.0,
+"texture": ExtResource("attack_south_0")
+},
+{"duration": 1.0,
+"texture": ExtResource("attack_south_1")
+},
+{"duration": 1.0,
+"texture": ExtResource("attack_south_2")
+},
+{"duration": 1.0,
+"texture": ExtResource("attack_south_3")
+},
+{"duration": 1.0,
+"texture": ExtResource("attack_south_4")
+},
+{"duration": 1.0,
+"texture": ExtResource("attack_south_5")
+},
+{"duration": 1.0,
+"texture": ExtResource("attack_south_6")
+}],
 "loop": false,
 "name": &"attack_south",
-"speed": 10.0
-},
+"speed": 10.0},
 {
-"frames": [
-{"duration": 1.0, "texture": ExtResource("attack_east_f0")}
-,
-{"duration": 1.0, "texture": ExtResource("attack_east_f1")}
-,
-{"duration": 1.0, "texture": ExtResource("attack_east_f2")}
-,
-{"duration": 1.0, "texture": ExtResource("attack_east_f3")}
-,
-{"duration": 1.0, "texture": ExtResource("attack_east_f4")}
-,
-{"duration": 1.0, "texture": ExtResource("attack_east_f5")}
-,
-{"duration": 1.0, "texture": ExtResource("attack_east_f6")}
-,
-{"duration": 1.0, "texture": ExtResource("attack_east_f7")}
-,
-{"duration": 1.0, "texture": ExtResource("attack_east_f8")}
-],
+"frames": [{"duration": 1.0,
+"texture": ExtResource("attack_east_0")
+},
+{"duration": 1.0,
+"texture": ExtResource("attack_east_1")
+},
+{"duration": 1.0,
+"texture": ExtResource("attack_east_2")
+},
+{"duration": 1.0,
+"texture": ExtResource("attack_east_3")
+},
+{"duration": 1.0,
+"texture": ExtResource("attack_east_4")
+},
+{"duration": 1.0,
+"texture": ExtResource("attack_east_5")
+},
+{"duration": 1.0,
+"texture": ExtResource("attack_east_6")
+}],
 "loop": false,
 "name": &"attack_east",
-"speed": 10.0
-},
+"speed": 10.0},
 {
-"frames": [
-{"duration": 1.0, "texture": ExtResource("attack_north_f0")}
-,
-{"duration": 1.0, "texture": ExtResource("attack_north_f1")}
-,
-{"duration": 1.0, "texture": ExtResource("attack_north_f2")}
-,
-{"duration": 1.0, "texture": ExtResource("attack_north_f3")}
-,
-{"duration": 1.0, "texture": ExtResource("attack_north_f4")}
-,
-{"duration": 1.0, "texture": ExtResource("attack_north_f5")}
-,
-{"duration": 1.0, "texture": ExtResource("attack_north_f6")}
-,
-{"duration": 1.0, "texture": ExtResource("attack_north_f7")}
-,
-{"duration": 1.0, "texture": ExtResource("attack_north_f8")}
-],
+"frames": [{"duration": 1.0,
+"texture": ExtResource("attack_north_0")
+},
+{"duration": 1.0,
+"texture": ExtResource("attack_north_1")
+},
+{"duration": 1.0,
+"texture": ExtResource("attack_north_2")
+},
+{"duration": 1.0,
+"texture": ExtResource("attack_north_3")
+},
+{"duration": 1.0,
+"texture": ExtResource("attack_north_4")
+},
+{"duration": 1.0,
+"texture": ExtResource("attack_north_5")
+},
+{"duration": 1.0,
+"texture": ExtResource("attack_north_6")
+}],
 "loop": false,
 "name": &"attack_north",
 "speed": 10.0
-},
-{
-"frames": [
-{"duration": 1.0, "texture": ExtResource("attack_west_f0")}
-,
-{"duration": 1.0, "texture": ExtResource("attack_west_f1")}
-,
-{"duration": 1.0, "texture": ExtResource("attack_west_f2")}
-,
-{"duration": 1.0, "texture": ExtResource("attack_west_f3")}
-,
-{"duration": 1.0, "texture": ExtResource("attack_west_f4")}
-,
-{"duration": 1.0, "texture": ExtResource("attack_west_f5")}
-,
-{"duration": 1.0, "texture": ExtResource("attack_west_f6")}
-,
-{"duration": 1.0, "texture": ExtResource("attack_west_f7")}
-,
-{"duration": 1.0, "texture": ExtResource("attack_west_f8")}
-],
-"loop": false,
-"name": &"attack_west",
-"speed": 10.0
-},
-{
-"frames": [
-{"duration": 1.0, "texture": ExtResource("jump_attack_south_f0")}
-,
-{"duration": 1.0, "texture": ExtResource("jump_attack_south_f1")}
-,
-{"duration": 1.0, "texture": ExtResource("jump_attack_south_f2")}
-,
-{"duration": 1.0, "texture": ExtResource("jump_attack_south_f3")}
-,
-{"duration": 1.0, "texture": ExtResource("jump_attack_south_f4")}
-,
-{"duration": 1.0, "texture": ExtResource("jump_attack_south_f5")}
-,
-{"duration": 1.0, "texture": ExtResource("jump_attack_south_f6")}
-,
-{"duration": 1.0, "texture": ExtResource("jump_attack_south_f7")}
-],
-"loop": false,
-"name": &"jump-attack_south",
-"speed": 10.0
-},
-{
-"frames": [
-{"duration": 1.0, "texture": ExtResource("jump_attack_east_f0")}
-,
-{"duration": 1.0, "texture": ExtResource("jump_attack_east_f1")}
-,
-{"duration": 1.0, "texture": ExtResource("jump_attack_east_f2")}
-,
-{"duration": 1.0, "texture": ExtResource("jump_attack_east_f3")}
-,
-{"duration": 1.0, "texture": ExtResource("jump_attack_east_f4")}
-,
-{"duration": 1.0, "texture": ExtResource("jump_attack_east_f5")}
-,
-{"duration": 1.0, "texture": ExtResource("jump_attack_east_f6")}
-,
-{"duration": 1.0, "texture": ExtResource("jump_attack_east_f7")}
-],
-"loop": false,
-"name": &"jump-attack_east",
-"speed": 10.0
-},
-{
-"frames": [
-{"duration": 1.0, "texture": ExtResource("jump_attack_north_f0")}
-,
-{"duration": 1.0, "texture": ExtResource("jump_attack_north_f1")}
-,
-{"duration": 1.0, "texture": ExtResource("jump_attack_north_f2")}
-,
-{"duration": 1.0, "texture": ExtResource("jump_attack_north_f3")}
-,
-{"duration": 1.0, "texture": ExtResource("jump_attack_north_f4")}
-,
-{"duration": 1.0, "texture": ExtResource("jump_attack_north_f5")}
-,
-{"duration": 1.0, "texture": ExtResource("jump_attack_north_f6")}
-,
-{"duration": 1.0, "texture": ExtResource("jump_attack_north_f7")}
-],
-"loop": false,
-"name": &"jump-attack_north",
-"speed": 10.0
-},
-{
-"frames": [
-{"duration": 1.0, "texture": ExtResource("jump_attack_west_f0")}
-,
-{"duration": 1.0, "texture": ExtResource("jump_attack_west_f1")}
-,
-{"duration": 1.0, "texture": ExtResource("jump_attack_west_f2")}
-,
-{"duration": 1.0, "texture": ExtResource("jump_attack_west_f3")}
-,
-{"duration": 1.0, "texture": ExtResource("jump_attack_west_f4")}
-,
-{"duration": 1.0, "texture": ExtResource("jump_attack_west_f5")}
-,
-{"duration": 1.0, "texture": ExtResource("jump_attack_west_f6")}
-,
-{"duration": 1.0, "texture": ExtResource("jump_attack_west_f7")}
-],
-"loop": false,
-"name": &"jump-attack_west",
-"speed": 10.0
-}
-]
+}]
